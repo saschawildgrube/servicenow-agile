@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_agile.GetBacklogItemStates</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GetBacklogItemStates</name>
+        <script><![CDATA[function GetBacklogItemStates()
+{
+	var states = {};
+	states.draft     = 1000;
+	states.ready     = 2000;
+	states.dev       = 3000;
+	states.done      = 4000;
+	states.test      = 5000;
+	states.failed    = 6000;
+	states.passed    = 7000;
+	states.prod      = 8000;
+	states.complete  = 9000;
+	states.cancelled = 10000;
+	return states;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 19:06:55</sys_created_on>
+        <sys_id>19cec147db7f4510b652edb3059619f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetBacklogItemStates</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_19cec147db7f4510b652edb3059619f5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 19:06:55</sys_updated_on>
+    </sys_script_include>
+</record_update>
