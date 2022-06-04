@@ -77,6 +77,49 @@
 		<li><b>Cancelled</b>: The backlog item will not be implemented or worked on any further.</li>
 	</ol>
 	
+	
+	<h2>Deployment Process</h2>
+	
+	<p>The following deployment process - no matter if performed manually or automated - should be applied to deploy applications (components).</p>
+	<h3>From DEV to TEST</h3>
+	<ol>
+		<li>Login to the DEV instance.</li>
+		<li>Navigate to Studio.</li>
+		<li>Switch to the application.</li>
+		<li>Verify that the DEV branch is active.</li>
+		<li>"Commit Changes" to DEV branch.</li>
+		<li>Create tag</li>
+		<li>Choose the tag name according to the application version (or an alternative naming schema - e.g. "YYYY-MM-DD_hhmm").</li>
+		<li>Login to the TEST instance.</li>
+		<li>Navigate to Studio.</li>
+		<li>Switch to the application.</li>
+		<li>Select "Apply Remote Changes" (this is necessary to update the list of available tags).</li>
+		<li>Select "Create Branch".</li>
+		<li>Choose the branch name exactly like the tag name.</li>
+		<li>Select the corresponding tag and click on "Create Branch".</li>
+		<li>Verify that the now current branch has changed to the just created branch.</li>
+		<li>Navigate to "Background Scripts" and verify the application scope.</li>
+		<li>Execute this code: <code>AppInstall();</code>.</li>
+		<li>Mark backlog items associated to the application in "Commited to repo" as "In Test".</li>
+	</ol>
+	
+	<h3>To PROD (roll-forward / roll-back)</h3>
+	<ol>
+		<li>DO NOT PROCEED TO ROLL-FORWARD if there are stories "In Test" or in "Test Failed / Show Stopper / Back to development"!</li>
+		<li>Login to the PROD instance.</li>
+		<li>Navigate to Studio.</li>
+		<li>Switch to the application.</li>
+		<li>Select "Apply Remote Changes" (this is necessary to update the list of available branches).</li>
+		<li>Select "Switch Branch".</li>
+		<li>Choose the branch name that represents the version that should be deployed.</li>
+		<li>If in doubt, stash changes and reapply them afterwards. However it SHOULD NOT be necessary.</li>
+		<li>Verify that the now current branch has changed to the just selected branch.</li>
+		<li>Navigate to "Background Scripts" and verify the application scope.</li>
+		<li>Execute this code: <code>AppInstall();</code>.</li>
+		<li>Mark storys associated to the application in "Ready for PROD" as "Review in PROD".</li>
+	</ol>
+
+	
 	<h2>Reference</h2>
 
 	<h3>Configuration Options</h3>
@@ -130,13 +173,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-04 19:42:51</sys_updated_on>
+        <sys_updated_on>2022-06-04 20:03:04</sys_updated_on>
     </sys_ui_page>
 </record_update>
