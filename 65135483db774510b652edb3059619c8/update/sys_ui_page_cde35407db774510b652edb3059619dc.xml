@@ -57,6 +57,7 @@
 		<li>Create a backlog.</li>
 		<li>Specify the definition of ready and the definition of done.</li>
 		<li>If applicable, specify the lead developer and the lead tester.</li>
+		<li>Define components and associate them to the backlog.</li>
 	</ol>
 	
 	
@@ -129,13 +130,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-04 18:21:29</sys_updated_on>
+        <sys_updated_on>2022-06-04 19:42:51</sys_updated_on>
     </sys_ui_page>
 </record_update>

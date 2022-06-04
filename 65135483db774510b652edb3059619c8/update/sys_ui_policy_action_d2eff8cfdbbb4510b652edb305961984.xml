@@ -17,7 +17,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-06-04 17:59:44</sys_updated_on>
         <table>x_snc_agile_backlog_item</table>
-        <ui_policy display_value="Set number and state to read-only">0fcf30cfdbbb4510b652edb3059619d2</ui_policy>
+        <ui_policy display_value="Backlog Item: Set number and state to read-only">0fcf30cfdbbb4510b652edb3059619d2</ui_policy>
         <visible>ignore</visible>
     </sys_ui_policy_action>
 </record_update>
