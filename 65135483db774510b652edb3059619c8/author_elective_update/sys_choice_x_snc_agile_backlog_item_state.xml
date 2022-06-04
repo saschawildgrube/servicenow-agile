@@ -81,7 +81,7 @@
             <element>state</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Committed to repo</label>
+            <label>Done / Committed to repo</label>
             <language>en</language>
             <name>x_snc_agile_backlog_item</name>
             <sequence>4</sequence>
@@ -91,9 +91,9 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>3b5af4c3dbbb4510b652edb305961942</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 17:35:33</sys_updated_on>
+            <sys_updated_on>2022-06-04 18:16:59</sys_updated_on>
             <value>4000</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -115,6 +115,106 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2022-06-04 17:35:45</sys_updated_on>
             <value>5000</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Test Failed / Show Stopper / Back to Development</label>
+            <language>en</language>
+            <name>x_snc_agile_backlog_item</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-06-04 18:19:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>82948d0bdbfb4510b652edb3059619bf</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-06-04 18:20:22</sys_updated_on>
+            <value>6000</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Test Passed / Ready for PROD</label>
+            <language>en</language>
+            <name>x_snc_agile_backlog_item</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-06-04 18:29:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>50c60d8bdbfb4510b652edb305961996</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-06-04 18:29:26</sys_updated_on>
+            <value>7000</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Review on PROD</label>
+            <language>en</language>
+            <name>x_snc_agile_backlog_item</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-06-04 18:19:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f884c50bdbfb4510b652edb3059619c8</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-06-04 18:31:52</sys_updated_on>
+            <value>8000</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Completed</label>
+            <language>en</language>
+            <name>x_snc_agile_backlog_item</name>
+            <sequence>9</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-06-04 18:30:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>00f64dcfdbfb4510b652edb3059619f9</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-06-04 18:32:16</sys_updated_on>
+            <value>9000</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Canceled</label>
+            <language>en</language>
+            <name>x_snc_agile_backlog_item</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-06-04 18:30:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c617c1cfdbfb4510b652edb30596196c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-06-04 18:30:55</sys_updated_on>
+            <value>10000</value>
         </sys_choice>
     </sys_choice>
 </record_update>
