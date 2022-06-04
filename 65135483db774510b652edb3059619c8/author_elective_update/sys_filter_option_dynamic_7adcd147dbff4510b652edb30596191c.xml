@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_filter_option_dynamic">
+    <sys_filter_option_dynamic action="DELETE">
+        <active>true</active>
+        <available_for_default>true</available_for_default>
+        <available_for_filter>true</available_for_filter>
+        <available_for_ref_qual>true</available_for_ref_qual>
+        <field_type display_value="List">e3f24e9cc0a80166007d6acccef476e9</field_type>
+        <label>Backlog Item - Components</label>
+        <order/>
+        <roles/>
+        <script>GetComponentFilterByBacklog(current)</script>
+        <script_reference_id/>
+        <script_reference_table/>
+        <sys_class_name>sys_filter_option_dynamic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 20:06:58</sys_created_on>
+        <sys_id>7adcd147dbff4510b652edb30596191c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Backlog Item - Components</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_filter_option_dynamic_7adcd147dbff4510b652edb30596191c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 20:14:48</sys_updated_on>
+        <table>x_snc_agile_component</table>
+        <table_containing_filter/>
+    </sys_filter_option_dynamic>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</application>
+        <file_path/>
+        <instance_id>f492329ddb5849108aea21c405961946</instance_id>
+        <instance_name>wildgrubedevquebec</instance_name>
+        <name>sys_filter_option_dynamic_7adcd147dbff4510b652edb30596191c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_filter_option_dynamic"><sys_filter_option_dynamic action="INSERT_OR_UPDATE"><active>true</active><available_for_default>true</available_for_default><available_for_filter>true</available_for_filter><available_for_ref_qual>true</available_for_ref_qual><field_type display_value="List">e3f24e9cc0a80166007d6acccef476e9</field_type><label>Backlog Item - Components</label><order/><roles/><script>GetComponentFilterByBacklog(current)</script><script_reference_id/><script_reference_table/><sys_class_name>sys_filter_option_dynamic</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-06-04 20:06:58</sys_created_on><sys_id>7adcd147dbff4510b652edb30596191c</sys_id><sys_mod_count>3</sys_mod_count><sys_name>Backlog Item - Components</sys_name><sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package><sys_policy/><sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope><sys_update_name>sys_filter_option_dynamic_7adcd147dbff4510b652edb30596191c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-06-04 20:14:48</sys_updated_on><table>x_snc_agile_component</table><table_containing_filter/></sys_filter_option_dynamic></record_update>]]></payload>
+        <payload_hash>-139538911</payload_hash>
+        <record_name>Backlog Item - Components</record_name>
+        <reverted_from/>
+        <source>1788d0cfdb774510b652edb3059619ac</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 20:14:48</sys_created_on>
+        <sys_id>f7de59cbdbff4510b652edb30596198b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>181305b23d60000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 20:14:48</sys_updated_on>
+        <type>Dynamic Filter Options</type>
+        <update_guid>ffde59cb11ff4510ebc2ab3972ca9a8a</update_guid>
+        <update_guid_history>ffde59cb11ff4510ebc2ab3972ca9a8a:-139538911,32de59cb3dff4510707722bc0893ded7:-1144662898,8a8e95cbd3ff4510702dc3618744eaa2:1959021393,091dd1471cff451094569f0473f76026:-1643434545</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 20:50:15</sys_created_on>
+        <sys_db_object display_value="" name="sys_filter_option_dynamic">sys_filter_option_dynamic</sys_db_object>
+        <sys_id>0148af1cad49446a80ba909c3a998969</sys_id>
+        <sys_metadata>7adcd147dbff4510b652edb30596191c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Backlog Item - Components</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_parent display_value="Component">bad1d18fdb7f4510b652edb3059619b9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope_delete display_value="">2dbab3f1846b464c8f5dbbc77c31e019</sys_scope_delete>
+        <sys_update_name>sys_filter_option_dynamic_7adcd147dbff4510b652edb30596191c</sys_update_name>
+        <sys_update_version display_value="sys_filter_option_dynamic_7adcd147dbff4510b652edb30596191c">f7de59cbdbff4510b652edb30596198b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 20:50:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

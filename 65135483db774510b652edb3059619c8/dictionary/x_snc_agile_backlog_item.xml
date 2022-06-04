@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" extends="task" label="Backlog Item" max_length="40" name="x_snc_agile_backlog_item" type="collection">
         <element label="Backlog" mandatory="true" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
-        <element label="Components" max_length="4000" name="components" reference="x_snc_agile_component" type="glide_list"/>
+        <element label="Components" max_length="4000" name="components" reference="x_snc_agile_component" reference_qual="javascript:GetComponentReferenceQualifierFromBacklog(current.backlog)" type="glide_list" use_reference_qualifier="advanced"/>
         <element label="Developer" max_length="32" name="developer" reference="sys_user" type="reference"/>
         <element label="Item Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
-        <element label="Lead Tester" max_length="32" name="tester" reference="sys_user" type="reference"/>
+        <element label="Tester" max_length="32" name="tester" reference="sys_user" type="reference"/>
     </element>
 </database>
