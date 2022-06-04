@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Agile M2m Components Backlogs" max_length="40" name="x_snc_agile_m2m_components_backlogs" type="collection">
+        <element attributes="encode_utf8=false" label="Backlog" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
+        <element attributes="encode_utf8=false" label="Component" max_length="32" name="component" reference="x_snc_agile_component" type="reference"/>
+        <index name="index">
+            <element name="component"/>
+        </index>
+        <index name="index2">
+            <element name="backlog"/>
+        </index>
+    </element>
+</database>
