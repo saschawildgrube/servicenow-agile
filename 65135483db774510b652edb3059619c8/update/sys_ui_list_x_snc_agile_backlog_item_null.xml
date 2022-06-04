@@ -2,63 +2,78 @@
     <sys_ui_list parent="" relationship="" sys_domain="global" table="x_snc_agile_backlog_item" version="2" view="">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>number</element>
-            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6efd948fdbb74510b652edb3059619a5</list_id>
+            <element>backlog</element>
+            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0481e007dbf74510b652edb305961945</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-06-04 15:31:16</sys_created_on>
-            <sys_id>2efd948fdbb74510b652edb3059619a6</sys_id>
+            <sys_created_on>2022-06-04 15:46:39</sys_created_on>
+            <sys_id>c081e007dbf74510b652edb305961946</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 15:31:16</sys_updated_on>
+            <sys_updated_on>2022-06-04 15:46:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>short_description</element>
-            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6efd948fdbb74510b652edb3059619a5</list_id>
+            <element>number</element>
+            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0481e007dbf74510b652edb305961945</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-06-04 15:31:16</sys_created_on>
-            <sys_id>b2fd948fdbb74510b652edb3059619a7</sys_id>
+            <sys_created_on>2022-06-04 15:46:39</sys_created_on>
+            <sys_id>4881e007dbf74510b652edb305961946</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 15:31:16</sys_updated_on>
+            <sys_updated_on>2022-06-04 15:46:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>state</element>
-            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6efd948fdbb74510b652edb3059619a5</list_id>
+            <element>short_description</element>
+            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0481e007dbf74510b652edb305961945</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-06-04 15:31:16</sys_created_on>
-            <sys_id>36fd948fdbb74510b652edb3059619a7</sys_id>
+            <sys_created_on>2022-06-04 15:46:39</sys_created_on>
+            <sys_id>c881e007dbf74510b652edb305961946</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 15:31:16</sys_updated_on>
+            <sys_updated_on>2022-06-04 15:46:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>assigned_to</element>
-            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6efd948fdbb74510b652edb3059619a5</list_id>
+            <element>state</element>
+            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0481e007dbf74510b652edb305961945</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-06-04 15:31:16</sys_created_on>
-            <sys_id>b6fd948fdbb74510b652edb3059619a7</sys_id>
+            <sys_created_on>2022-06-04 15:46:39</sys_created_on>
+            <sys_id>4c81e007dbf74510b652edb305961946</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 15:31:16</sys_updated_on>
+            <sys_updated_on>2022-06-04 15:46:39</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>assigned_to</element>
+            <list_id display_value="x_snc_agile_backlog_item" element="NULL" name="x_snc_agile_backlog_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">0481e007dbf74510b652edb305961945</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-06-04 15:46:39</sys_created_on>
+            <sys_id>cc81e007dbf74510b652edb305961946</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-06-04 15:46:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -72,10 +87,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-06-04 15:31:16</sys_created_on>
+            <sys_created_on>2022-06-04 15:46:39</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>6efd948fdbb74510b652edb3059619a5</sys_id>
+            <sys_id>0481e007dbf74510b652edb305961945</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_snc_agile_backlog_item</sys_name>
             <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -83,7 +98,7 @@
             <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
             <sys_update_name>sys_ui_list_x_snc_agile_backlog_item_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 15:31:16</sys_updated_on>
+            <sys_updated_on>2022-06-04 15:46:39</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
