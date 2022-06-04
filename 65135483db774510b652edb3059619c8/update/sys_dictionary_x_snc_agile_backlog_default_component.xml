@@ -44,7 +44,7 @@
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
-        <reference_qual>javascript:GetComponentReferenceQualifierFromBacklog(current.backlog)</reference_qual>
+        <reference_qual>javascript:GetComponentReferenceQualifierFromBacklog(current.sys_id)</reference_qual>
         <reference_qual_condition/>
         <reference_type/>
         <sizeclass/>
@@ -54,14 +54,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 21:35:43</sys_created_on>
         <sys_id>ab4171c3dbb38510b652edb3059619fb</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Default Component</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_agile_backlog_default_component</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-04 21:36:11</sys_updated_on>
+        <sys_updated_on>2022-06-04 21:41:37</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

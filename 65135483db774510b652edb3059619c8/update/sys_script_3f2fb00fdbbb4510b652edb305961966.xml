@@ -37,25 +37,43 @@
 		current.state = 1000;
 	}
 
-	if (GetStringValue(current.backlog) == '')
+	if (current.isNewRecord())
 	{
-		var grBacklog = new GlideRecord('x_snc_agile_backlog');
-		grBacklog.query();
-		if (grBacklog.getRowCount() == 1)
+		if (GetStringValue(current.backlog) == '')
 		{
-			if (grBacklog.next())
+			var grBacklog = new GlideRecord('x_snc_agile_backlog');
+			grBacklog.query();
+			if (grBacklog.getRowCount() == 1)
 			{
-				current.backlog = grBacklog.sys_id;
+				if (grBacklog.next())
+				{
+					current.backlog = grBacklog.sys_id;
+				}
+			}
+		}
+
+		if (GetStringValue(current.backlog) != '' && current.isNewRecord())
+		{
+			if (GetStringValue(current.owner) == '')
+			{
+				current.owner = current.backlog.owner;
+			}
+			if (GetStringValue(current.developer) == '')
+			{
+				current.developer = current.backlog.developer;
+			}
+			if (GetStringValue(current.tester) == '')
+			{
+				current.tester = current.backlog.tester;
+			}
+			if (GetStringValue(current.components) == '')
+			{
+				current.components = current.backlog.default_component;
 			}
 		}
 	}
 	
-	if (GetStringValue(current.backlog) != '')
-	{
-		current.owner = current.backlog.owner;
-		current.developer = current.backlog.developer;
-		current.tester = current.backlog.tester;
-	}
+	
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -64,7 +82,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3f2fb00fdbbb4510b652edb305961966</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Backlog Item - Set defaults</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -72,7 +90,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_3f2fb00fdbbb4510b652edb305961966</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-04 21:14:55</sys_updated_on>
+        <sys_updated_on>2022-06-04 21:48:29</sys_updated_on>
         <template/>
         <when>before_display</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
