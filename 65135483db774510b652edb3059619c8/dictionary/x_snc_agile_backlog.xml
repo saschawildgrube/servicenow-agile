@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Backlog" max_length="40" name="x_snc_agile_backlog" type="collection">
+        <element label="Definition of Done" max_length="2000" name="definition_of_done" type="string"/>
+        <element label="Definition of Ready" max_length="2000" name="definition_of_ready" type="string"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+    </element>
+</database>

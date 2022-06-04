@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Backlog Item" max_length="40" name="x_snc_agile_backlog_item" type="collection">
+        <element label="Backlog" mandatory="true" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
+    </element>
+</database>

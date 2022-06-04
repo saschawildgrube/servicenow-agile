@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 15:27:48</sys_created_on>
+        <sys_id>bb2d540fdbb74510b652edb30596197d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_agile_backlog_item.x_snc_agile.agilist</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_security_acl display_value="x_snc_agile_backlog_item">7b2d540fdbb74510b652edb30596197a</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_bb2d540fdbb74510b652edb30596197d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 15:27:48</sys_updated_on>
+        <sys_user_role display_value="x_snc_agile.agilist" name="x_snc_agile.agilist">b0c81c03dbb74510b652edb305961962</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</application>
+        <file_path/>
+        <instance_id>f492329ddb5849108aea21c405961946</instance_id>
+        <instance_name>wildgrubedevquebec</instance_name>
+        <name>sys_security_acl_role_bb2d540fdbb74510b652edb30596197d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-06-04 15:27:48</sys_created_on><sys_id>bb2d540fdbb74510b652edb30596197d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_agile_backlog_item.x_snc_agile.agilist</sys_name><sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package><sys_policy/><sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope><sys_security_acl display_value="x_snc_agile_backlog_item">7b2d540fdbb74510b652edb30596197a</sys_security_acl><sys_update_name>sys_security_acl_role_bb2d540fdbb74510b652edb30596197d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-06-04 15:27:48</sys_updated_on><sys_user_role display_value="x_snc_agile.agilist" name="x_snc_agile.agilist">b0c81c03dbb74510b652edb305961962</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-877894347</payload_hash>
+        <record_name>x_snc_agile_backlog_item.x_snc_agile.agilist</record_name>
+        <reverted_from/>
+        <source>1788d0cfdb774510b652edb3059619ac</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 15:27:48</sys_created_on>
+        <sys_id>843d540fdbb74510b652edb305961980</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1812f54647e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 15:27:48</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>cc3d540f88b74510e6836d5834293e7f</update_guid>
+        <update_guid_history>cc3d540f88b74510e6836d5834293e7f:-877894347</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_snc_agile_backlog_item.x_snc_agile.agilist">673d580fdbb74510b652edb30596191a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 15:28:04</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>27b9a9c934d8463abe87c423dd100c89</sys_id>
+        <sys_metadata>bb2d540fdbb74510b652edb30596197d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_agile_backlog_item.x_snc_agile.agilist</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_parent display_value="">7b2d540fdbb74510b652edb30596197a</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope_delete display_value="">2dbab3f1846b464c8f5dbbc77c31e019</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_bb2d540fdbb74510b652edb30596197d</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_bb2d540fdbb74510b652edb30596197d">843d540fdbb74510b652edb305961980</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 15:28:04</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
