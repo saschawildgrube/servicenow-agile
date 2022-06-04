@@ -20,7 +20,7 @@
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>Assign users</name>
+        <name>Backlog Item - Assign users</name>
         <order>1000</order>
         <priority>100</priority>
         <rest_method/>
@@ -31,22 +31,52 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	if (current.state == GetBacklogItemState('dev') || current.state == GetBacklogItemState('failed'))
+	var GetStringValue = x_snc_devtools.GetStringValue;
+
+
+	if (current.state == GetBacklogItemState('draft') )
 	{
-		if (current.developer != '')
+		if (GetStringValue(current.owner) != '')
+		{
+			current.assigned_to = current.owner;
+		}
+	}	
+	
+	if (current.state == GetBacklogItemState('ready') || current.state == GetBacklogItemState('dev') || current.state == GetBacklogItemState('failed'))
+	{
+		if (GetStringValue(current.developer) != '')
 		{
 			current.assigned_to = current.developer;
 		}
 	}
+	
+	if (current.state == GetBacklogItemState('done') || current.state == GetBacklogItemState('passed') )
+	{
+		if (GetStringValue(current.backlog.devops) != '')
+		{
+			current.assigned_to = current.backlog.devops;
+		}
+	}	
 
 	if (current.state == GetBacklogItemState('test'))
 	{
-		if (current.tester != '')
+		if (GetStringValue(current.tester) != '')
 		{
 			current.assigned_to = current.tester;
 		}
 	}
 	
+	if (current.state == GetBacklogItemState('prod'))
+	{
+		if (GetStringValue(current.owner) != '')
+		{
+			current.assigned_to = current.owner;
+		}
+		else if (GetStringValue(current.backlog.owner) != '')
+		{
+			current.assigned_to = current.backlog.owner;
+		}
+	}	
 	
 	
 })(current, previous);]]></script>
@@ -56,15 +86,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>26b9a943db738510b652edb305961952</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>Assign users</sys_name>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Backlog Item - Assign users</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_26b9a943db738510b652edb305961952</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-04 21:06:24</sys_updated_on>
+        <sys_updated_on>2022-06-04 21:30:08</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
