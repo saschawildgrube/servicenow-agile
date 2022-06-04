@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices>Debug=debug,Info=info,Warn=warn,Error=error</choices>
+        <description>Controls the verbosity of log output produced by the Agile application.</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>true</is_private>
+        <name>x_snc_agile.logging.verbosity</name>
+        <read_roles/>
+        <suffix>logging.verbosity</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 14:54:16</sys_created_on>
+        <sys_id>b085dc8bdb774510b652edb3059619ee</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_snc_agile.logging.verbosity</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_properties_b085dc8bdb774510b652edb3059619ee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-04 15:05:54</sys_updated_on>
+        <type>choicelist</type>
+        <value>debug</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=b085dc8bdb774510b652edb3059619ee"/>
+</record_update>
