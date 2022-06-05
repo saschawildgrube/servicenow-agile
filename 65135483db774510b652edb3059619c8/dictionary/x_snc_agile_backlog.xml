@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Backlog" max_length="40" name="x_snc_agile_backlog" type="collection">
+    <element label="Backlog" max_length="40" name="x_snc_agile_backlog" sizeclass="1" type="collection">
         <element label="Default Component" max_length="32" name="default_component" reference="x_snc_agile_component" reference_qual="javascript:GetComponentReferenceQualifierFromBacklog(current.sys_id)" type="reference" use_reference_qualifier="advanced"/>
         <element label="Definition of Done" max_length="2000" name="definition_of_done" type="string"/>
         <element label="Definition of Ready" max_length="2000" name="definition_of_ready" type="string"/>
