@@ -17,7 +17,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-06-05 10:22:00</sys_updated_on>
         <table>x_snc_agile_backlog_item</table>
-        <ui_policy display_value="Backlog Item - Ready only when completed">4370241fdb77c510b652edb305961917</ui_policy>
+        <ui_policy display_value="Backlog Item - Read only when completed">4370241fdb77c510b652edb305961917</ui_policy>
         <visible>ignore</visible>
     </sys_ui_policy_action>
 </record_update>

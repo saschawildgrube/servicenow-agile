@@ -17,7 +17,7 @@
         <mobile_title>Backlog Items in Test</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_snc_agile_backlog_item</name>
-        <order>30</order>
+        <order>40</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
@@ -28,7 +28,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1db41547dbbf4510b652edb30596190f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Backlog Items in Test</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -36,7 +36,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_app_module_1db41547dbbf4510b652edb30596190f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-04 19:31:21</sys_updated_on>
+        <sys_updated_on>2022-06-06 17:01:13</sys_updated_on>
         <timeline_page/>
         <title>Backlog Items in Test</title>
         <uncancelable>false</uncancelable>
