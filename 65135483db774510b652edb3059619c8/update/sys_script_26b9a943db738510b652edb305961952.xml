@@ -32,6 +32,10 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetValue = x_snc_devtools.GetValue;
+	var GetRecord = x_snc_devtools.GetRecord;
 
 
 	if (current.state == GetBacklogItemState('draft') )
@@ -52,9 +56,26 @@
 	
 	if (current.state == GetBacklogItemState('done') || current.state == GetBacklogItemState('passed') )
 	{
-		if (GetStringValue(current.backlog.devops) != '')
+		var strDevOps = '';
+		var aComponents = GetArrayValue(current.components);
+		if (aComponents.length == 1)
 		{
-			current.assigned_to = current.backlog.devops;
+			var grComponent = GetRecord('x_snc_agile_component',GetValue(aComponents,0));
+			if (IsValidRecord(grComponent) == true)
+			{
+				if (GetStringValue(grComponent.devops) != '')
+				{
+					strDevOps = GetStringValue(grComponent.devops);
+				}
+			}
+		}
+		if (strDevOps == '')
+		{
+			strDevOps = GetStringValue(current.backlog.devops);
+		}
+		if (strDevOps != '')
+		{
+			current.assigned_to = strDevOps;
 		}
 	}	
 
@@ -86,7 +107,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>26b9a943db738510b652edb305961952</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Backlog Item - Assign users</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -94,7 +115,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_26b9a943db738510b652edb305961952</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-06 17:52:18</sys_updated_on>
+        <sys_updated_on>2022-06-06 18:08:35</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
