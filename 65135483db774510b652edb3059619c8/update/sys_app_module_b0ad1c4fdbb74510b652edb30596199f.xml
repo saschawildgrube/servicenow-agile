@@ -15,7 +15,7 @@
         <mobile_title>All Items</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_snc_agile_backlog_item</name>
-        <order>60</order>
+        <order>20</order>
         <override_menu_roles>false</override_menu_roles>
         <query>sysparm_order=order&amp;sysparm_order_direction=asc</query>
         <report/>
@@ -26,7 +26,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b0ad1c4fdbb74510b652edb30596199f</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>All active Backlog Items</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -34,7 +34,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_app_module_b0ad1c4fdbb74510b652edb30596199f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-06 20:05:53</sys_updated_on>
+        <sys_updated_on>2022-06-08 09:28:56</sys_updated_on>
         <timeline_page/>
         <title>All active Backlog Items</title>
         <uncancelable>false</uncancelable>
