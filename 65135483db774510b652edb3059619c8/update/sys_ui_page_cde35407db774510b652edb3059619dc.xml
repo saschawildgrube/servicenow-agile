@@ -17,7 +17,7 @@
 	<p>Welcome to the Agile app - created and maintained by&#160;<a href="mailto:sascha.wildgrube@servicenow.com">Sascha Wildgrube</a>.</p>
 
 	<h2>Features</h2> 
-	<p>The Agile app helps to manage the work of an agile software project team.</p>
+	<p>Manage agile software projects and deployments.</p>
 
 	<h2>Disclaimer</h2>
 	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
@@ -26,7 +26,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Rome,San Diego',
+				'San Diego,Tokyo',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -38,7 +38,8 @@
 			docapi.RenderInstallationInstructionsImportFromSourceControl(
 				'DevTools',
 				'https://github.com/saschawildgrube/servicenow-devtools',
-				true);
+				true,
+				'https://www.wildgrube.com/servicenow-devtools/');
 		]</g2:no_escape>
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsImportFromSourceControl(
@@ -98,8 +99,7 @@
 		<li>Choose the branch name exactly like the tag name.</li>
 		<li>Select the corresponding tag and click on "Create Branch".</li>
 		<li>Verify that the now current branch has changed to the just created branch.</li>
-		<li>Navigate to "Background Scripts" and verify the application scope.</li>
-		<li>Execute this code: <code>AppInstall();</code>.</li>
+		<li>Navigate to "Studio" / "File" / "Settings" and execute the related link "Run Install Scripts".</li>
 		<li>Mark backlog items associated to the application in "Commited to repo" as "In Test".</li>
 	</ol>
 	
@@ -114,9 +114,8 @@
 		<li>Choose the branch name that represents the version that should be deployed.</li>
 		<li>If in doubt, stash changes and reapply them afterwards. However it SHOULD NOT be necessary.</li>
 		<li>Verify that the now current branch has changed to the just selected branch.</li>
-		<li>Navigate to "Background Scripts" and verify the application scope.</li>
-		<li>Execute this code: <code>AppInstall();</code>.</li>
-		<li>Mark storys associated to the application in "Ready for PROD" as "Review in PROD".</li>
+		<li>Navigate to "Studio" / "File" / "Settings" and execute the related link "Run Install Scripts".</li>
+		<li>Mark backlog items associated to the application in "Ready for PROD" as "Review in PROD".</li>
 	</ol>
 
 	
@@ -174,13 +173,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>manual</sys_name>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-09-05 08:06:43</sys_updated_on>
+        <sys_updated_on>2023-02-08 05:52:06</sys_updated_on>
     </sys_ui_page>
 </record_update>
