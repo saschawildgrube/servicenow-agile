@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="developer" label="Developer" language="en" table="x_snc_agile_backlog_item">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>developer</element>
+            <help/>
+            <hint/>
+            <label>Developer</label>
+            <language>en</language>
+            <name>x_snc_agile_backlog_item</name>
+            <plural>Developers</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-06-04 16:06:06</sys_created_on>
+            <sys_id>74f5600fdbf74510b652edb3059619ff</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Developer</sys_name>
+            <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_agile_backlog_item_developer_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-06-04 18:11:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

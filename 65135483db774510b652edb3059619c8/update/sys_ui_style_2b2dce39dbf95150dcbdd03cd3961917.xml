@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_style">
+    <sys_ui_style action="INSERT_OR_UPDATE">
+        <alt/>
+        <element>order</element>
+        <name>x_snc_agile_backlog_item</name>
+        <style>background-color: #FF0000;</style>
+        <sys_class_name>sys_ui_style</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-09-08 12:31:02</sys_created_on>
+        <sys_id>2b2dce39dbf95150dcbdd03cd3961917</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_snc_agile_backlog_item</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_ui_style_2b2dce39dbf95150dcbdd03cd3961917</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-09-08 12:33:16</sys_updated_on>
+        <value>1</value>
+    </sys_ui_style>
+    <sys_translated_text action="delete_multiple" query="documentkey=2b2dce39dbf95150dcbdd03cd3961917"/>
+</record_update>

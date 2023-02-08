@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_agile.GetComponentReferenceQualifierFromBacklog</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns the encoded query to be used by a reference qualifier to filter the components associated to a backlog.</description>
+        <name>GetComponentReferenceQualifierFromBacklog</name>
+        <script><![CDATA[function GetComponentReferenceQualifierFromBacklog(strBacklogSysId)
+{
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	
+	var grBacklogToComponent = new GlideRecord('x_snc_agile_m2m_components_backlogs');
+	grBacklogToComponent.addQuery('backlog','=',strBacklogSysId);
+	grBacklogToComponent.query();
+
+	var aComponentSysIds = [];
+
+	while (grBacklogToComponent.next())
+	{
+		aComponentSysIds.push(GetStringValue(grBacklogToComponent.component));
+	}
+	
+	if (aComponentSysIds.length == 0)
+	{
+		return '';
+	}
+	
+	var strEncodedQuery = 'sys_idIN'+GetStringValue(aComponentSysIds);
+	return strEncodedQuery;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-04 20:12:31</sys_created_on>
+        <sys_id>336d5d47dbff4510b652edb305961997</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>GetComponentReferenceQualifierFromBacklog</sys_name>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_336d5d47dbff4510b652edb305961997</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-07 15:59:20</sys_updated_on>
+    </sys_script_include>
+</record_update>
