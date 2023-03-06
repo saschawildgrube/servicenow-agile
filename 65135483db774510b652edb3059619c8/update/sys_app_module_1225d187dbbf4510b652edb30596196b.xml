@@ -4,7 +4,10 @@
         <application display_value="Agile">8de39407db774510b652edb305961907</application>
         <assessment/>
         <device_type/>
-        <filter table="x_snc_agile_backlog_item">state&lt;5000^EQ<item display_value="In Test" endquery="false" field="state" goto="false" newquery="false" operator="&lt;" or="false" value="5000"/>
+        <filter table="x_snc_agile_backlog_item">state=3000^ORstate=6000^ORstate=2000^ORstate=4000^EQ<item display_value="In Development" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="3000"/>
+            <item display_value="Test Failed / Show Stopper / Back to Development" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="6000"/>
+            <item display_value="Ready" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="2000"/>
+            <item display_value="Done / Committed to repo" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="4000"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter>
         <hint/>
@@ -26,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1225d187dbbf4510b652edb30596196b</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>In Development</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -34,7 +37,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_app_module_1225d187dbbf4510b652edb30596196b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-09-05 08:10:23</sys_updated_on>
+        <sys_updated_on>2023-02-10 19:16:32</sys_updated_on>
         <timeline_page/>
         <title>In Development</title>
         <uncancelable>false</uncancelable>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Persona" max_length="40" name="x_snc_agile_persona" type="collection">
+        <element label="Description" max_length="4000" name="description" type="string"/>
+        <element display="true" label="Name" mandatory="true" max_length="80" name="name" type="string"/>
+        <element label="Role" max_length="200" name="role" type="string"/>
+    </element>
+</database>
