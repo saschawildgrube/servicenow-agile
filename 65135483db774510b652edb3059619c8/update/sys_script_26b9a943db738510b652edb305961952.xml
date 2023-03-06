@@ -13,7 +13,7 @@
         <client_callable>false</client_callable>
         <collection>x_snc_agile_backlog_item</collection>
         <condition/>
-        <description/>
+        <description>Assign the users based on a backlog's and component's default values.</description>
         <execute_function>false</execute_function>
         <filter_condition table="x_snc_agile_backlog_item">stateVALCHANGES^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
@@ -114,7 +114,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>26b9a943db738510b652edb305961952</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Backlog Item - Assign users</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -122,7 +122,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_26b9a943db738510b652edb305961952</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-06 20:48:36</sys_updated_on>
+        <sys_updated_on>2023-03-06 10:41:30</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
