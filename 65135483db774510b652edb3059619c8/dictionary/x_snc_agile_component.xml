@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Component" max_length="40" name="x_snc_agile_component" sizeclass="4" type="collection">
+    <element label="Component" max_length="40" name="x_snc_agile_component" sizeclass="2" type="collection">
         <element label="Application" max_length="32" name="application" reference="sys_app" type="reference"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
         <element label="DevOps" max_length="32" name="devops" reference="sys_user" type="reference"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <index name="index">
