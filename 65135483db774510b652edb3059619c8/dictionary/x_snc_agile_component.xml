@@ -2,7 +2,7 @@
     <element label="Component" max_length="40" name="x_snc_agile_component" sizeclass="2" type="collection">
         <element label="Application" max_length="32" name="application" reference="sys_app" type="reference"/>
         <element label="Description" max_length="4000" name="description" type="string"/>
-        <element label="DevOps" max_length="32" name="devops" reference="sys_user" type="reference"/>
+        <element label="DevOps" max_length="32" name="devops" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <index name="index">
             <element name="application"/>
