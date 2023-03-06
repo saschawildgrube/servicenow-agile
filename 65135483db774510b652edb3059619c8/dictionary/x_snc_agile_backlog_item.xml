@@ -3,6 +3,7 @@
         <element label="Backlog" mandatory="true" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
         <element label="Components" max_length="4000" name="components" reference="x_snc_agile_component" reference_qual="javascript:GetComponentReferenceQualifierFromBacklog(current.backlog)" type="glide_list" use_reference_qualifier="advanced"/>
         <element label="Developer" max_length="32" name="developer" reference="sys_user" type="reference"/>
+        <element display="true" label="Display" max_length="200" name="display" read_only="true" type="string"/>
         <element label="Item Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
         <element label="Personas" max_length="4000" name="personas" reference="x_snc_agile_persona" type="glide_list"/>
         <element label="Required backlog items" max_length="4000" name="required_backlog_items" reference="x_snc_agile_backlog_item" type="glide_list"/>

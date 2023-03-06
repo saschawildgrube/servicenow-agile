@@ -11,6 +11,14 @@
 {
 	var installer = new x_snc_devtools.InstallerAPI(x_snc_devtools.GetAppName('x_snc_agile'));
 	
+	var grBacklogItem = new GlideRecord('x_snc_agile_backlog_item');
+	grBacklogItem.query();
+	while (grBacklogItem.next())
+	{
+		SetBacklogItemDisplayValue(grBacklogItem);
+		grBacklogItem.update();
+	}
+	
 	return installer.Finish();
 }
 ]]></script>
@@ -18,13 +26,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>b8e35407db774510b652edb3059619bf</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>AppInstall</sys_name>
-        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_b8e35407db774510b652edb3059619bf</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-07 15:54:55</sys_updated_on>
+        <sys_updated_on>2023-03-06 10:36:53</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -166,6 +166,7 @@
 		<li>Introduced Personas: Backlog items can now be associated with Personas.</li>
 		<li>New backlog items are now added to the end (with the next highest order value) by default.</li>
 		<li>Backlog items can now specify required other backlog items.</li>
+		<li>Backlog item's display value now shows the number, the state and the short description.</li>
 		<li>Components now have a description field.</li>
 		<li>Added menu module "New Item".</li>
 		<li>Added menu module for items "In Draft" and refined the list for "In Development" and "In Test".</li>
@@ -183,13 +184,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-06 07:48:52</sys_updated_on>
+        <sys_updated_on>2023-03-06 10:38:47</sys_updated_on>
     </sys_ui_page>
 </record_update>
