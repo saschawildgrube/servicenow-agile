@@ -51,27 +51,27 @@
 				}
 			}
 		}
-
-		if (GetStringValue(current.backlog) != '' && current.isNewRecord())
-		{
-			if (GetStringValue(current.owner) == '')
-			{
-				current.owner = current.backlog.owner;
-			}
-			if (GetStringValue(current.developer) == '')
-			{
-				current.developer = current.backlog.developer;
-			}
-			if (GetStringValue(current.tester) == '')
-			{
-				current.tester = current.backlog.tester;
-			}
-			if (GetStringValue(current.components) == '')
-			{
-				current.components = current.backlog.default_component;
-			}
-		}
 	}
+
+	if (GetStringValue(current.backlog) != '' /*&& current.isNewRecord()*/)
+	{
+		if (GetStringValue(current.owner) == '')
+		{
+			current.owner = current.backlog.owner;
+		}
+		if (GetStringValue(current.developer) == '')
+		{
+			current.developer = current.backlog.developer;
+		}
+		if (GetStringValue(current.tester) == '')
+		{
+			current.tester = current.backlog.tester;
+		}
+		if (GetStringValue(current.components) == '')
+		{
+			current.components = current.backlog.default_component;
+		}
+	}	
 	
 	
 
@@ -82,7 +82,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3f2fb00fdbbb4510b652edb305961966</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Backlog Item - Set defaults</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -90,7 +90,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_3f2fb00fdbbb4510b652edb305961966</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-04 21:48:29</sys_updated_on>
+        <sys_updated_on>2023-03-06 11:14:38</sys_updated_on>
         <template/>
         <when>before_display</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
