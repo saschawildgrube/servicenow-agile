@@ -165,6 +165,7 @@
 		<li>Initializing the backlog's default component on new backlog item now works properly.</li>
 		<li>The backlog item's short description is now a mandatory field.</li>
 		<li>Added the default DevOps user to the components list view.</li>
+		<li>Added default component and owner to the backlog list view.</li>
 	</ol>	
 	
 	<h3>1.1.0 - 2023-03-06</h3>
@@ -193,13 +194,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-11 07:59:09</sys_updated_on>
+        <sys_updated_on>2023-04-11 08:05:41</sys_updated_on>
     </sys_ui_page>
 </record_update>
