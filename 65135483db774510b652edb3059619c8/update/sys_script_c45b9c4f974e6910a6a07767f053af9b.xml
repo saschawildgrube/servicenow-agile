@@ -13,15 +13,14 @@
         <client_callable>false</client_callable>
         <collection>x_snc_agile_backlog_item</collection>
         <condition/>
-        <description>Assign the users based on a backlog's and component's default values.</description>
+        <description>Sets the backlog if only one backlog is configured&#13;
+</description>
         <execute_function>false</execute_function>
-        <filter_condition table="x_snc_agile_backlog_item">stateVALCHANGES^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
-        </filter_condition>
+        <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Backlog Item - Assign users</name>
-        <order>21000</order>
+        <name>Backlog Item - Set backlog</name>
+        <order>2000</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -31,27 +30,40 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	BacklogItemAssignUsers(current);
-			
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	
+	if (GetStringValue(current.backlog) == '')
+	{
+		var grBacklog = new GlideRecord('x_snc_agile_backlog');
+		grBacklog.query();
+		if (grBacklog.getRowCount() == 1)
+		{
+			if (grBacklog.next())
+			{
+				current.backlog = grBacklog.sys_id;
+			}
+		}
+	}
+
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-06-04 21:04:47</sys_created_on>
+        <sys_created_on>2023-04-11 07:52:03</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>26b9a943db738510b652edb305961952</sys_id>
-        <sys_mod_count>17</sys_mod_count>
-        <sys_name>Backlog Item - Assign users</sys_name>
+        <sys_id>c45b9c4f974e6910a6a07767f053af9b</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Backlog Item - Set backlog</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
-        <sys_update_name>sys_script_26b9a943db738510b652edb305961952</sys_update_name>
+        <sys_update_name>sys_script_c45b9c4f974e6910a6a07767f053af9b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-07 20:28:37</sys_updated_on>
+        <sys_updated_on>2023-04-11 07:55:03</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>before_display</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=26b9a943db738510b652edb305961952"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=c45b9c4f974e6910a6a07767f053af9b"/>
 </record_update>

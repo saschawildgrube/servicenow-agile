@@ -26,7 +26,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'San Diego,Tokyo',
+				'Tokyo,Utah',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -67,12 +67,12 @@
 	<p>Please add the affected application names as a tags to the story.</p>
 	<ol>
 	<li><b>Draft / Need more info</b>: The requirement description is being worked on or more information is required to implement the backlog item.</li>
-		<li><b>Ready</b>: The author of the item claims the item contains enough information to start development. A developer should be assigned to the story.</li>
+		<li><b>Ready</b>: The author of the item claims the item contains enough information to start development. A developer should be assigned to the backlog item.</li>
 		<li><b>In Development</b>: A developer works or is asked to work on the implementation of the backlog item in the DEV environment.</li>
-		<li><b>Commited to repo</b>: The developer has completed their work and committed their changes to the source code repo - which makes the change part of any subsequent deployment to the TEST environment.</li>
+		<li><b>Commited to repo</b>: The developer has completed their work and committed their changes to the source code repository - which makes the backlog item part of a subsequent deployment to the TEST environment.</li>
 		<li><b>In Test</b>: The changes related to the backlog item has been deployed to the TEST environemnt and a tester is asked to test the result.</li>
 		<li><b>Test Failed / Show Stopper / Back to development</b>: A backlog item has failed the test and must be considered as a show stopper - so the current version on the TEST environment MUST NOT be deplyoed to the PROD environment. The backlog item is sent back to a developer who is now asked to fix issues. It is important to disiguish this state from "In Development" because the current deployment on TEST should not be deployed to the PROD environment as long as there are show stoppers. If a test failed but the issues are not considered as show stoppers, the version can be deployed to PROD and the state should be set to "In Development" which indicates that they do not represent a reason to delay deployment to PROD but still need to be worked on.</li>
-		<li><b>Test Passed / Ready for PROD</b>: The test has been passed and the change is ready for deployment on the PROD environment.</li>
+		<li><b>Test Passed / Ready for PROD</b>: The test has been passed and the backlog item is ready for deployment on the PROD environment.</li>
 		<li><b>Review on PROD</b>: Deployment to PROD environment has been completed. A final check should be done before the backlog item is marked as "Completed".</li>
 		<li><b>Completed</b>: The backlog item is finally completed.</li>
 		<li><b>Cancelled</b>: The backlog item will not be implemented or worked on any further.</li>
@@ -160,6 +160,19 @@
 		<li>TODO: document changes here</li>
 	</ol>
 -->
+	<h3>1.2.0 - 2023-06-08</h3>
+	<ol>
+		<li>Agile is now fully tested in Utah.</li>
+		<li>DevTools 1.63.0 is now required.</li>
+		<li>San Diego is no longer actively supported.</li>
+		<li>Added the "Cancel" UI action to set the state of a backlog item to "cancelled".</li>
+		<li>Initializing the backlog's default component on new backlog item now works properly.</li>
+		<li>The backlog item's short description is now a mandatory field.</li>
+		<li>Added the default DevOps user to the components list view.</li>
+		<li>Added default component and owner to the backlog list view.</li>
+		<li>Removed display value from the backlog item form view.</li>
+		<li>Users with the x_snc_agile.agilist role were unable to add comments, edit the short description and description and assigned_to fields. This has been fixed.</li>
+	</ol>	
 	
 	<h3>1.1.0 - 2023-03-06</h3>
 	<ol>
@@ -187,13 +200,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-06 12:31:52</sys_updated_on>
+        <sys_updated_on>2023-06-07 21:54:47</sys_updated_on>
     </sys_ui_page>
 </record_update>

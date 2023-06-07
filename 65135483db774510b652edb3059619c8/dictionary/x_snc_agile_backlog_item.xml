@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element attributes="hasLabels=true" audit="true" extends="task" label="Backlog Item" max_length="40" name="x_snc_agile_backlog_item" sizeclass="5" type="collection">
+    <element attributes="hasLabels=true" audit="true" db_object_id="af3e60831bf0a910cd6153d16b4bcb21" extends="task" label="Backlog Item" max_length="40" name="x_snc_agile_backlog_item" type="collection">
         <element label="Backlog" mandatory="true" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
         <element label="Components" max_length="4000" name="components" reference="x_snc_agile_component" reference_qual="javascript:GetComponentReferenceQualifierFromBacklog(current.backlog)" type="glide_list" use_reference_qualifier="advanced"/>
         <element label="Developer" max_length="32" name="developer" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
