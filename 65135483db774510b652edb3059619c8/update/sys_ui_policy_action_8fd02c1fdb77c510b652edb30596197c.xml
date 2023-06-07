@@ -2,20 +2,20 @@
     <sys_ui_policy_action action="INSERT_OR_UPDATE">
         <cleared>false</cleared>
         <disabled>true</disabled>
-        <field>work_notes</field>
+        <field>comments</field>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-05 10:22:20</sys_created_on>
         <sys_id>8fd02c1fdb77c510b652edb30596197c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>work_notes</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>comments</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_policy_action_8fd02c1fdb77c510b652edb30596197c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-05 10:22:20</sys_updated_on>
+        <sys_updated_on>2023-06-07 19:16:57</sys_updated_on>
         <table>x_snc_agile_backlog_item</table>
         <ui_policy display_value="Backlog Item - Read only when completed">4370241fdb77c510b652edb305961917</ui_policy>
         <visible>ignore</visible>
