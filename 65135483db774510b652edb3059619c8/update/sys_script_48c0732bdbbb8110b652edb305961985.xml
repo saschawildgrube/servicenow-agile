@@ -43,6 +43,8 @@
 	{
 		strTable = GetStringValue(strTable);
 		strColumn = GetStringValue(strColumn);
+		strSysId = GetStringValue(strSysId);
+		nNewOrder = GetIntegerValue(nNewOrder);
 		
 		if (IsValidTable(strTable) == false)
 		{
@@ -89,7 +91,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>48c0732bdbbb8110b652edb305961985</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Backlog Item - Manage order</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -97,7 +99,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_48c0732bdbbb8110b652edb305961985</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-09-07 17:33:09</sys_updated_on>
+        <sys_updated_on>2023-09-07 17:59:37</sys_updated_on>
         <template/>
         <when>async_always</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
