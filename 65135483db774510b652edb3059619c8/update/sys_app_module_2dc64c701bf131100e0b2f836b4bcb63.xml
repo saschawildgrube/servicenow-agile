@@ -4,40 +4,39 @@
         <application display_value="Agile">8de39407db774510b652edb305961907</application>
         <assessment/>
         <device_type/>
-        <filter table="sys_atf_test_suite">sys_id=8de35407db774510b652edb3059619e1<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="8de35407db774510b652edb3059619e1"/>
-        </filter>
+        <filter/>
         <hint/>
         <homepage/>
         <image/>
-        <link_type>DETAIL</link_type>
+        <link_type>SEPARATOR</link_type>
         <map_page/>
-        <mobile_title>Test Suite</mobile_title>
+        <mobile_title>Admin</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>sys_atf_test_suite</name>
-        <order>1100</order>
+        <name/>
+        <order>1000</order>
         <override_menu_roles>false</override_menu_roles>
-        <query>sysparm_view_forced=true</query>
+        <query/>
         <report/>
-        <roles/>
+        <roles>x_snc_agile.admin</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-06-04 14:47:12</sys_created_on>
+        <sys_created_on>2023-10-07 16:31:43</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>4de39407db774510b652edb305961920</sys_id>
+        <sys_id>2dc64c701bf131100e0b2f836b4bcb63</sys_id>
         <sys_mod_count>1</sys_mod_count>
-        <sys_name>Test Suite</sys_name>
+        <sys_name>Admin</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
-        <sys_update_name>sys_app_module_4de39407db774510b652edb305961920</sys_update_name>
+        <sys_update_name>sys_app_module_2dc64c701bf131100e0b2f836b4bcb63</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-10-07 16:32:12</sys_updated_on>
+        <sys_updated_on>2023-10-07 16:31:50</sys_updated_on>
         <timeline_page/>
-        <title>Test Suite</title>
+        <title>Admin</title>
         <uncancelable>false</uncancelable>
-        <view_name>DevTools</view_name>
+        <view_name/>
         <window_name/>
     </sys_app_module>
 </record_update>

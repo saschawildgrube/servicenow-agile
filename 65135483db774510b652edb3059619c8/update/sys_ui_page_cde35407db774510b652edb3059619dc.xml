@@ -10,7 +10,7 @@
 <div style="padding-left: 20px;">
 <span style="visibility: hidden;">_CUT_HERE_</span>
 	<g2:no_escape>$[
-		var docapi = new x_snc_devtools.DocumentationAPI('65135483db774510b652edb3059619c8');
+		var docapi = new x_snc_devtools.DocumentationAPI('x_snc_agile');
 		docapi.RenderHeader();
 	]</g2:no_escape>
 	
@@ -26,7 +26,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Tokyo,Utah',
+				'Utah,Vancouver',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -88,19 +88,21 @@
 		<li>Navigate to Studio.</li>
 		<li>Switch to the application.</li>
 		<li>Verify that the DEV branch is active.</li>
+		<li>Document all changes.</li>
+		<li>Set verson in application settings.</li>
+		<li>Run all ATF tests and Instance Scan checks.</li>
+		<li>Navigate to "Studio" / "File" / "Settings" and click on the button "Baseline Version".</li>
 		<li>"Commit Changes" to DEV branch.</li>
-		<li>Create tag</li>
-		<li>Choose the tag name according to the application version (or an alternative naming schema - e.g. "YYYY-MM-DD_hhmm").</li>
+		<li>Select "Create Branch" and choose the branch name according to the application version (or an alternative naming schema - e.g. "YYYY-MM-DD_hhmm").</li>
+		<li>Select "Switch Branch" and select the DEV branch.</li>
 		<li>Login to the TEST instance.</li>
 		<li>Navigate to Studio.</li>
 		<li>Switch to the application.</li>
 		<li>Select "Apply Remote Changes" (this is necessary to update the list of available tags).</li>
-		<li>Select "Create Branch".</li>
-		<li>Choose the branch name exactly like the tag name.</li>
-		<li>Select the corresponding tag and click on "Create Branch".</li>
+		<li>Select "Switch Branch" and select the corresponding version branch.</li>
 		<li>Verify that the now current branch has changed to the just created branch.</li>
 		<li>Navigate to "Studio" / "File" / "Settings" and execute the related link "Run Install Scripts".</li>
-		<li>Mark backlog items associated to the application in "Commited to repo" as "In Test".</li>
+		<li>Mark backlog items associated to the application in "Done / Commited to repo" as "In Test".</li>
 	</ol>
 	
 	<h3>To PROD (roll-forward / roll-back)</h3>
@@ -161,6 +163,16 @@
 	</ol>
 -->
 	
+	<h3>1.4.0 - 2023-10-07</h3>
+	<ol>
+		<li>The Agile app has been fully tested with Vancouver.</li>
+		<li>Tokyo is no longer actively supported.</li>
+		<li>DevTools 1.71.0 is now required.</li>
+		<li>Added the "Low Prio" UI action to send a backlog item to the end of the backlog.</li>
+		<li>New backlog items ALWAYS start in state "Draft". When a new backlog item was created from the state specific list views (e.g. "In Test") the new item inherited the state from the list filter. This has been fixed.</li>
+		<li>The fields "Hotfixed in PROD" and "Order" are now read-only once the backlog item is closed.</li>
+	</ol>	
+	
 	<h3>1.3.0 - 2023-09-07</h3>
 	<ol>
 		<li>Backlog item number and state can no longer be edited in list views.</li>
@@ -210,13 +222,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-09-07 20:03:09</sys_updated_on>
+        <sys_updated_on>2023-10-07 17:37:55</sys_updated_on>
     </sys_ui_page>
 </record_update>
