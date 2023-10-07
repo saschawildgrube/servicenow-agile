@@ -16,7 +16,7 @@
         <mobile_title>Log</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>syslog_app_scope</name>
-        <order>120</order>
+        <order>1200</order>
         <override_menu_roles>false</override_menu_roles>
         <query>&amp;sysparm_view_forced=true&amp;sysparm_order=sequence&amp;sysparm_order_direction=desc</query>
         <report/>
@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>49e39407db774510b652edb305961924</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Log</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_app_module_49e39407db774510b652edb305961924</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-07 19:26:24</sys_updated_on>
+        <sys_updated_on>2023-10-07 16:32:17</sys_updated_on>
         <timeline_page/>
         <title>Log</title>
         <uncancelable>false</uncancelable>
