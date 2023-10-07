@@ -10,7 +10,7 @@
 <div style="padding-left: 20px;">
 <span style="visibility: hidden;">_CUT_HERE_</span>
 	<g2:no_escape>$[
-		var docapi = new x_snc_devtools.DocumentationAPI('65135483db774510b652edb3059619c8');
+		var docapi = new x_snc_devtools.DocumentationAPI('x_snc_agile');
 		docapi.RenderHeader();
 	]</g2:no_escape>
 	
@@ -167,6 +167,7 @@
 	<ol>
 		<li>The Agile app has been fully tested with Vancouver.</li>
 		<li>Tokyo is no longer actively supported.</li>
+		<li>DevTools 1.71.0 is now required.</li>
 		<li>Added the "Low Prio" UI action to send a backlog item to the end of the backlog.</li>
 		<li>New backlog items ALWAYS start in state "Draft". When a new backlog item was created from the state specific list views (e.g. "In Test") the new item inherited the state from the list filter. This has been fixed.</li>
 		<li>The fields "Hotfixed in PROD" and "Order" are now read-only once the backlog item is closed.</li>
@@ -221,13 +222,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-10-07 16:38:51</sys_updated_on>
+        <sys_updated_on>2023-10-07 16:42:27</sys_updated_on>
     </sys_ui_page>
 </record_update>
