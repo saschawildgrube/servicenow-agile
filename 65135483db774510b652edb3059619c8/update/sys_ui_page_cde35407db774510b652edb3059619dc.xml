@@ -167,6 +167,7 @@
 	<ol>
 		<li>DevTools 1.72.0 is now required. Using RecordManageOrder().</li>
 		<li>The definition of ready is now also displayed in the "Ready" state so that the description can be compared with the definition of ready.</li>
+		<li>The backlog items that require the current backlog item are displayed on the backlog item form.</li>
 		<li>Refactored AppInstall() to not use .update() directly.</li>
 	</ol>	
 	
@@ -229,13 +230,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>72</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-23 17:47:52</sys_updated_on>
+        <sys_updated_on>2024-01-23 21:57:10</sys_updated_on>
     </sys_ui_page>
 </record_update>
