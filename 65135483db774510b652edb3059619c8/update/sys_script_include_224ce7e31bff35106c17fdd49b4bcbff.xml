@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_agile.GetBacklogItemDependencies</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Retrieves the dependency tree of a given backlog item.</description>
+        <name>GetBacklogItemDependencies</name>
+        <script><![CDATA[function GetBacklogItemDependencies(vBacklogItem, aPath)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var Clone = x_snc_devtools.Clone;
+	var ArrayValueExists = x_snc_devtools.ArrayValueExists;
+
+	var grBacklogItem =  GetRecord('x_snc_agile_backlog_item',vBacklogItem);
+	if (IsValidRecord(grBacklogItem) == false)
+	{
+		return false;
+	}
+	
+	var backlogitem = Clone(grBacklogItem);
+	backlogitem = CleanUpBacklogItemObject(backlogitem);
+
+	aPath = GetArrayValue(aPath);
+	
+	if (ArrayValueExists(aPath,backlogitem.sys_id) == true)
+	{
+		backlogitem.circular_dependency = true;
+	}
+	else
+	{
+		aPath.push(backlogitem.sys_id);
+		var aRequiredBacklogItemSysIds = GetArrayValue(grBacklogItem.required_backlog_items);
+		var aRequiredBacklogItems = [];
+		for (var nRBI = 0; nRBI < aRequiredBacklogItemSysIds.length; nRBI++)
+		{
+			var strSysId = aRequiredBacklogItemSysIds[nRBI];
+			var requiredbacklogitem = GetBacklogItemDependencies(strSysId,aPath);
+			if (requiredbacklogitem != false)
+			{
+				aRequiredBacklogItems.push(requiredbacklogitem);
+			}
+		}
+		backlogitem['_required_backlog_items'] = aRequiredBacklogItems;	
+	}
+	
+	
+	return backlogitem;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-24 08:28:56</sys_created_on>
+        <sys_id>224ce7e31bff35106c17fdd49b4bcbff</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GetBacklogItemDependencies</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_224ce7e31bff35106c17fdd49b4bcbff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-24 17:10:42</sys_updated_on>
+    </sys_script_include>
+</record_update>

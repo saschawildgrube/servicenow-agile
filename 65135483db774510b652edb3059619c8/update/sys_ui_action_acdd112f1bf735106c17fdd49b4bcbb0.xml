@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>agile_backlogitem_newrequired</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments>Creates a new backlog item (in the same backlog) that is required by the current backlog item.</comments>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>New Required Backlog Item</name>
+        <onclick/>
+        <order>60</order>
+        <script><![CDATA[var grBacklogItem = new GlideRecord('x_snc_agile_backlog_item');
+grBacklogItem.initialize();
+grBacklogItem.backlog = current.backlog;
+grBacklogItem.short_description = 'New backlog item required by "'+current.short_description+'"';
+var strBacklogItemSysId = grBacklogItem.insert();
+current.required_backlog_items = current.required_backlog_items + ','+strBacklogItemSysId;
+current.update();
+x_snc_devtools.RedirectToRecord(grBacklogItem);]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-23 22:03:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>acdd112f1bf735106c17fdd49b4bcbb0</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>New Required Backlog Item</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_ui_action_acdd112f1bf735106c17fdd49b4bcbb0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-23 22:18:51</sys_updated_on>
+        <table>x_snc_agile_backlog_item</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_agile.CleanUpBacklogItemObject</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Removes all attributes from an object representing a backlog item which are not required by the Agile app. </description>
+        <name>CleanUpBacklogItemObject</name>
+        <script><![CDATA[function CleanUpBacklogItemObject(backlogitem)
+{
+	var IsObject = x_snc_devtools.IsObject;
+	var Clone = x_snc_devtools.Clone;
+
+	if (IsObject(backlogitem) == false)
+	{
+		return false;
+	}
+	backlogitem = Clone(backlogitem);
+	
+
+	delete backlogitem.activity_due;
+	delete backlogitem.additional_assignee_list;
+	delete backlogitem.approval;
+	delete backlogitem.approval_history;
+	delete backlogitem.approval_set;
+	delete backlogitem.business_duration; 
+	delete backlogitem.business_service;
+	delete backlogitem.calendar_duration; 
+	delete backlogitem.cmdb_ci;
+	delete backlogitem.close_notes;
+	delete backlogitem.closed_at; 
+	delete backlogitem.closed_by;
+	delete backlogitem.comments;
+	delete backlogitem.comments_and_work_notes; 
+	delete backlogitem.company;
+	delete backlogitem.contact_type;
+	delete backlogitem.contract;
+	delete backlogitem.correlation_display;
+	delete backlogitem.correlation_id;
+	delete backlogitem.delivery_plan;
+	delete backlogitem.delivery_task;	
+	delete backlogitem.due_date; 
+	delete backlogitem.escalation; 0
+	delete backlogitem.expected_start; 
+	delete backlogitem.follow_up; 
+	delete backlogitem.group_list; null
+	delete backlogitem.hierarchical_variables; 
+	delete backlogitem.impact;
+	delete backlogitem.knowledge;
+	delete backlogitem.location;
+	delete backlogitem.made_sla;	
+	delete backlogitem.parent;
+	delete backlogitem.priority;
+	delete backlogitem.reassignment_count;
+	delete backlogitem.rejection_goto;
+	delete backlogitem.route_reason;
+	delete backlogitem.service_offering;
+	delete backlogitem.sla_due; 
+	delete backlogitem.sys_domain; 
+	delete backlogitem.sys_domain_path;
+	delete backlogitem.sys_meta;
+	delete backlogitem.sys_mod_count; 
+	delete backlogitem.tags; 
+	delete backlogitem.task_effective_number;
+	delete backlogitem.time_worked; 
+	delete backlogitem.universal_request;
+	delete backlogitem.upon_approval; 
+	delete backlogitem.upon_reject; 
+	delete backlogitem.urgency;
+	delete backlogitem.user_input; 
+	delete backlogitem.variable_pool;
+	delete backlogitem.variables; 
+	delete backlogitem.watch_list; 
+	delete backlogitem.wf_activity; 
+	delete backlogitem.work_end; 
+	delete backlogitem.work_notes; 
+	delete backlogitem.work_notes_list;
+	delete backlogitem.work_start; 	
+	
+	return backlogitem;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-24 16:46:31</sys_created_on>
+        <sys_id>3c3fd1731b7775106c17fdd49b4bcb42</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>CleanUpBacklogItemObject</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_3c3fd1731b7775106c17fdd49b4bcb42</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-24 16:59:40</sys_updated_on>
+    </sys_script_include>
+</record_update>
