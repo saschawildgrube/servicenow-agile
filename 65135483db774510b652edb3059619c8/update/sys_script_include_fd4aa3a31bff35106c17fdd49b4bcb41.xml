@@ -7,13 +7,14 @@
         <client_callable>false</client_callable>
         <description>Renders the dependenc tree of a given backlog item</description>
         <name>HtmlRenderBacklogItemDependencies</name>
-        <script><![CDATA[function HtmlRenderBacklogItemDependencies(vBacklogItem)
+        <script><![CDATA[function HtmlRenderBacklogItemDependencies(vBacklogItem,strMode)
 {
 	var GetRecord = x_snc_devtools.GetRecord;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var HtmlRenderError = x_snc_devtools.HtmlRenderError;
 	var HtmlRenderTree = x_snc_devtools.HtmlRenderTree;
 	var HtmlRenderValue = x_snc_devtools.HtmlRenderValue;
+	var GetStringValue = x_snc_devtools.GetStringValue;
 	
 	var grBacklogItem =  GetRecord('x_snc_agile_backlog_item',vBacklogItem);
 	if (IsValidRecord(grBacklogItem) == false)
@@ -46,13 +47,14 @@
 		
 		var strContent = '';
 		
-		if (GetBoolValue(GetValue(backlogitem,'circular_dependency')) == true)
-		{
-			strContent = HtmlRenderError('CIRCULAR DEPENDENCY!');
-		}
-		
+			
 		var strUrl = GetInstanceRecordURL('x_snc_agile_backlog_item',backlogitem.sys_id);
 		strContent += HtmlRenderLink(strUrl,backlogitem.display,true); 
+		
+		if (GetBoolValue(GetValue(backlogitem,'circular_dependency')) == true)
+		{
+			strContent += '<br/><span style="color: red; font-weight: bold">CIRCULAR DEPENDENCY DETECTED!<br/>A circular dependency might have been created by mistake OR it points to a real problem in the solution design. A circular dependency indicates that two individuals (or teams) are waiting for each other to do their part first before the other can start. The involved individuals or teams shoud have a conversation with each other rather sooner than later!</span>';
+		}		
 		
 		
 		node['content'] = strContent;
@@ -65,9 +67,16 @@
 		node['_nodes'] = aNodes;
 		return node;
 	}
+	
+	strMode = GetStringValue(strMode);
+	var bBottomUp = false;
+	if (strMode == 'bottomup')
+	{
+		bBottomUp = true;
+	}
 		
 	var aNodes = [GetNodeFromBacklogItem(backlogitem)];
-	strHtml += HtmlRenderTree(aNodes);
+	strHtml += HtmlRenderTree(aNodes,0,bBottomUp);
 	
 	if (AppGetProperty('logging.verbosity') == 'debug')
 	{
@@ -81,13 +90,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-24 08:18:04</sys_created_on>
         <sys_id>fd4aa3a31bff35106c17fdd49b4bcb41</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>HtmlRenderBacklogItemDependencies</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_fd4aa3a31bff35106c17fdd49b4bcb41</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-24 17:15:28</sys_updated_on>
+        <sys_updated_on>2024-01-25 17:38:48</sys_updated_on>
     </sys_script_include>
 </record_update>

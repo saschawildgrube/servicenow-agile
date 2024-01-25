@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-25 20:41:47</sys_created_on>
+        <sys_id>61eedfc01b4886106c17fdd49b4bcb48</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_atf_step_61eedfc01b4886106c17fdd49b4bcb48</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-25 20:48:24</sys_updated_on>
+        <table/>
+        <test display_value="Agile - GetBacklogItemDependencies">02ce1fc01b4886106c17fdd49b4bcb5d</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=61eedfc01b4886106c17fdd49b4bcb48"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>61eedfc01b4886106c17fdd49b4bcb48</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-25 20:41:48</sys_created_on>
+        <sys_id>09fedfc01b4886106c17fdd49b4bcb58</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-25 20:41:48</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>61eedfc01b4886106c17fdd49b4bcb48</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-25 20:41:48</sys_created_on>
+        <sys_id>cdfedfc01b4886106c17fdd49b4bcb58</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-25 20:48:24</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+	function TestCase_GetBacklogItemDependencies(vBacklogItem, aPath, vExpected)&#13;
+	{&#13;
+		function TestCase_GetBacklogItemDependencies_CheckResult(vInput,vExpected,vResult)&#13;
+		{&#13;
+			if (vExpected === false)&#13;
+			{&#13;
+				return (vExpected == vResult);&#13;
+			}&#13;
+			if (x_snc_devtools.IsObject(vResult) == false)&#13;
+			{&#13;
+				return false;&#13;
+			}&#13;
+			var aRequiredBacklogItems = x_snc_devtools.GetArrayValue(&#13;
+				x_snc_devtools.GetValue(vResult,'_expected_backlog_items'));&#13;
+			return (aRequiredBacklogItems.length == vExpected);&#13;
+		}&#13;
+&#13;
+		test.TestCase(&#13;
+			'Function GetBacklogItemDependencies()',&#13;
+			GetBacklogItemDependencies,&#13;
+			{&#13;
+				'Backlog Item': vBacklogItem,&#13;
+				'Path': aPath,&#13;
+			},&#13;
+			vExpected,&#13;
+			TestCase_GetBacklogItemDependencies_CheckResult);&#13;
+	}&#13;
+&#13;
+	TestCase_GetBacklogItemDependencies(null,null,false);&#13;
+&#13;
+	var grBacklogItem = new GlideRecord('x_snc_agile_backlog_item');&#13;
+	grBacklogItem.initialize();&#13;
+	grBacklogItem.short_description = '_ATF_TEST1';&#13;
+	var strBacklogItem1Sysid = grBacklogItem.insert();&#13;
+&#13;
+	TestCase_GetBacklogItemDependencies(grBacklogItem,[],0);&#13;
+	TestCase_GetBacklogItemDependencies(grBacklogItem,[],0);&#13;
+	&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>
