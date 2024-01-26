@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="DELETE">
+        <group/>
+        <hidden>false</hidden>
+        <name>catalog_Admin_Home</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-07 12:50:31</sys_created_on>
+        <sys_id>d5f5933fdb330110b652edb30596193a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Catalog_admin_home</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_ui_view_d5f5933fdb330110b652edb30596193a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-07 12:50:31</sys_updated_on>
+        <title>Catalog_admin_home</title>
+        <user/>
+    </sys_ui_view>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</application>
+        <file_path/>
+        <instance_id>25322e70dbb92590c1a4c5970596192e</instance_id>
+        <instance_name>wildgrubeutah</instance_name>
+        <name>sys_ui_view_d5f5933fdb330110b652edb30596193a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>catalog_Admin_Home</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-07 12:50:31</sys_created_on>
+        <sys_id>d5f5933fdb330110b652edb30596193a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Catalog_admin_home</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_ui_view_d5f5933fdb330110b652edb30596193a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-07 12:50:31</sys_updated_on>
+        <title>Catalog_admin_home</title>
+        <user/>
+    </sys_ui_view>
+</record_update>]]></payload>
+        <payload_hash>1156033770</payload_hash>
+        <record_name>Catalog_admin_home</record_name>
+        <reverted_from/>
+        <source>347f78a51b9725106c17fdd49b4bcbed</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-06-07 21:57:50</sys_created_on>
+        <sys_id>098ffca51b9725106c17fdd49b4bcbd3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18897ddb95a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-07 21:57:50</sys_updated_on>
+        <type>UI View</type>
+        <update_guid>c58ffca58f9725103d661e9c3e2c94d3</update_guid>
+        <update_guid_history>c58ffca58f9725103d661e9c3e2c94d3:1156033770</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-26 19:52:09</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_view">sys_ui_view</sys_db_object>
+        <sys_id>200e813964cd4b4eb837f01651562979</sys_id>
+        <sys_metadata>d5f5933fdb330110b652edb30596193a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Catalog_admin_home</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope_delete display_value="">2dbab3f1846b464c8f5dbbc77c31e019</sys_scope_delete>
+        <sys_update_name>sys_ui_view_d5f5933fdb330110b652edb30596193a</sys_update_name>
+        <sys_update_version display_value="sys_ui_view_d5f5933fdb330110b652edb30596193a">098ffca51b9725106c17fdd49b4bcbd3</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-26 19:52:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
