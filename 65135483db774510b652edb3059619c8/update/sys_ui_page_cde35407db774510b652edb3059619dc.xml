@@ -20,6 +20,16 @@
 	<g2:no_escape>$[
 		docapi.RenderDescription();  
 	]</g2:no_escape>	
+	
+	<h2>Features</h2>
+	<ul>
+		<li>Manage multiple backlogs with their backlog items.</li>
+		<li>Put all backlog items into an order based on relative priority.</li>
+		<li>Maintain dependencies between backlog items and visualize the dependency tree.</li>
+		<li>Maintain the correct order of backlog items while considering their dependencies at all times.</li>
+		<li>Manage the development and deployment process as described in the whitepaper&#160;<a href="https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf" target="_blank">A mature Development and Deployment Process - How to sleep well when your 200 developers deploy apps every day</a>.</li>
+		<li>Keep track on relevant components and personas for each backlog item.</li> 
+	</ul>
 
 	<h2>Disclaimer</h2>
 	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
@@ -168,6 +178,7 @@
 	<h3>1.6.0 - 2024-TODO</h3>
 	<ol>
 		<li>Added function BacklogItemManageOrder() to manage backlog item order recursively considering the required backlog items (and their dependencies likewise). It is now no longer possible to set the order of a backlog item below the order of a required backlog item. Circular dependencies are detected and ignored. Dependent backlog items are also considered - so the tree of dependencies is both walked up and down.</li>
+		<li>Added feature descriptions to the manual.</li>
 	</ol>	
 	
 	<h3>1.5.0 - 2024-01-29</h3>
@@ -242,13 +253,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>85</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-02-04 18:16:24</sys_updated_on>
+        <sys_updated_on>2024-02-04 18:30:14</sys_updated_on>
     </sys_ui_page>
 </record_update>
