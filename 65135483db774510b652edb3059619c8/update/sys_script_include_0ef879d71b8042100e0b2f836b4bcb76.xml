@@ -14,6 +14,7 @@
 	var ArrayValueExists = x_snc_devtools.ArrayValueExists;
 	var GetRecord = x_snc_devtools.GetRecord;
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var Clone = x_snc_devtools.Clone;
 	
 	RecordManageOrder(
 		'x_snc_agile_backlog_item',
@@ -23,12 +24,12 @@
 
 	if (grBacklogItem)
 	{
-		aPath = GetArrayValue(aPath);
-		if (ArrayValueExists(aPath,GetStringValue(grBacklogItem.sys_id)) == true)
+		var aPathNew = Clone(GetArrayValue(aPath));
+		if (ArrayValueExists(aPathNew,GetStringValue(grBacklogItem.sys_id)) == true)
 		{
 			return;
 		}	
-		aPath.push(GetStringValue(grBacklogItem.sys_id));
+		aPathNew.push(GetStringValue(grBacklogItem.sys_id));
 		
 		// Downstream: update required backlog items
 		var aItems = GetArrayValue(grBacklogItem.required_backlog_items);
@@ -40,7 +41,7 @@
 				if (grItem.order > grBacklogItem.order)
 				{
 					grItem.order = grBacklogItem.order;
-					BacklogItemManageOrder(grItem,aPath);
+					BacklogItemManageOrder(grItem,aPathNew);
 				}
 			}
 		}
@@ -54,7 +55,7 @@
 			if (grDependentBacklogItems.order < grBacklogItem.order)
 			{
 				grDependentBacklogItems.order = grBacklogItem.order;
-				BacklogItemManageOrder(grDependentBacklogItems,aPath);
+				BacklogItemManageOrder(grDependentBacklogItems,aPathNew);
 			}
 		}		
 	}
@@ -64,13 +65,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-02-04 15:42:09</sys_created_on>
         <sys_id>0ef879d71b8042100e0b2f836b4bcb76</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>BacklogItemManageOrder</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_0ef879d71b8042100e0b2f836b4bcb76</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-02-04 18:12:43</sys_updated_on>
+        <sys_updated_on>2024-03-05 09:53:48</sys_updated_on>
     </sys_script_include>
 </record_update>
