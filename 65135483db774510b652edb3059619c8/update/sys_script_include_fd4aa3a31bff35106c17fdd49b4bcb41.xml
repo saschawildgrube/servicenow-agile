@@ -15,6 +15,7 @@
 	var HtmlRenderTree = x_snc_devtools.HtmlRenderTree;
 	var HtmlRenderValue = x_snc_devtools.HtmlRenderValue;
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var ArrayValueExists = x_snc_devtools.ArrayValueExists;
 	
 	var grBacklogItem =  GetRecord('x_snc_agile_backlog_item',vBacklogItem);
 	if (IsValidRecord(grBacklogItem) == false)
@@ -28,8 +29,9 @@
 	var backlogitem = GetBacklogItemDependencies(grBacklogItem);
 	
 	var aNodes = [];
+	var aItems = [];
 
-	function GetNodeFromBacklogItem(backlogitem)
+	function GetNodeFromBacklogItem(backlogitem,bSkipDuplicates,bSkipInactive)
 	{
 		var IsObject = x_snc_devtools.IsObject;
 		var GetValue = x_snc_devtools.GetValue;
@@ -43,11 +45,20 @@
 		{
 			return [];
 		}
+		if (bSkipInactive == true && backlogitem.active == false)
+		{
+			return [];
+		}
+		if (bSkipDuplicates == true && ArrayValueExists(aItems,backlogitem.sys_id))
+		{
+			return [];
+		}
+		aItems.push(backlogitem.sys_id);
+
 		var node = {};
 		
 		var strContent = '';
-		
-			
+					
 		var strUrl = GetInstanceRecordURL('x_snc_agile_backlog_item',backlogitem.sys_id);
 		strContent += HtmlRenderLink(strUrl,backlogitem.display,true); 
 		
@@ -62,7 +73,7 @@
 		var aNodes = [];
 		for (var nRBI = 0; nRBI < aRBIs.length; nRBI++)
 		{
-			aNodes.push(GetNodeFromBacklogItem(aRBIs[nRBI]));
+			aNodes.push(GetNodeFromBacklogItem(aRBIs[nRBI],bSkipDuplicates,bSkipInactive));
 		}
 		node['_nodes'] = aNodes;
 		return node;
@@ -70,12 +81,18 @@
 	
 	strMode = GetStringValue(strMode);
 	var bBottomUp = false;
+	var bSkipDuplicates = false;
+	var bSkipInactive = false;
 	if (strMode == 'bottomup')
 	{
 		bBottomUp = true;
+		bSkipDuplicates = true;
+		bSkipInactive = true;
 	}
-		
-	var aNodes = [GetNodeFromBacklogItem(backlogitem)];
+	
+
+
+	var aNodes = [GetNodeFromBacklogItem(backlogitem,bSkipDuplicates,bSkipInactive)];
 	strHtml += HtmlRenderTree(aNodes,0,bBottomUp);
 	
 	if (AppGetProperty('logging.verbosity') == 'debug')
@@ -90,13 +107,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-24 08:18:04</sys_created_on>
         <sys_id>fd4aa3a31bff35106c17fdd49b4bcb41</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>HtmlRenderBacklogItemDependencies</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_fd4aa3a31bff35106c17fdd49b4bcb41</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-25 17:38:48</sys_updated_on>
+        <sys_updated_on>2024-03-05 10:23:19</sys_updated_on>
     </sys_script_include>
 </record_update>

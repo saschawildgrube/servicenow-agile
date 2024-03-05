@@ -38,7 +38,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Utah,Vancouver',
+				'Vancouver,Washington',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -175,6 +175,16 @@
 	</ol>
 -->
 	
+	<h3>1.7.0 - 2024-02-05</h3>
+	<ol>
+		<li>Utah is no longer actively supported.</li>
+		<li>Agile has been fully tested with Washington.</li>
+		<li>The backlog item dependency view "Work Plan" tab now hides already completed backlog items and does no longer show duplicates. This turns the view into a visualization of the remaining work to be done.</li>
+		<li>If there is no developer, tester or owner assigned to a backlog item, the "Assigned To" field is cleared when entering the corresponding states.</li>
+		<li>Fixed a defect in GetBacklogItemDependencies() which led to false-positive warnings on circular dependencies.</li>
+		<li>Fixed a defect in BacklogItemManageOrder() which led incorrect ordering if multiple backlog items depend on the same backlog item which also has its own dependencies.</li>
+	</ol>	
+	
 	<h3>1.6.0 - 2024-02-05</h3>
 	<ol>
 		<li>Added function BacklogItemManageOrder() to manage backlog item order recursively considering the required backlog items (and their dependencies likewise). It is now no longer possible to set the order of a backlog item below the order of a required backlog item. Circular dependencies are detected and ignored. Dependent backlog items are also considered - so the tree of dependencies is both walked up and down.</li>
@@ -253,13 +263,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>100</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-02-05 10:07:29</sys_updated_on>
+        <sys_updated_on>2024-03-05 13:26:05</sys_updated_on>
     </sys_ui_page>
 </record_update>
