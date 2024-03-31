@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Backlog" max_length="40" name="x_snc_agile_backlog" sizeclass="1" type="collection">
+    <element db_object_id="bdd51474db753110f0f1d03cd39619d9" label="Backlog" max_length="40" name="x_snc_agile_backlog" type="collection">
         <element label="Default Component" max_length="32" name="default_component" reference="x_snc_agile_component" reference_qual="javascript:GetComponentReferenceQualifierFromBacklog(current.sys_id)" type="reference" use_reference_qualifier="advanced"/>
         <element label="Definition of Done" max_length="2000" name="definition_of_done" type="string"/>
         <element label="Definition of Ready" max_length="2000" name="definition_of_ready" type="string"/>
@@ -9,19 +9,19 @@
         <element label="Owner" max_length="32" name="owner" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
         <element label="Lead Tester" max_length="32" name="tester" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
         <index name="index">
-            <element name="owner"/>
+            <element name="default_component"/>
         </index>
         <index name="index2">
-            <element name="devops"/>
-        </index>
-        <index name="index3">
-            <element name="tester"/>
-        </index>
-        <index name="index4">
             <element name="developer"/>
         </index>
+        <index name="index3">
+            <element name="devops"/>
+        </index>
+        <index name="index4">
+            <element name="owner"/>
+        </index>
         <index name="index5">
-            <element name="default_component"/>
+            <element name="tester"/>
         </index>
     </element>
 </database>

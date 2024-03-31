@@ -6,14 +6,13 @@
         <sys_id>cdf15d8fdb7f4510b652edb305961911</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_snc_agile_component.x_snc_agile.agilist</sys_name>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_security_acl display_value="x_snc_agile_component">01f15d8fdb7f4510b652edb30596190f</sys_security_acl>
         <sys_update_name>sys_security_acl_role_cdf15d8fdb7f4510b652edb305961911</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-06-04 19:18:21</sys_updated_on>
         <sys_user_role display_value="x_snc_agile.agilist" name="x_snc_agile.agilist">b0c81c03dbb74510b652edb305961962</sys_user_role>
-        <transaction_id/>
     </sys_security_acl_role>
 </record_update>
