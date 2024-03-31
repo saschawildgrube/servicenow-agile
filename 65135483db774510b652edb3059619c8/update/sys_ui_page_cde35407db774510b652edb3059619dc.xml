@@ -74,16 +74,17 @@
 	</ol>
 	
 	
-	<h2>Development Process / Backlog Item States</h2>
-	
-	<p>Please add the affected application names as a tags to the story.</p>
+	<h2>Backlog Item States</h2>
+
 	<ol>
 	<li><b>Draft / Need more info</b>: The requirement description is being worked on or more information is required to implement the backlog item.</li>
 		<li><b>Ready</b>: The author of the item claims the item contains enough information to start development. A developer should be assigned to the backlog item.</li>
-		<li><b>In Development</b>: A developer works or is asked to work on the implementation of the backlog item in the DEV environment.</li>
-		<li><b>Done / Commited to repo</b>: The developer has completed their work and committed their changes to the source code repository - which makes the backlog item part of a subsequent deployment to the TEST environment.</li>
+		<li><b>In Development</b>: Developers work on the implementation of the backlog item in the DEV environment.</li>
+		<li><b>Done / Commited to repo</b>: Developers have completed their work and committed their changes to the source code repository - which makes the backlog item available to be part of one or more baselined application versions.</li>
+		<li><b>Basedlined</b>: The team has baselined all related applications that were affected by the changes made for this backlog item - which enables the backlog item to be part of a subsequent deployment to the TEST environment.</li>
 		<li><b>In Test</b>: The changes related to the backlog item has been deployed to the TEST environemnt and a tester is asked to test the result.</li>
-		<li><b>Test Failed / Showstopper / Back to development</b>: A backlog item has failed the test and must be considered as a showstopper - so the current version on the TEST environment MUST NOT be deplyoed to the PROD environment. The backlog item is sent back to a developer who is now asked to fix issues. It is important to disiguish this state from "In Development" because the current deployment on TEST should not be deployed to the PROD environment as long as there are showstoppers. If a test failed but the issues are not considered as showstoppers, the version can be deployed to PROD and the state should be set to "In Development" which indicates that they do not represent a reason to delay deployment to PROD but still need to be worked on.</li>
+		<li><b>Test Failed / Showstopper / Back to development</b>: A backlog item has failed the test and must be considered as a showstopper - so the current version on the TEST environment MUST NOT be deplyoed to the PROD environment. The backlog item is sent back to a developer who is now asked to fix issues. It is important to distinguish this state from "In Development" because the current deployment on TEST should not be deployed to the PROD environment as long as there are showstoppers. If a test failed but the issues are not considered as showstoppers, the version can be deployed to PROD and the state should be set to "In Development" which indicates that they do not represent a reason to delay deployment to PROD but still need to be worked on.</li>
+		<li><b>Baselined Showstopper</b>: A fix has been provided to resolve the showstopper. All relevant application versions have been baselined and are now ready for deployment to TEST.</li> 
 		<li><b>Test Passed / Ready for PROD</b>: The test has been passed and the backlog item is ready for deployment on the PROD environment.</li>
 		<li><b>Review on PROD</b>: Deployment to PROD environment has been completed. A final check should be done before the backlog item is marked as "Completed".</li>
 		<li><b>Completed</b>: The backlog item is finally completed.</li>
@@ -94,19 +95,18 @@
 	<h2>Deployment Process</h2>
 	
 	<p>The following deployment process - no matter if performed manually or automated - should be applied to deploy applications (components).</p>
-	<h3>From DEV to TEST</h3>
+	<h3>Baseline an Application Version</h3>
 	<ol>
 		<li>Login to the DEV instance.</li>
 		<li>Navigate to Studio.</li>
 		<li>Switch to the application.</li>
-		<li>Verify that the DEV branch is active.</li>
-		<li>Document all changes.</li>
+		<li>Verify that the "dev" branch is active.</li>
+		<li>Document all changes in the release notes section of the manual.</li>
 		<li>Set verson in application settings.</li>
-		<li>Run all ATF tests and Instance Scan checks.</li>
+		<li>Run all ATF tests.</li>
+		<li>Run (CodeSanity) Instance Scan checks.</li>
+		<li>"Commit Changes" to the "dev" branch.</li>
 		<li>Navigate to "Studio" / "File" / "Settings" and click on the button "Baseline Version".</li>
-		<li>"Commit Changes" to DEV branch.</li>
-		<li>Select "Create Branch" and choose the branch name according to the application version (or an alternative naming schema - e.g. "YYYY-MM-DD_hhmm").</li>
-		<li>Select "Switch Branch" and select the DEV branch.</li>
 		<li>Login to the TEST instance.</li>
 		<li>Navigate to Studio.</li>
 		<li>Switch to the application.</li>
@@ -114,12 +114,26 @@
 		<li>Select "Switch Branch" and select the corresponding version branch.</li>
 		<li>Verify that the now current branch has changed to the just created branch.</li>
 		<li>Navigate to "Studio" / "File" / "Settings" and execute the related link "Run Install Scripts".</li>
-		<li>Mark backlog items associated to the application in "Done / Commited to repo" as "In Test".</li>
+		<li>Mark backlog items associated to the application in "Done / Commited to repo" as "Baselined".</li>
 	</ol>
 	
-	<h3>To PROD (roll-forward / roll-back)</h3>
+	<h3>Deploy to TEST</h3>
 	<ol>
-		<li>DO NOT PROCEED TO ROLL-FORWARD if there are stories "In Test" or in "Test Failed / Showstopper / Back to development"!</li>
+		<li>Login to the TEST instance.</li>
+		<li>Navigate to Studio.</li>
+		<li>Switch to the application.</li>
+		<li>Select "Apply Remote Changes" (this is necessary to update the list of available tags).</li>
+		<li>Select "Switch Branch" and select the corresponding version branch.</li>
+		<li>Verify that the now current branch has changed to the just created branch.</li>
+		<li>Run (CodeSanity) Instance Scan checks.</li>
+		<li>Navigate to "Studio" / "File" / "Settings" and execute the related link "Run Install Scripts".</li>
+		<li>Run all ATF tests.</li>
+		<li>Mark backlog items associated to the application in "Baselined" as "In Test".</li>
+	</ol>
+
+	<h3>Deploy to PROD</h3>
+	<ol>
+		<li>DO NOT PROCEED TO ROLL-FORWARD if there are backlog items "In Test" or in "Test Failed / Showstopper / Back to development" or "Baselined Showstopper"!</li>
 		<li>Login to the PROD instance.</li>
 		<li>Navigate to Studio.</li>
 		<li>Switch to the application.</li>
@@ -174,6 +188,14 @@
 		<li>TODO: document changes here</li>
 	</ol>
 -->
+
+	<h3>1.8.0 - 2024-03-31</h3>
+	<ol>
+		<li>DevTools 1.84.0 is now required.</li> 
+		<li>Introduced the "Baselined" and "Baselined Showstopper" states.</li>
+		<li>Added menu item "Baselining" to list all backlog items that are "Done", "Baselined" or "Baseoined Showstopper".</li>
+		<li>Backlog items that are "hotfixed in PROD" are marked in blue.</li>
+	</ol>
 	
 	<h3>1.7.0 - 2024-02-05</h3>
 	<ol>
@@ -263,13 +285,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>100</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-05 13:26:05</sys_updated_on>
+        <sys_updated_on>2024-03-31 16:48:29</sys_updated_on>
     </sys_ui_page>
 </record_update>

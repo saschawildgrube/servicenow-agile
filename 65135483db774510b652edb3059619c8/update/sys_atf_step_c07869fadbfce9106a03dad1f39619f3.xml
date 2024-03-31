@@ -9,7 +9,6 @@
         <mugshots_cache_json/>
         <notes/>
         <order>1</order>
-        <snapshot/>
         <step_config display_value="DevTools - Check app dependencies">e4b8e71e1bbb5d105b76777d8b4bcb35</step_config>
         <sys_class_name>sys_atf_step</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -43,5 +42,4 @@
         <value>65135483db774510b652edb3059619c8</value>
         <variable display_value="">75de33561b3f5d105b76777d8b4bcbc8</variable>
     </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_e4b8e71e1bbb5d105b76777d8b4bcb35^id=c07869fadbfce9106a03dad1f39619f3"/>
 </record_update>

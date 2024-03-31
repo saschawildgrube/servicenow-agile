@@ -2,7 +2,6 @@
     <sys_dictionary action="INSERT_OR_UPDATE" element="" table="x_snc_agile_m2m_components_backlogs">
         <active>true</active>
         <array>false</array>
-        <array_denormalized>false</array_denormalized>
         <attributes/>
         <audit>false</audit>
         <calculation/>
@@ -25,6 +24,7 @@
         <element/>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <internal_type display_value="Collection">collection</internal_type>
@@ -42,19 +42,16 @@
         <reference_qual/>
         <reference_qual_condition/>
         <reference_type/>
-        <sizeclass>3</sizeclass>
         <spell_check>false</spell_check>
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 19:22:57</sys_created_on>
-        <sys_id>2003dd83dbbf4510b652edb3059619fb</sys_id>
-        <sys_mod_count>1</sys_mod_count>
         <sys_name>x_snc_agile_m2m_components_backlogs</sys_name>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
-        <sys_update_name>sys_dictionary_x_snc_agile_m2m_components_backlogs_null</sys_update_name>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_dictionary_x_snc_agile_m2m_components_backlogs_NULL</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-06-05 10:17:50</sys_updated_on>
         <table_reference>false</table_reference>
@@ -64,6 +61,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
