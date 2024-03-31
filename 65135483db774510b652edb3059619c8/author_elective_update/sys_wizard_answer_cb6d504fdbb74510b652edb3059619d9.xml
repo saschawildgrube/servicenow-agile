@@ -30,7 +30,7 @@
     </sys_wizard_answer>
 <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="Agile">65135483db774510b652edb3059619c8</application>
+        <application display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</application>
         <file_path/>
         <instance_id>25322e70dbb92590c1a4c5970596192e</instance_id>
         <instance_name>wildgrubeutah</instance_name>
@@ -93,10 +93,10 @@
         <sys_metadata>cb6d504fdbb74510b652edb3059619d9</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Backlog Item</sys_name>
-        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_parent display_value="">51a8a528a920211076daa554cb57d91f</sys_parent>
         <sys_policy/>
-        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_scope_delete display_value="">2dbab3f1846b464c8f5dbbc77c31e019</sys_scope_delete>
         <sys_update_name>sys_wizard_answer_cb6d504fdbb74510b652edb3059619d9</sys_update_name>
         <sys_update_version display_value="sys_wizard_answer_cb6d504fdbb74510b652edb3059619d9">589f74e51b9725106c17fdd49b4bcb4c</sys_update_version>
