@@ -17,6 +17,10 @@
 
 	if (grBacklogItem.state == GetBacklogItemState('draft') )
 	{
+		if (GetStringValue(grBacklogItem.owner) == '')
+		{
+			grBacklogItem.owner = grBacklogItem.opened_by;
+		}
 		if (grBacklogItem.opened_by != grBacklogItem.assigned_to)
 		{
 			if (GetStringValue(grBacklogItem.owner) != '')
@@ -108,13 +112,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-07 20:29:30</sys_created_on>
         <sys_id>a2da60211b9ba110cd6153d16b4bcb85</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>BacklogItemAssignUsers</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_a2da60211b9ba110cd6153d16b4bcb85</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-05 09:37:56</sys_updated_on>
+        <sys_updated_on>2024-04-16 09:37:12</sys_updated_on>
     </sys_script_include>
 </record_update>

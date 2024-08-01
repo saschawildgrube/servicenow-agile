@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="dependency_level" label="Dependency Level" language="en" table="x_snc_agile_backlog_item">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>dependency_level</element>
+            <help/>
+            <hint/>
+            <label>Dependency Level</label>
+            <language>en</language>
+            <name>x_snc_agile_backlog_item</name>
+            <plural>Dependency Levels</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-08-01 13:39:02</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Dependency Level</sys_name>
+            <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_agile_backlog_item_dependency_level_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-08-01 13:39:02</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

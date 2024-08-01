@@ -29,6 +29,7 @@
 		<li>Maintain the correct order of backlog items while considering their dependencies at all times.</li>
 		<li>Manage the development and deployment process as described in the whitepaper&#160;<a href="https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf" target="_blank">A mature Development and Deployment Process - How to sleep well when your 200 developers deploy apps every day</a>.</li>
 		<li>Keep track on relevant components and personas for each backlog item.</li> 
+		<li>List all "Top Level" backlog items - these are backlog items which are not required by any other backlog item. This list view is helpful to make real prioritization decisions.</li>
 	</ul>
 
 	<h2>Disclaimer</h2>
@@ -81,7 +82,7 @@
 		<li><b>Ready</b>: The author of the item claims the item contains enough information to start development. A developer should be assigned to the backlog item.</li>
 		<li><b>In Development</b>: Developers work on the implementation of the backlog item in the DEV environment.</li>
 		<li><b>Done / Commited to repo</b>: Developers have completed their work and committed their changes to the source code repository - which makes the backlog item available to be part of one or more baselined application versions.</li>
-		<li><b>Basedlined</b>: The team has baselined all related applications that were affected by the changes made for this backlog item - which enables the backlog item to be part of a subsequent deployment to the TEST environment.</li>
+		<li><b>Baselined</b>: The team has baselined all related applications that were affected by the changes made for this backlog item - which enables the backlog item to be part of a subsequent deployment to the TEST environment.</li>
 		<li><b>In Test</b>: The changes related to the backlog item has been deployed to the TEST environemnt and a tester is asked to test the result.</li>
 		<li><b>Test Failed / Showstopper / Back to development</b>: A backlog item has failed the test and must be considered as a showstopper - so the current version on the TEST environment MUST NOT be deplyoed to the PROD environment. The backlog item is sent back to a developer who is now asked to fix issues. It is important to distinguish this state from "In Development" because the current deployment on TEST should not be deployed to the PROD environment as long as there are showstoppers. If a test failed but the issues are not considered as showstoppers, the version can be deployed to PROD and the state should be set to "In Development" which indicates that they do not represent a reason to delay deployment to PROD but still need to be worked on.</li>
 		<li><b>Baselined Showstopper</b>: A fix has been provided to resolve the showstopper. All relevant application versions have been baselined and are now ready for deployment to TEST.</li> 
@@ -155,6 +156,9 @@
 	<h3>Roles</h3>
 	<g2:no_escape>$[docapi.RenderRoles()]</g2:no_escape>		
 
+	<h3>Tables</h3>
+	<g2:no_escape>$[docapi.RenderTables()]</g2:no_escape>		
+
 	<h3>UI Actions</h3>
 	<g2:no_escape>$[docapi.RenderUIActions()]</g2:no_escape>		
 
@@ -175,6 +179,12 @@
 	<g2:no_escape>$[docapi.RenderBusinessRules()]</g2:no_escape>	
 -->	
 
+	<h3>Dependencies</h3>
+	<g2:no_escape>$[docapi.RenderDependencies()]</g2:no_escape>	
+
+	<h3>Technical Debts</h3>
+	<g2:no_escape>$[docapi.RenderTechnicalDebts()]</g2:no_escape>			
+
 
 	<h2>License</h2>
 	<g2:no_escape>$[docapi.RenderCopyright(2022,'Sascha Wildgrube')]</g2:no_escape>
@@ -182,18 +192,22 @@
 	
 	<h2>Release Notes</h2>
 
-	<!--
-	<h3>1.x.0 - 2024-TODO</h3>
+	<h3>1.9.0 - 2024-08-01</h3>
 	<ol>
-		<li>TODO: document changes here</li>
+		<li>DevTools 1.97.0 is now required because of DocumentationAPI::RenderTables() and DocumentationAPI::RenderDependencies().</li>
+		<li>Added menu module "All Active (Top Level)" to show all backlog items that no other item depends on. Added function GetBacklogItemDependencyLevel() and the business rules "Backlog Item - Set dependency level" and "Backlog Item - Set downstream levels".</li>
+		<li>If no owner is specified, the user that opened the backlog item is set as the owner.</li>
+		<li>The menu item "Baselining" now also shows items in state "Baselined Showstopper".</li>
+		<li>AppInstall() now sets the default ordering on table "Backlog Items" to the field "Order".</li>
+		<li>Updated the Backlog Item form layout for better overview. Hoping users will like it.</li>
 	</ol>
--->
 
 	<h3>1.8.0 - 2024-03-31</h3>
 	<ol>
 		<li>DevTools 1.84.0 is now required.</li> 
 		<li>Introduced the "Baselined" and "Baselined Showstopper" states.</li>
-		<li>Added menu item "Baselining" to list all backlog items that are "Done", "Baselined" or "Baseoined Showstopper".</li>
+		<li>Added menu item "Baselining" to list all backlog items that are "Done", "Baselined" or "Baselined Showstopper".</li>
+		<li>Added the "Continue Development" UI Action.</li>
 		<li>Backlog items that are "hotfixed in PROD" are marked in blue.</li>
 	</ol>
 	
@@ -285,13 +299,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>112</sys_mod_count>
+        <sys_mod_count>128</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-31 16:48:29</sys_updated_on>
+        <sys_updated_on>2024-08-01 21:20:20</sys_updated_on>
     </sys_ui_page>
 </record_update>
