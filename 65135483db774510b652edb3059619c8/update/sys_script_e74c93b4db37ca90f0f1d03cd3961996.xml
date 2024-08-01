@@ -13,12 +13,12 @@
         <client_callable>false</client_callable>
         <collection>x_snc_agile_backlog_item</collection>
         <condition/>
-        <description>Sets the dependency level for the backlog item.</description>
+        <description>Sets the dependency levels for required (downstream) backlog items..</description>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Backlog Item - Set dependency level</name>
+        <name>Backlog Item - Set downstream levels</name>
         <order>23000</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,27 +29,40 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	current.dependency_level = GetBacklogItemDependencyLevel(current);
+	var aRequiredItems = x_snc_devtools.Merge(
+		x_snc_devtools.GetArrayValue(current.required_backlog_items),
+		x_snc_devtools.GetArrayValue(previous.required_backlog_items));
+
+	for (var nItem = 0; nItem < aRequiredItems.length; nItem++)
+	{
+		var grRequiredItem = x_snc_devtools.GetRecord('x_snc_agile_backlog_item',aRequiredItems[nItem]);
+		if (x_snc_devtools.IsValidRecord(grRequiredItem) == true)
+		{
+			gs.addInfoMessage(grRequiredItem.short_description);
+			grRequiredItem.dependency_level = GetBacklogItemDependencyLevel(grRequiredItem);
+			grRequiredItem.update();
+		}
+	}
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-08-01 13:49:50</sys_created_on>
+        <sys_created_on>2024-08-01 14:21:06</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>f0e45bbcdbf3ca90f0f1d03cd39619e6</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>Backlog Item - Set dependency level</sys_name>
+        <sys_id>e74c93b4db37ca90f0f1d03cd3961996</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Backlog Item - Set downstream levels</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
-        <sys_update_name>sys_script_f0e45bbcdbf3ca90f0f1d03cd39619e6</sys_update_name>
+        <sys_update_name>sys_script_e74c93b4db37ca90f0f1d03cd3961996</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-08-01 14:20:54</sys_updated_on>
+        <sys_updated_on>2024-08-01 14:23:44</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>after</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=f0e45bbcdbf3ca90f0f1d03cd39619e6"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=e74c93b4db37ca90f0f1d03cd3961996"/>
 </record_update>
