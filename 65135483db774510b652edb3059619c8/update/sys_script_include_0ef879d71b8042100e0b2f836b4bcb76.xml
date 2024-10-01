@@ -59,19 +59,32 @@
 			}
 		}		
 	}
+
+	var grBacklogItems = new GlideRecord('x_snc_agile_backlog_item');
+	grBacklogItems.addActiveQuery();
+	grBacklogItems.query();
+	while (grBacklogItems.next())
+	{
+		if (grBacklogItem.sys_id != grBacklogItems.sys_id)
+		{
+			BacklogItemSortRequiredBacklogItems(grBacklogItems);
+			grBacklogItems.update();
+		}
+	}
+
 	return;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-02-04 15:42:09</sys_created_on>
         <sys_id>0ef879d71b8042100e0b2f836b4bcb76</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>BacklogItemManageOrder</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_0ef879d71b8042100e0b2f836b4bcb76</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-05 09:53:48</sys_updated_on>
+        <sys_updated_on>2024-10-01 18:20:24</sys_updated_on>
     </sys_script_include>
 </record_update>
