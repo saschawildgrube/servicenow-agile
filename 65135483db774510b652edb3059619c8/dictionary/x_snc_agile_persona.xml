@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="a2d55474db753110f0f1d03cd3961968" label="Persona" max_length="40" name="x_snc_agile_persona" type="collection">
-        <element label="Description" max_length="4000" name="description" type="string"/>
+    <element db_object_id="4ad9fbbcc378c2105a37f907050131a4" label="Persona" max_length="40" name="x_snc_agile_persona" type="collection">
         <element display="true" label="Name" mandatory="true" max_length="80" name="name" type="string"/>
         <element label="Role" max_length="200" name="role" type="string"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
     </element>
 </database>

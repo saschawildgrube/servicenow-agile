@@ -22,6 +22,7 @@
         <override_menu_roles>false</override_menu_roles>
         <query>sysparm_order=order&amp;sysparm_order_direction=asc</query>
         <report/>
+        <require_confirmation>false</require_confirmation>
         <roles/>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -32,9 +33,9 @@
         <sys_mod_count>4</sys_mod_count>
         <sys_name>In Test</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_app_module_1db41547dbbf4510b652edb30596190f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-03-30 19:51:50</sys_updated_on>
