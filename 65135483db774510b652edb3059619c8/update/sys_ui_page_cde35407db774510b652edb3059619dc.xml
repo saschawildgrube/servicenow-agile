@@ -39,7 +39,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Vancouver,Washington',
+				'Washington,Xanadu',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -192,11 +192,13 @@
 	
 	<h2>Release Notes</h2>
 
-	<h3>1.10.0 - TODO</h3>
+	<h3>1.10.0 - 2024-10-01</h3>
 	<ol>
+		<li>Vancouver is no longer actively supported.</li>
+		<li>Agile is fully tested with Xanadu.</li>
 		<li>Required backlog items of a backlog item are now sorted by order - in the form and in the "Dependency" view.</li>
 		<li>The currently assigned user is now displayed in the "Work Plan" view.</li>
-		<li>Improved display of required backlog items on the item form.</li>
+		<li>Improved display of required backlog items on the backlog item form.</li>
 		<li>Business rule "Backlog Item - Set downstream levels" produced debug output when changing a backlog item. This has been fixed.</li>
 	</ol>
 
@@ -208,7 +210,7 @@
 		<li>If no owner is specified, the user that opened the backlog item is set as the owner.</li>
 		<li>The menu item "Baselining" now also shows items in state "Baselined Showstopper".</li>
 		<li>AppInstall() now sets the default ordering on table "Backlog Items" to the field "Order".</li>
-		<li>Updated the Backlog Item form layout for better overview. Hoping users will like it.</li>
+		<li>Updated the backlog item form layout for better overview. Hoping users will like it.</li>
 	</ol>
 
 	<h3>1.8.0 - 2024-03-31</h3>
@@ -308,13 +310,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>132</sys_mod_count>
+        <sys_mod_count>135</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 18:22:26</sys_updated_on>
+        <sys_updated_on>2024-10-01 18:33:18</sys_updated_on>
     </sys_ui_page>
 </record_update>
