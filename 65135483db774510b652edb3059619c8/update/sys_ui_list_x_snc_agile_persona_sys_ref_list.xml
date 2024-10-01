@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_snc_agile_component" version="2" view="sys_ref_list">
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_snc_agile_persona" version="2" view="sys_ref_list">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="x_snc_agile_component" element="NULL" name="x_snc_agile_component" parent="NULL" relationship="NULL" sys_domain="global" view="4d65a0438320021000d5ccc0deaad327">8d045d07dbbf4510b652edb30596193f</list_id>
+            <list_id display_value="x_snc_agile_persona" element="NULL" name="x_snc_agile_persona" parent="NULL" relationship="NULL" sys_domain="global" view="4d65a0438320021000d5ccc0deaad327">d5eece4ac3a496105a37f907050131c8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-06-04 19:27:22</sys_created_on>
-            <sys_id>49045d07dbbf4510b652edb305961940</sys_id>
+            <sys_created_on>2024-09-11 12:42:24</sys_created_on>
+            <sys_id>59ee028ac3a496105a37f90705013146</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 19:27:22</sys_updated_on>
+            <sys_updated_on>2024-09-11 12:42:24</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element/>
             <max_value>false</max_value>
             <min_value>false</min_value>
-            <name>x_snc_agile_component</name>
+            <name>x_snc_agile_persona</name>
             <parent/>
             <position/>
             <relationship/>
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-06-04 19:27:22</sys_created_on>
+            <sys_created_on>2024-09-11 12:42:24</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>8d045d07dbbf4510b652edb30596193f</sys_id>
+            <sys_id>d5eece4ac3a496105a37f907050131c8</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>x_snc_agile_component</sys_name>
+            <sys_name>x_snc_agile_persona</sys_name>
             <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
             <sys_policy/>
             <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
-            <sys_update_name>sys_ui_list_x_snc_agile_component_sys_ref_list</sys_update_name>
+            <sys_update_name>sys_ui_list_x_snc_agile_persona_sys_ref_list</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-06-04 19:27:22</sys_updated_on>
+            <sys_updated_on>2024-09-11 12:42:24</sys_updated_on>
             <sys_user/>
             <view display_value="Reference List" name="sys_ref_list">4d65a0438320021000d5ccc0deaad327</view>
             <view_name/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="e2d55474db753110f0f1d03cd396199a" label="Components to Backlogs" max_length="40" name="x_snc_agile_m2m_components_backlogs" type="collection">
+    <element db_object_id="9ed9fbbcc378c2105a37f907050131c9" label="Components to Backlogs" max_length="40" name="x_snc_agile_m2m_components_backlogs" type="collection">
         <element attributes="encode_utf8=false" label="Backlog" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
         <element attributes="encode_utf8=false" label="Component" max_length="32" name="component" reference="x_snc_agile_component" type="reference"/>
         <index name="index">

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="92d55474db753110f0f1d03cd3961931" label="Component" max_length="40" name="x_snc_agile_component" type="collection">
-        <element label="Application" max_length="32" name="application" reference="sys_app" type="reference"/>
-        <element label="Description" max_length="4000" name="description" type="string"/>
+    <element db_object_id="ced9fbbcc378c2105a37f90705013186" label="Component" max_length="40" name="x_snc_agile_component" type="collection">
         <element label="DevOps" max_length="32" name="devops" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
+        <element label="Application" max_length="32" name="application" reference="sys_app" type="reference"/>
         <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
         <index name="index">
             <element name="application"/>
         </index>

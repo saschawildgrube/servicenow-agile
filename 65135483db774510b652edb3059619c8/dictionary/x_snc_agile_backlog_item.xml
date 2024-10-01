@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element attributes="hasLabels=true" audit="true" db_object_id="af3e60831bf0a910cd6153d16b4bcb21" extends="task" label="Backlog Item" max_length="40" name="x_snc_agile_backlog_item" type="collection">
-        <element label="Backlog" mandatory="true" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
-        <element attributes="no_truncate=true" label="Components" max_length="4000" name="components" reference="x_snc_agile_component" reference_qual="javascript:GetComponentReferenceQualifierFromBacklog(current.backlog)" type="glide_list" use_reference_qualifier="advanced"/>
-        <element label="Dependency Level" max_length="40" name="dependency_level" read_only="true" type="integer"/>
         <element label="Developer" max_length="32" name="developer" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
-        <element display="true" label="Display" max_length="200" name="display" read_only="true" type="string"/>
-        <element label="Hotfixed in PROD" max_length="40" name="hotfixed" type="boolean"/>
-        <element label="Item Owner" max_length="32" name="owner" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
-        <element label="Personas" max_length="4000" name="personas" reference="x_snc_agile_persona" type="glide_list"/>
-        <element label="Required backlog items" max_length="4000" name="required_backlog_items" reference="x_snc_agile_backlog_item" type="glide_list"/>
+        <element label="Backlog" mandatory="true" max_length="32" name="backlog" reference="x_snc_agile_backlog" type="reference"/>
         <element label="Tags" max_length="40" name="tags" read_only="true" type="related_tags"/>
+        <element label="Dependency Level" max_length="40" name="dependency_level" read_only="true" type="integer"/>
+        <element attributes="no_truncate=true" label="Components" max_length="4000" name="components" reference="x_snc_agile_component" reference_qual="javascript:GetComponentReferenceQualifierFromBacklog(current.backlog)" type="glide_list" use_reference_qualifier="advanced"/>
+        <element label="Required backlog items" max_length="4000" name="required_backlog_items" reference="x_snc_agile_backlog_item" type="glide_list"/>
+        <element label="Hotfixed in PROD" max_length="40" name="hotfixed" type="boolean"/>
+        <element display="true" label="Display" max_length="200" name="display" read_only="true" type="string"/>
         <element label="Tester" max_length="32" name="tester" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
+        <element label="Personas" max_length="4000" name="personas" reference="x_snc_agile_persona" type="glide_list"/>
+        <element label="Item Owner" max_length="32" name="owner" reference="sys_user" reference_qual="roles=x_snc_agile.agilist^EQ" reference_qual_condition="roles=x_snc_agile.agilist^EQ" type="reference"/>
     </element>
 </database>

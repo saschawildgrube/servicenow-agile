@@ -13,13 +13,13 @@
         <client_callable>false</client_callable>
         <collection>x_snc_agile_backlog_item</collection>
         <condition/>
-        <description>Sets the dependency levels for required (downstream) backlog items..</description>
+        <description>Sorts the required backlog items.</description>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Backlog Item - Set downstream levels</name>
-        <order>23000</order>
+        <name>Backlog Item - Sort required items</name>
+        <order>24000</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -29,39 +29,27 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	var aRequiredItems = x_snc_devtools.Merge(
-		x_snc_devtools.GetArrayValue(current.required_backlog_items),
-		x_snc_devtools.GetArrayValue(previous.required_backlog_items));
-
-	for (var nItem = 0; nItem < aRequiredItems.length; nItem++)
-	{
-		var grRequiredItem = x_snc_devtools.GetRecord('x_snc_agile_backlog_item',aRequiredItems[nItem]);
-		if (x_snc_devtools.IsValidRecord(grRequiredItem) == true)
-		{
-			grRequiredItem.dependency_level = GetBacklogItemDependencyLevel(grRequiredItem);
-			grRequiredItem.update();
-		}
-	}
+	BacklogItemSortRequiredBacklogItems(current);
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-08-01 14:21:06</sys_created_on>
+        <sys_created_on>2024-10-01 12:48:42</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>e74c93b4db37ca90f0f1d03cd3961996</sys_id>
+        <sys_id>2c20d120c34552505a37f9070501310a</sys_id>
         <sys_mod_count>4</sys_mod_count>
-        <sys_name>Backlog Item - Set downstream levels</sys_name>
+        <sys_name>Backlog Item - Sort required items</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
-        <sys_update_name>sys_script_e74c93b4db37ca90f0f1d03cd3961996</sys_update_name>
+        <sys_update_name>sys_script_2c20d120c34552505a37f9070501310a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-08-13 10:03:34</sys_updated_on>
+        <sys_updated_on>2024-10-01 16:51:45</sys_updated_on>
         <template/>
-        <when>after</when>
+        <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=e74c93b4db37ca90f0f1d03cd3961996"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=2c20d120c34552505a37f9070501310a"/>
 </record_update>
