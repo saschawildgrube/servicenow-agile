@@ -11,6 +11,7 @@
 {
 	var GetRecord = x_snc_devtools.GetRecord;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var IsValidSysId = x_snc_devtools.IsValidSysId;
 	var HtmlRenderError = x_snc_devtools.HtmlRenderError;
 	var HtmlRenderTree = x_snc_devtools.HtmlRenderTree;
 	var HtmlRenderValue = x_snc_devtools.HtmlRenderValue;
@@ -37,10 +38,12 @@
 		var GetValue = x_snc_devtools.GetValue;
 		var GetArrayValue = x_snc_devtools.GetArrayValue;
 		var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
-		var GetInstanceRecordURL = x_snc_devtools.GetInstanceRecordURL;
+		var GetInstanceRecordUrl = x_snc_devtools.GetInstanceRecordUrl;
 		var GetBoolValue = x_snc_devtools.GetBoolValue;
 		var HtmlRenderError = x_snc_devtools.HtmlRenderError;
-		
+		var GetUserRecord = x_snc_devtools.GetUserRecord;
+		var GetInstanceListURL = x_snc_devtools.GetInstanceListURL;
+				
 		if (IsObject(backlogitem) == false)
 		{
 			return [];
@@ -59,9 +62,19 @@
 		
 		var strContent = '';
 					
-		var strUrl = GetInstanceRecordURL('x_snc_agile_backlog_item',backlogitem.sys_id);
+		var strUrl = GetInstanceRecordUrl('x_snc_agile_backlog_item',backlogitem.sys_id);
 		strContent += HtmlRenderLink(strUrl,backlogitem.display,true); 
-		
+		if (bShowAssignedUser == true && IsValidSysId(backlogitem.assigned_to))
+		{
+			var strUrl = GetInstanceListURL(
+				'x_snc_agile_backlog_item',
+				'',
+				'active=true^assigned_to='+backlogitem.assigned_to,
+				0);
+			var grUser = GetUserRecord(backlogitem.assigned_to);
+			strContent += ' - ' + HtmlRenderLink(strUrl,grUser.getDisplayValue(),true) + '';
+		}
+
 		if (GetBoolValue(GetValue(backlogitem,'circular_dependency')) == true)
 		{
 			strContent += '<br/><span style="color: red; font-weight: bold">CIRCULAR DEPENDENCY DETECTED!<br/>A circular dependency might have been created by mistake OR it points to a real problem in the solution design. A circular dependency indicates that two individuals (or teams) are waiting for each other to do their part first before the other can start. The involved individuals or teams shoud have a conversation with each other rather sooner than later!</span>';
@@ -83,11 +96,13 @@
 	var bBottomUp = false;
 	var bSkipDuplicates = false;
 	var bSkipInactive = false;
+	var bShowAssignedUser = false;
 	if (strMode == 'bottomup')
 	{
 		bBottomUp = true;
 		bSkipDuplicates = true;
 		bSkipInactive = true;
+		bShowAssignedUser = true;
 	}
 	
 
@@ -107,13 +122,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-24 08:18:04</sys_created_on>
         <sys_id>fd4aa3a31bff35106c17fdd49b4bcb41</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>HtmlRenderBacklogItemDependencies</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_fd4aa3a31bff35106c17fdd49b4bcb41</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-05 10:23:19</sys_updated_on>
+        <sys_updated_on>2024-10-01 18:10:33</sys_updated_on>
     </sys_script_include>
 </record_update>

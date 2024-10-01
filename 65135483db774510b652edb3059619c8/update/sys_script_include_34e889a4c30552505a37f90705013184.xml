@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_agile.BacklogItemSortRequiredBacklogItems</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Sorts the backlog item Sys Ids in the reference list field of the required backlog items of the given backlog item. </description>
+        <name>BacklogItemSortRequiredBacklogItems</name>
+        <script><![CDATA[function BacklogItemSortRequiredBacklogItems(grBacklogItem)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var GetRecord = x_snc_devtools.GetRecord;
+	var Clone = x_snc_devtools.Clone;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	
+	if (IsValidRecord(grBacklogItem) == false)
+	{
+		return false;
+	}
+	var aRequiredBacklogItemSysIds = GetArrayValue(grBacklogItem.required_backlog_items);
+
+	var aRequiredBacklogItems = [];
+	for (var nItem = 0; nItem < aRequiredBacklogItemSysIds.length; nItem++)
+	{
+		var grRequiredBacklogItem = GetRecord('x_snc_agile_backlog_item',aRequiredBacklogItemSysIds[nItem]);
+		aRequiredBacklogItems.push(Clone(grRequiredBacklogItem));
+	}
+
+	function CompareBacklogItem(grBacklogItem1, grBacklogItem2)
+	{
+		return GetIntegerValue(grBacklogItem1.order) - GetIntegerValue(grBacklogItem2.order);
+	}
+
+	aRequiredBacklogItems = aRequiredBacklogItems.sort(CompareBacklogItem);
+
+	var strRequiredBacklogItems = '';
+	for (var nItem = 0; nItem < aRequiredBacklogItems.length; nItem++)
+	{
+		if (nItem > 0)
+		{
+			strRequiredBacklogItems += ',';
+		}
+		strRequiredBacklogItems += aRequiredBacklogItems[nItem].sys_id;
+	}
+
+	grBacklogItem.required_backlog_items = strRequiredBacklogItems;
+
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 12:20:22</sys_created_on>
+        <sys_id>34e889a4c30552505a37f90705013184</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>BacklogItemSortRequiredBacklogItems</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_34e889a4c30552505a37f90705013184</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 16:52:04</sys_updated_on>
+    </sys_script_include>
+</record_update>
