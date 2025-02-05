@@ -34,14 +34,10 @@
 	
 	if (GetStringValue(current.backlog) == '')
 	{
-		var grBacklog = new GlideRecord('x_snc_agile_backlog');
-		grBacklog.query();
-		if (grBacklog.getRowCount() == 1)
+		var grBacklog = GetBacklogRecord();
+		if (grBacklog != false)
 		{
-			if (grBacklog.next())
-			{
-				current.backlog = grBacklog.sys_id;
-			}
+			current.backlog = grBacklog.sys_id;
 		}
 	}
 
@@ -52,7 +48,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c45b9c4f974e6910a6a07767f053af9b</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Backlog Item - Set backlog</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -60,7 +56,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_c45b9c4f974e6910a6a07767f053af9b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-11 07:55:03</sys_updated_on>
+        <sys_updated_on>2025-02-05 21:03:52</sys_updated_on>
         <template/>
         <when>before_display</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
