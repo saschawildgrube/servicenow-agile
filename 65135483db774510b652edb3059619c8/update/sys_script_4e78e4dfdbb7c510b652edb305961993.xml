@@ -35,7 +35,6 @@
 	{
 		current.state = GetBacklogItemState('draft');
 		gs.addErrorMessage('Please enter a short description!');
-		//current.setAbortAction(true);
 	}
 	
 	if (current.state >= GetBacklogItemState('ready'))
@@ -44,7 +43,6 @@
 		{
 			current.state = GetBacklogItemState('draft');
 			gs.addErrorMessage('Please enter a description!');
-			//current.setAbortAction(true);
 		}
 	}
 
@@ -55,7 +53,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4e78e4dfdbb7c510b652edb305961993</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Backlog Item - Check values</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -63,7 +61,7 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_4e78e4dfdbb7c510b652edb305961993</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-06 10:41:10</sys_updated_on>
+        <sys_updated_on>2025-02-05 18:23:28</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
