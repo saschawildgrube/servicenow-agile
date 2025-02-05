@@ -30,8 +30,16 @@
         <name>New Required Backlog Item</name>
         <onclick/>
         <order>60</order>
-        <script><![CDATA[CreateNewRequiredBacklogItem(current);
-x_snc_devtools.RedirectToRecord(grBacklogItem);]]></script>
+        <script><![CDATA[var grNewBacklogItem = CreateNewRequiredBacklogItem(current);
+if (grNewBacklogItem != false)
+{
+	x_snc_devtools.RedirectToRecord(grNewBacklogItem);
+}
+else
+{
+	x_snc_devtools.RedirectToRecord(current);
+}
+]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -42,7 +50,7 @@ x_snc_devtools.RedirectToRecord(grBacklogItem);]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>acdd112f1bf735106c17fdd49b4bcbb0</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>New Required Backlog Item</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -50,7 +58,7 @@ x_snc_devtools.RedirectToRecord(grBacklogItem);]]></script>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_action_acdd112f1bf735106c17fdd49b4bcbb0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-05 17:24:26</sys_updated_on>
+        <sys_updated_on>2025-02-05 17:37:46</sys_updated_on>
         <table>x_snc_agile_backlog_item</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
