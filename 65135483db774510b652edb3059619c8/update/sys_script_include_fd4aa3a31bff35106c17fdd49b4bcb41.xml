@@ -7,7 +7,7 @@
         <client_callable>false</client_callable>
         <description>Renders the dependenc tree of a given backlog item</description>
         <name>HtmlRenderBacklogItemDependencies</name>
-        <script><![CDATA[function HtmlRenderBacklogItemDependencies(vBacklogItem,strMode)
+        <script><![CDATA[function HtmlRenderBacklogItemDependencies(vBacklogItem,strMode,nMaxLevel)
 {
 	var GetRecord = x_snc_devtools.GetRecord;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
@@ -23,7 +23,7 @@
 	{
 		return HtmlRenderError('Could not identify the backlog item.');
 	}
-	
+
 	var strHtml = '';
 	
 	
@@ -32,7 +32,7 @@
 	var aNodes = [];
 	var aItems = [];
 
-	function GetNodeFromBacklogItem(backlogitem,bSkipDuplicates,bSkipInactive)
+	function GetNodeFromBacklogItem(backlogitem,bSkipDuplicates,bSkipInactive,nMaxLevel,nLevel)
 	{
 		var IsObject = x_snc_devtools.IsObject;
 		var GetValue = x_snc_devtools.GetValue;
@@ -56,6 +56,14 @@
 		{
 			return [];
 		}
+		if (nMaxLevel > 0)
+		{
+			if (nLevel > nMaxLevel)
+			{
+				return [];
+			}
+		}
+
 		aItems.push(backlogitem.sys_id);
 
 		var node = {};
@@ -86,7 +94,13 @@
 		var aNodes = [];
 		for (var nRBI = 0; nRBI < aRBIs.length; nRBI++)
 		{
-			aNodes.push(GetNodeFromBacklogItem(aRBIs[nRBI],bSkipDuplicates,bSkipInactive));
+			aNodes.push(
+				GetNodeFromBacklogItem(
+					aRBIs[nRBI],
+					bSkipDuplicates,
+					bSkipInactive,
+					nMaxLevel,
+					nLevel+1));
 		}
 		node['_nodes'] = aNodes;
 		return node;
@@ -104,14 +118,24 @@
 		bSkipInactive = true;
 		bShowAssignedUser = true;
 	}
-	
 
+	var aNodes = [
+			GetNodeFromBacklogItem(backlogitem,bSkipDuplicates,bSkipInactive,nMaxLevel,0)
+		];
 
-	var aNodes = [GetNodeFromBacklogItem(backlogitem,bSkipDuplicates,bSkipInactive)];
-	strHtml += HtmlRenderTree(aNodes,0,bBottomUp);
+	if (strMode == 'map')
+	{
+		strHtml += HtmlRenderProcessMap(aNodes,0);
+	}
+	else
+	{
+		strHtml += HtmlRenderTree(aNodes,0,bBottomUp);
+	}
+
 	
 	if (AppGetProperty('logging.verbosity') == 'debug')
 	{
+		strHtml += HtmlRenderValue(nMaxLevel);
 		strHtml += HtmlRenderValue(aNodes);
 		strHtml += HtmlRenderValue(backlogitem);
 	}
@@ -122,13 +146,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-24 08:18:04</sys_created_on>
         <sys_id>fd4aa3a31bff35106c17fdd49b4bcb41</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>HtmlRenderBacklogItemDependencies</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_fd4aa3a31bff35106c17fdd49b4bcb41</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 18:58:37</sys_updated_on>
+        <sys_updated_on>2025-02-21 08:08:16</sys_updated_on>
     </sys_script_include>
 </record_update>

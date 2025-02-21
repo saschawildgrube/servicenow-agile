@@ -199,6 +199,7 @@
 		<li>Added function GetLowestPrioBacklogItem().</li>
 		<li>Added function GetBacklogRecord().</li>
 		<li>Backlog Item table is now configurable.</li>
+		<li>HtmlRenderBacklogItemDependencies() and HtmlRenderPageBacklogItemDependencies() now support the maxlevel parameter to control how deep the dependency tree should render.</li>
 	</ol>
 
 
@@ -320,13 +321,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>139</sys_mod_count>
+        <sys_mod_count>140</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-18 02:55:58</sys_updated_on>
+        <sys_updated_on>2025-02-21 08:09:49</sys_updated_on>
     </sys_ui_page>
 </record_update>

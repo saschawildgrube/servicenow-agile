@@ -11,6 +11,7 @@
 {
 	var GetParam = x_snc_devtools.GetParam;
 	var HtmlRenderTabNavigation = x_snc_devtools.HtmlRenderTabNavigation;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
 
 	var strBacklogItem = GetParam('backlogitem');
 
@@ -19,6 +20,8 @@
 	{
 		strMode = 'topdown';
 	}
+
+	var nMaxLevel = GetIntegerValue(GetParam('maxlevel'));
 	
 	var strHtml = '';
 	
@@ -29,19 +32,24 @@
 			{
 				id: 'topdown',
 				text: 'Project Structure Plan',
-				url: '?backlogitem='+strBacklogItem+'&mode=topdown'
+				url: '?backlogitem='+strBacklogItem+'&mode=topdown'+'&maxlevel='+nMaxLevel
 			},
 			{
 				id: 'bottomup',
 				text: 'Work Plan',
-				url: '?backlogitem='+strBacklogItem+'&mode=bottomup'
+				url: '?backlogitem='+strBacklogItem+'&mode=bottomup'+'&maxlevel='+nMaxLevel
+			},
+			{
+				id: 'map',
+				text: 'Map',
+				url: '?backlogitem='+strBacklogItem+'&mode=map'+'&maxlevel='+nMaxLevel
 			}
 		],
 		strMode);
 
 
 	strHtml += '<div style="padding-top: 10px;">';
-		strHtml += HtmlRenderBacklogItemDependencies(strBacklogItem,strMode);
+		strHtml += HtmlRenderBacklogItemDependencies(strBacklogItem,strMode,nMaxLevel);
 	strHtml += '</div>';
 	
 	return strHtml;
@@ -50,13 +58,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-23 22:22:12</sys_created_on>
         <sys_id>c262e5631b3b35106c17fdd49b4bcb4c</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>HtmlRenderPageBacklogItemDependencies</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_c262e5631b3b35106c17fdd49b4bcb4c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 18:58:37</sys_updated_on>
+        <sys_updated_on>2025-02-21 08:03:33</sys_updated_on>
     </sys_script_include>
 </record_update>
