@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="DELETE">
+        <operation>execute</operation>
+        <source_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 18:08:43</sys_created_on>
+        <sys_id>6c69d2ecc34952505a37f9070501318f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetInstanceListURL</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_scope_privilege_6c69d2ecc34952505a37f9070501318f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 18:08:43</sys_updated_on>
+        <target_name>GetInstanceListURL</target_name>
+        <target_scope display_value="DevTools WORK IN PROGRESS">d689f6901bd38450a89720a8ec4bcbfd</target_scope>
+        <target_type>sys_script_include</target_type>
+    </sys_scope_privilege>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</application>
+        <file_path/>
+        <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
+        <instance_name>wildwashington</instance_name>
+        <name>sys_scope_privilege_6c69d2ecc34952505a37f9070501318f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege"><sys_scope_privilege action="INSERT_OR_UPDATE"><operation>execute</operation><source_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</source_scope><status>allowed</status><sys_class_name>sys_scope_privilege</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-10-01 18:08:43</sys_created_on><sys_id>6c69d2ecc34952505a37f9070501318f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>GetInstanceListURL</sys_name><sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package><sys_policy/><sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope><sys_update_name>sys_scope_privilege_6c69d2ecc34952505a37f9070501318f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-10-01 18:08:43</sys_updated_on><target_name>GetInstanceListURL</target_name><target_scope display_value="DevTools WORK IN PROGRESS">d689f6901bd38450a89720a8ec4bcbfd</target_scope><target_type>sys_script_include</target_type></sys_scope_privilege></record_update>]]></payload>
+        <payload_hash>-218700871</payload_hash>
+        <record_name>GetInstanceListURL</record_name>
+        <reverted_from/>
+        <source>ce5bb374c3b8c2105a37f907050131e3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 18:08:43</sys_created_on>
+        <sys_id>a469d2ecc34952505a37f90705013192</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19249452db70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 18:08:43</sys_updated_on>
+        <type>Cross scope privilege</type>
+        <update_guid>6869d2ecd249525054dea67536b60491</update_guid>
+        <update_guid_history>6869d2ecd249525054dea67536b60491:-218700871</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-24 10:52:26</sys_created_on>
+        <sys_db_object display_value="" name="sys_scope_privilege">sys_scope_privilege</sys_db_object>
+        <sys_id>151e626e7076486c924f23f869ba6789</sys_id>
+        <sys_metadata>6c69d2ecc34952505a37f9070501318f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetInstanceListURL</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope_delete display_value="">2dbab3f1846b464c8f5dbbc77c31e019</sys_scope_delete>
+        <sys_update_name>sys_scope_privilege_6c69d2ecc34952505a37f9070501318f</sys_update_name>
+        <sys_update_version display_value="sys_scope_privilege_6c69d2ecc34952505a37f9070501318f">a469d2ecc34952505a37f90705013192</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-24 10:52:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
