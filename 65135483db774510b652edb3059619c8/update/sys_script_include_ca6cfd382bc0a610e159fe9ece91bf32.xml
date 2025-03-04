@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_agile.ImportDataFromAttachments</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Imports data from an attachment to the given backlog item.</description>
+        <name>ImportDataFromAttachments</name>
+        <script><![CDATA[function ImportDataFromAttachments(vBacklogItem)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var ArrayPushUnique = x_snc_devtools.ArrayPushUnique;
+	var GetValue = x_snc_devtools.GetValue;
+	var RecordInsertOrUpdate = x_snc_devtools.RecordInsertOrUpdate;
+	var RecordGetValue = x_snc_devtools.RecordGetValue;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var RecordSetValue = x_snc_devtools.RecordSetValue;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+
+	var grBacklogItem = GetBacklogItemRecord(vBacklogItem);
+	if (IsValidRecord(grBacklogItem) == false)
+	{
+		return false;
+	}
+
+	var grBacklog = GetBacklogRecord(grBacklogItem.backlog);
+	if (IsValidRecord(grBacklog) == false)
+	{
+		return false;
+	}
+
+	var grAttachment = new GlideRecord('sys_attachment');
+	grAttachment.addQuery('table_name', 'x_snc_agile_backlog_item'); 
+	grAttachment.addQuery('table_sys_id', grBacklogItem.sys_id);
+	grAttachment.query();
+
+	if (grAttachment.next())
+	{
+		var sysAttachment = new GlideSysAttachment();
+		var strCsv = sysAttachment.getContent(grAttachment);
+
+		var aArisData = x_snc_devtools.ParseCsv(strCsv);
+
+		var aPersonas = [];
+
+		var aLevel1 = [];
+		var aLevel2 = [];
+		var aLevel3 = [];
+
+		for (var nItem = 0; nItem < aArisData.length; nItem++)
+		{
+			var arisItem = aArisData[nItem];
+
+			if (nItem < 3)
+			{
+				x_snc_devtools.Log('Item '+nItem+':\n'+x_snc_devtools.RenderValue(arisItem));
+			}
+
+			var strPersona = GetValue(arisItem,'Org');
+			var strLevel1 = GetValue(arisItem,'Process');
+			var strLevel2 = GetValue(arisItem,'EPC');
+			var strLevel3 = GetValue(arisItem,'Task');
+
+			var strLevel1Name = strLevel1;
+			var strLevel2Name = strLevel1 + ' - ' + strLevel2;
+			var strLevel3Name = strLevel1 + ' - ' + strLevel2 + ' - ' + strLevel3;
+
+			aPersonas = ArrayPushUnique(aPersonas,strPersona);
+			aLevel1 = ArrayPushUnique(aLevel1,strLevel1Name);
+			aLevel2 = ArrayPushUnique(aLevel2,strLevel2Name);
+			aLevel3 = ArrayPushUnique(aLevel3,strLevel3Name);
+		
+			// Personas
+
+			var strPersonaSysId = x_snc_devtools.RecordInsertOrUpdate(
+				'x_snc_agile_persona',
+				{
+					name: strPersona
+				},
+				{
+					description: 'Imported from Aris'
+				},
+				{});
+
+			// Level 3
+			var strLevel3SysId = x_snc_devtools.RecordInsertOrUpdate(
+				'x_snc_agile_backlog_item',
+				{
+					short_description: strLevel3
+				},
+				{
+					description: 'Imported from Aris'
+				},
+				{
+					backlog: grBacklog.sys_id
+				});
+
+			// Add personas to Level 3
+			var strPersonas = RecordGetValue(
+				'x_snc_agile_backlog_item',strLevel3SysId,
+				'personas');
+			var aPersonas = GetArrayValue(strPersonas);
+			aPersonas = ArrayPushUnique(aPersonas,strPersonaSysId);
+			RecordSetValue(
+				'x_snc_agile_backlog_item',strLevel3SysId,
+				'personas',
+				GetStringValue(aPersonas));
+			
+			// Level 2
+			var strLevel2SysId = x_snc_devtools.RecordInsertOrUpdate(
+				'x_snc_agile_backlog_item',
+				{
+					short_description: strLevel2
+				},
+				{
+					description: 'Imported from Aris'
+				},
+				{
+					backlog: grBacklog.sys_id
+				});
+
+			// Add dependencies to Level 2
+			var strRequiredItems = RecordGetValue(
+				'x_snc_agile_backlog_item',strLevel2SysId,
+				'required_backlog_items');
+			var aRequiredItems = GetArrayValue(strRequiredItems);
+			aRequiredItems = ArrayPushUnique(aRequiredItems,strLevel3SysId);
+			RecordSetValue(
+				'x_snc_agile_backlog_item',strLevel2SysId,
+				'required_backlog_items',
+				GetStringValue(aRequiredItems));
+
+			// Level 1
+			var strLevel1SysId = x_snc_devtools.RecordInsertOrUpdate(
+				'x_snc_agile_backlog_item',
+				{
+					short_description: strLevel1
+				},
+				{
+					description: 'Imported from Aris'
+				},
+				{
+					backlog: grBacklog.sys_id
+				});
+
+			// Add dependencies to Level 1
+			var strRequiredItems = RecordGetValue(
+				'x_snc_agile_backlog_item',strLevel1SysId,
+				'required_backlog_items');
+			var aRequiredItems = GetArrayValue(strRequiredItems);
+			aRequiredItems = ArrayPushUnique(aRequiredItems,strLevel2SysId);
+			RecordSetValue(
+				'x_snc_agile_backlog_item',strLevel1SysId,
+				'required_backlog_items',
+				GetStringValue(aRequiredItems));
+
+			// Add dependencies to Reference Item
+			var aRequiredItems =
+				GetArrayValue(
+					RecordGetValue(
+						'x_snc_agile_backlog_item',grBacklogItem.sys_id,
+						'required_backlog_items'));
+			aRequiredItems = ArrayPushUnique(aRequiredItems,strLevel1SysId);
+			RecordSetValue(
+				'x_snc_agile_backlog_item',grBacklogItem.sys_id,
+				'required_backlog_items',
+				GetStringValue(aRequiredItems));				
+
+		}
+
+		//gs.info('Attachment Content: ' + x_snc_devtools.RenderValue(aArisData));
+
+/*
+		x_snc_devtools.Log('Personas:\n'+x_snc_devtools.RenderValue(aPersonas));
+		x_snc_devtools.Log('Level1:\n'+x_snc_devtools.RenderValue(aLevel1));
+		x_snc_devtools.Log('Level2:\n'+x_snc_devtools.RenderValue(aLevel2));
+		x_snc_devtools.Log('Level3:\n'+x_snc_devtools.RenderValue(aLevel3));
+*/
+		
+	}
+
+
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 13:50:03</sys_created_on>
+        <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ImportDataFromAttachments</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-28 13:55:32</sys_updated_on>
+    </sys_script_include>
+</record_update>
