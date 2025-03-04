@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_agile.AgileClientAPI</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>The AgileClientAPI is a client callable proxy for ajax calls to some of the functions provided by Agile.
+|
+Methods:
+* start()</description>
+        <name>AgileClientAPI</name>
+        <script><![CDATA[var AgileClientAPI = Class.create();
+AgileClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
+{
+
+	start: function()
+	{
+		/*
+		if (gs.hasRole('admin') == false)
+		{
+			return '';
+		}
+
+		var strWorkerId = '';
+		var strTrackerSourceTable = '';
+		var strTrackerType = '';
+
+		var strCommand = GetStringValue(this.getParameter("sysparm_ajax_processor_command"));
+		if (strCommand == 'app_version_baseline')
+		{
+			var strAppSysId = GetStringValue(this.getParameter("sysparm_ajax_processor_app_sys_id"));
+			if (strAppSysId == '')
+			{
+				LogError('DevToolsClientAPI.start(): AppVersionBaseline: no app_sys_id specified.');
+				return '';
+			}
+			var grApp = GetAppRecord(strAppSysId);
+			if (IsValidRecord(grApp) == false)
+			{
+				LogError('DevToolsClientAPI.start(): AppVersionBaseline: App not found.');
+				return '';
+			}
+
+			strTrackerSourceTable = 'sys_app';
+			strTrackerType = 'app_version_baseline';
+	
+			if (AppVersionBaselineIsRunning() == true)
+			{
+				LogError('DevToolsClientAPI.start(): AppVersionBaseline: Already running.');
+				return '';
+			}
+
+			var strProgressName = "Creating a new version baseline for application "+GetCleanAppName(grApp.name)+' '+grApp.version;
+
+			var params = {};
+			params['strAppSysId'] = strAppSysId;
+
+			strWorkerId = StartWorker(
+				strProgressName,
+				'x_snc_devtools.DevToolsWorkerAPI',
+				'AppVersionBaseline',
+				params);
+		}
+		if (strCommand == 'source_control_commit')
+		{
+			var strAppSysId = GetStringValue(this.getParameter("sysparm_ajax_processor_app_sys_id"));
+			if (strAppSysId == '')
+			{
+				LogError('DevToolsClientAPI.start(): SourceControlCommitToCurrentBranch: no app_sys_id specified.');
+				return '';
+			}
+			var grApp = GetAppRecord(strAppSysId);
+			if (IsValidRecord(grApp) == false)
+			{
+				LogError('DevToolsClientAPI.start(): SourceControlCommitToCurrentBranch: App not found.');
+				return '';
+			}
+
+			var strMessage = GetStringValue(this.getParameter("sysparm_ajax_processor_message"));
+
+			strTrackerSourceTable = 'sys_app';
+			strTrackerType = 'source_control_commit';
+
+			var strCurrentBranch = GetAppCurrentBranch(grApp);
+	
+			var strProgressName =
+				'Committing files to branch "'+strCurrentBranch+'" for app: '
+				+GetCleanAppName(grApp.name);
+
+			var params = {};
+			params['strAppSysId'] = strAppSysId;
+			params['strMessage'] = strMessage;
+
+			strWorkerId = StartWorker(
+				strProgressName,
+				'x_snc_devtools.DevToolsWorkerAPI',
+				'SourceControlCommitToCurrentBranch',
+				params);
+		}
+		else
+		{
+			LogError('DevToolsClientAPI.start(): Unknown command!');
+		}
+
+		
+		if (strWorkerId == '')
+		{
+			return '';
+		}
+
+		var nCountDown = 1000;
+		while (nCountDown > 0)
+		{
+			var grTracker = new GlideRecord('sys_execution_tracker');
+			grTracker.orderByDesc('sys_created_on');
+			grTracker.addQuery('source_table','=',strTrackerSourceTable);
+			grTracker.addQuery('type','=',strTrackerType);
+			grTracker.addQuery('state', 'IN', '0,1');
+			grTracker.query();
+			if (grTracker.next())
+			{
+				return GetStringValue(grTracker.sys_id);
+			}
+			nCountDown--;
+		}
+		*/
+		return strWorkerId;
+	},
+		
+
+    type: 'AgileClientAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-04 20:26:37</sys_created_on>
+        <sys_id>8cad3b8e2bcc2610e159fe9ece91bf8e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AgileClientAPI</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_8cad3b8e2bcc2610e159fe9ece91bf8e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-04 20:47:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

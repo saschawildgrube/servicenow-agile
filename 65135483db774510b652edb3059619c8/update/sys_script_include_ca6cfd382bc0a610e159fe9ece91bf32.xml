@@ -18,30 +18,74 @@
 	var RecordSetValue = x_snc_devtools.RecordSetValue;
 	var GetStringValue = x_snc_devtools.GetStringValue;
 
+
+	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
+
+	progresstracker.Start();
+	progresstracker.SetText('Importing data...');
+	progresstracker.SetPercentageProgress(1);
+
+	var result = {};
+/*
+// Report success
+progresstracker.SetResult(null,true,'Operation complete.');
+
+// or failure
+progresstracker.SetResult(null,false,'Operation failed!');
+*/
+
+
 	var grBacklogItem = GetBacklogItemRecord(vBacklogItem);
 	if (IsValidRecord(grBacklogItem) == false)
 	{
-		return false;
+		progresstracker.SetResult(null,false,'Backlog item not found!');
+		return result;
 	}
 
 	var grBacklog = GetBacklogRecord(grBacklogItem.backlog);
 	if (IsValidRecord(grBacklog) == false)
 	{
-		return false;
+		progresstracker.SetResult(null,false,'Backlog not found!');
+		return result;
 	}
 
 	var grAttachment = new GlideRecord('sys_attachment');
-	grAttachment.addQuery('table_name', 'x_snc_agile_backlog_item'); 
-	grAttachment.addQuery('table_sys_id', grBacklogItem.sys_id);
+	grAttachment.addQuery('table_name','=','x_snc_agile_backlog_item'); 
+	grAttachment.addQuery('table_sys_id','=', grBacklogItem.sys_id);
+	grAttachment.addQuery('file_name','CONTAINS', '.csv');
 	grAttachment.query();
 
+	var nFiles = grAttachment.getRowCount();
+	if (nFiles == 0)
+	{
+		return result;
+	}
+
+	var fProgressPerFile = 100 / nFiles;
+
+	var nFile = 0;
 	if (grAttachment.next())
 	{
+		progresstracker.SetText('Importing from '+grAttachment.file_name);
+		progresstracker.SetPercentageProgress(fProgressPerFile * nFile);
+
+/*
+// Do more lengthy things...
+
+progresstracker.SetText('Finishing lengthy operation...');
+progresstracker.SetPercentageProgress(90);
+
+// Do one more thing...
+
+progresstracker.SetPercentageProgress(100);
+*/
+
 		var sysAttachment = new GlideSysAttachment();
 		var strCsv = sysAttachment.getContent(grAttachment);
 
 		var aArisData = x_snc_devtools.ParseCsv(strCsv);
 
+		var aSystems = [];
 		var aPersonas = [];
 
 		var aLevel1 = [];
@@ -57,31 +101,58 @@
 				x_snc_devtools.Log('Item '+nItem+':\n'+x_snc_devtools.RenderValue(arisItem));
 			}
 
-			var strPersona = GetValue(arisItem,'Org');
-			var strLevel1 = GetValue(arisItem,'Process');
-			var strLevel2 = GetValue(arisItem,'EPC');
-			var strLevel3 = GetValue(arisItem,'Task');
+			var strSystem = GetStringValue(GetValue(arisItem,'System'));
+			var strPersona = GetStringValue(GetValue(arisItem,'Persona'));
+			var strLevel1 = GetStringValue(GetValue(arisItem,'L1'));
+			var strLevel2 = GetStringValue(GetValue(arisItem,'L2'));
+			var strLevel3 = GetStringValue(GetValue(arisItem,'L3'));
+
+			strSystem = strSystem.trim();
+			strPersona = strPersona.trim();
+
 
 			var strLevel1Name = strLevel1;
 			var strLevel2Name = strLevel1 + ' - ' + strLevel2;
 			var strLevel3Name = strLevel1 + ' - ' + strLevel2 + ' - ' + strLevel3;
 
-			aPersonas = ArrayPushUnique(aPersonas,strPersona);
 			aLevel1 = ArrayPushUnique(aLevel1,strLevel1Name);
 			aLevel2 = ArrayPushUnique(aLevel2,strLevel2Name);
 			aLevel3 = ArrayPushUnique(aLevel3,strLevel3Name);
 		
-			// Personas
 
-			var strPersonaSysId = x_snc_devtools.RecordInsertOrUpdate(
-				'x_snc_agile_persona',
-				{
-					name: strPersona
-				},
-				{
-					description: 'Imported from Aris'
-				},
-				{});
+			// Systems
+			if (strSystem != '')
+			{
+				aSystems = ArrayPushUnique(aSystems,strSystem);
+
+				var strSystemSysId = x_snc_devtools.RecordInsertOrUpdate(
+					'x_snc_agile_backlog_item',
+					{
+						short_description: strSystem
+					},
+					{
+						description: 'Imported'
+					},
+					{
+						backlog: grBacklog.sys_id
+					});			
+			}
+
+			// Personas
+			if (strPersona != '')
+			{			
+				aPersonas = ArrayPushUnique(aPersonas,strPersona);
+
+				var strPersonaSysId = x_snc_devtools.RecordInsertOrUpdate(
+					'x_snc_agile_persona',
+					{
+						name: strPersona
+					},
+					{
+						description: 'Imported'
+					},
+					{});
+			}
 
 			// Level 3
 			var strLevel3SysId = x_snc_devtools.RecordInsertOrUpdate(
@@ -90,22 +161,25 @@
 					short_description: strLevel3
 				},
 				{
-					description: 'Imported from Aris'
+					description: 'Imported'
 				},
 				{
 					backlog: grBacklog.sys_id
 				});
 
 			// Add personas to Level 3
-			var strPersonas = RecordGetValue(
-				'x_snc_agile_backlog_item',strLevel3SysId,
-				'personas');
-			var aPersonas = GetArrayValue(strPersonas);
-			aPersonas = ArrayPushUnique(aPersonas,strPersonaSysId);
-			RecordSetValue(
-				'x_snc_agile_backlog_item',strLevel3SysId,
-				'personas',
-				GetStringValue(aPersonas));
+			if (strPersona != '')
+			{
+				var strPersonas = RecordGetValue(
+					'x_snc_agile_backlog_item',strLevel3SysId,
+					'personas');
+				var aPersonas = GetArrayValue(strPersonas);
+				aPersonas = ArrayPushUnique(aPersonas,strPersonaSysId);
+				RecordSetValue(
+					'x_snc_agile_backlog_item',strLevel3SysId,
+					'personas',
+					GetStringValue(aPersonas));
+			}
 			
 			// Level 2
 			var strLevel2SysId = x_snc_devtools.RecordInsertOrUpdate(
@@ -114,7 +188,7 @@
 					short_description: strLevel2
 				},
 				{
-					description: 'Imported from Aris'
+					description: 'Imported'
 				},
 				{
 					backlog: grBacklog.sys_id
@@ -138,7 +212,7 @@
 					short_description: strLevel1
 				},
 				{
-					description: 'Imported from Aris'
+					description: 'Imported'
 				},
 				{
 					backlog: grBacklog.sys_id
@@ -154,6 +228,20 @@
 				'x_snc_agile_backlog_item',strLevel1SysId,
 				'required_backlog_items',
 				GetStringValue(aRequiredItems));
+
+			// Add system dependency to Level 3
+			if (strSystem != '')
+			{
+				var strRequiredItems = RecordGetValue(
+					'x_snc_agile_backlog_item',strLevel3SysId,
+					'required_backlog_items');
+				var aRequiredItems = GetArrayValue(strRequiredItems);
+				aRequiredItems = ArrayPushUnique(aRequiredItems,strSystemSysId);
+				RecordSetValue(
+					'x_snc_agile_backlog_item',strLevel3SysId,
+					'required_backlog_items',
+					GetStringValue(aRequiredItems));				
+			}
 
 			// Add dependencies to Reference Item
 			var aRequiredItems =
@@ -179,21 +267,22 @@
 */
 		
 	}
+	progresstracker.SetPercentageProgress(100);
+	progresstracker.SetText('Import complete.');
 
-
-	return true;
+	return result;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-02-28 13:50:03</sys_created_on>
         <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>ImportDataFromAttachments</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-28 13:55:32</sys_updated_on>
+        <sys_updated_on>2025-03-04 20:44:40</sys_updated_on>
     </sys_script_include>
 </record_update>
