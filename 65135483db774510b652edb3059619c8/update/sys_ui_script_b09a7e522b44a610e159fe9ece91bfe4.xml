@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Client side user interface to the data import process.</description>
+        <global>true</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>x_snc_agile.ImportDataFromAttachments</name>
+        <script><![CDATA[function ImportDataFromAttachments(strBacklogItemSysId)
+{
+	var strBacklogItemSysId = GetStringValue(strBacklogItemSysId);
+	var strTitle = 'Import data';
+	
+	var today = new Date(Date.now());
+	var strDate = today.toISOString();
+	strDate = strDate.substring(0,10);
+
+	var bUserConfirmation = false;
+
+	StateStart();
+
+	function StateUserConfirmation()
+	{
+		DoModalConfirm(
+			strTitle,
+			strMessage
+			+'\n\n'
+			+'Ready to import?',
+			StateUserConfirmationUserResponse);
+	}
+
+	function StateUserConfirmationUserResponse(bResult)
+	{
+		if (bResult == false)
+		{
+			StateEnd();
+			return;
+		}
+		bUserConfirmation = true;
+		StateStart();		
+	}
+
+			
+
+	function OnExecutionComplete(dialog,tracker)
+	{
+		var buttonViewResults = GetElementById('sysparm_button_view_results');
+		if (buttonViewResults)
+		{
+			buttonViewResults.style.display = "none";
+		}
+	
+		var buttonClose = GetElementById('sysparm_button_close');
+        if (buttonClose)
+		{
+            buttonClose.on('click', function()
+				{
+					StateEnd();
+				});
+        }
+	}
+	
+	function OnExecutionFailed(dialog)
+	{
+		StateError('Data import failed!');
+	}
+	
+	function OnStatusUpdate(dialog)
+	{
+	}
+
+	function StateAbort()
+	{
+		DoModalMessage(
+			strTitle,
+			'Aborting...',
+			StateEnd);
+		return;	
+	}
+
+	function StateError(strErrorMessage)
+	{
+		DoModalMessage(
+			strTitle,
+			'ERROR: '+strErrorMessage,
+			StateEnd);		
+		return;	
+	}	
+
+	function StateEnd()
+	{
+		RedirectToRecord('x_snc_agile_backlog_item',strBacklogItemSysId,'');
+	}
+
+	function StateStart()
+	{
+		if (bUserConfirmation == false)
+		{
+			StateUserConfirmation();
+			return;
+		}
+
+		DoModalProgress(
+			strTitle,
+			'Import data',
+			'x_snc_agile.AgileClientAPI',
+			{
+				command: 'agile_import',
+				backlog_item_sys_id: strBacklogItemSysId
+			},
+			{
+				close:
+				{
+					title: 'Close'
+				}
+			},
+			{
+				callbackOnExecutionComplete: OnExecutionComplete,
+				callbackOnExecutionFailed: OnExecutionFailed,
+				callbackOnStatusUpdate: OnStatusUpdate,
+			});
+	}
+
+
+}]]></script>
+        <script_name>ImportDataFromAttachments</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-05 10:17:37</sys_created_on>
+        <sys_id>b09a7e522b44a610e159fe9ece91bfe4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_snc_agile.ImportDataFromAttachments</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_ui_script_b09a7e522b44a610e159fe9ece91bfe4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-05 10:33:09</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+        <x_snc_devtools_global>true</x_snc_devtools_global>
+    </sys_ui_script>
+</record_update>

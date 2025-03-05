@@ -64,7 +64,7 @@ progresstracker.SetResult(null,false,'Operation failed!');
 	var fProgressPerFile = 100 / nFiles;
 
 	var nFile = 0;
-	if (grAttachment.next())
+	while (grAttachment.next())
 	{
 		progresstracker.SetText('Importing from '+grAttachment.file_name);
 		progresstracker.SetPercentageProgress(fProgressPerFile * nFile);
@@ -121,29 +121,32 @@ progresstracker.SetPercentageProgress(100);
 		
 
 			// Systems
+			var strSystemSysId = '';
 			if (strSystem != '')
 			{
 				aSystems = ArrayPushUnique(aSystems,strSystem);
 
-				var strSystemSysId = x_snc_devtools.RecordInsertOrUpdate(
+				strSystemSysId = x_snc_devtools.RecordInsertOrUpdate(
 					'x_snc_agile_backlog_item',
 					{
-						short_description: strSystem
+						short_description: strSystem,
+						backlog: grBacklog.sys_id
 					},
 					{
 						description: 'Imported'
 					},
 					{
-						backlog: grBacklog.sys_id
+						
 					});			
 			}
 
 			// Personas
+			var strPersonaSysId = '';
 			if (strPersona != '')
 			{			
 				aPersonas = ArrayPushUnique(aPersonas,strPersona);
 
-				var strPersonaSysId = x_snc_devtools.RecordInsertOrUpdate(
+				strPersonaSysId = x_snc_devtools.RecordInsertOrUpdate(
 					'x_snc_agile_persona',
 					{
 						name: strPersona
@@ -158,17 +161,18 @@ progresstracker.SetPercentageProgress(100);
 			var strLevel3SysId = x_snc_devtools.RecordInsertOrUpdate(
 				'x_snc_agile_backlog_item',
 				{
-					short_description: strLevel3
+					short_description: strLevel3,
+					backlog: grBacklog.sys_id
 				},
 				{
 					description: 'Imported'
 				},
 				{
-					backlog: grBacklog.sys_id
+					
 				});
 
 			// Add personas to Level 3
-			if (strPersona != '')
+			if (strPersonaSysId != '')
 			{
 				var strPersonas = RecordGetValue(
 					'x_snc_agile_backlog_item',strLevel3SysId,
@@ -185,13 +189,14 @@ progresstracker.SetPercentageProgress(100);
 			var strLevel2SysId = x_snc_devtools.RecordInsertOrUpdate(
 				'x_snc_agile_backlog_item',
 				{
-					short_description: strLevel2
+					short_description: strLevel2,
+					backlog: grBacklog.sys_id
 				},
 				{
 					description: 'Imported'
 				},
 				{
-					backlog: grBacklog.sys_id
+					
 				});
 
 			// Add dependencies to Level 2
@@ -209,13 +214,14 @@ progresstracker.SetPercentageProgress(100);
 			var strLevel1SysId = x_snc_devtools.RecordInsertOrUpdate(
 				'x_snc_agile_backlog_item',
 				{
-					short_description: strLevel1
+					short_description: strLevel1,
+					backlog: grBacklog.sys_id
 				},
 				{
 					description: 'Imported'
 				},
 				{
-					backlog: grBacklog.sys_id
+					
 				});
 
 			// Add dependencies to Level 1
@@ -230,7 +236,7 @@ progresstracker.SetPercentageProgress(100);
 				GetStringValue(aRequiredItems));
 
 			// Add system dependency to Level 3
-			if (strSystem != '')
+			if (strSystemSysId != '')
 			{
 				var strRequiredItems = RecordGetValue(
 					'x_snc_agile_backlog_item',strLevel3SysId,
@@ -276,13 +282,13 @@ progresstracker.SetPercentageProgress(100);
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-02-28 13:50:03</sys_created_on>
         <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>ImportDataFromAttachments</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-03-04 20:44:40</sys_updated_on>
+        <sys_updated_on>2025-03-04 21:09:01</sys_updated_on>
     </sys_script_include>
 </record_update>
