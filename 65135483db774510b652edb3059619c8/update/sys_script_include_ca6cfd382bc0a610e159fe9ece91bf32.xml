@@ -26,19 +26,12 @@
 	progresstracker.SetPercentageProgress(1);
 
 	var result = {};
-/*
-// Report success
-progresstracker.SetResult(null,true,'Operation complete.');
-
-// or failure
-progresstracker.SetResult(null,false,'Operation failed!');
-*/
-
 
 	var grBacklogItem = GetBacklogItemRecord(vBacklogItem);
 	if (IsValidRecord(grBacklogItem) == false)
 	{
 		progresstracker.SetResult(null,false,'Backlog item not found!');
+		LogError('ImportDataFromAttachments: Backlog item not found!');
 		return result;
 	}
 
@@ -46,6 +39,7 @@ progresstracker.SetResult(null,false,'Operation failed!');
 	if (IsValidRecord(grBacklog) == false)
 	{
 		progresstracker.SetResult(null,false,'Backlog not found!');
+		LogError('ImportDataFromAttachments: Backlog not found!');
 		return result;
 	}
 
@@ -58,6 +52,8 @@ progresstracker.SetResult(null,false,'Operation failed!');
 	var nFiles = grAttachment.getRowCount();
 	if (nFiles == 0)
 	{
+		progresstracker.SetResult(null,true,'No files to import');
+		Log('ImportDataFromAttachments: No files to import!');
 		return result;
 	}
 
@@ -66,19 +62,10 @@ progresstracker.SetResult(null,false,'Operation failed!');
 	var nFile = 0;
 	while (grAttachment.next())
 	{
+		Log('Import from '+grAttachment.file_name+'');
+
 		progresstracker.SetText('Importing from '+grAttachment.file_name);
 		progresstracker.SetPercentageProgress(fProgressPerFile * nFile);
-
-/*
-// Do more lengthy things...
-
-progresstracker.SetText('Finishing lengthy operation...');
-progresstracker.SetPercentageProgress(90);
-
-// Do one more thing...
-
-progresstracker.SetPercentageProgress(100);
-*/
 
 		var sysAttachment = new GlideSysAttachment();
 		var strCsv = sysAttachment.getContent(grAttachment);
@@ -96,10 +83,7 @@ progresstracker.SetPercentageProgress(100);
 		{
 			var arisItem = aArisData[nItem];
 
-			if (nItem < 3)
-			{
-				x_snc_devtools.Log('Item '+nItem+':\n'+x_snc_devtools.RenderValue(arisItem));
-			}
+			Log('Item '+nItem+':\n'+x_snc_devtools.RenderValue(arisItem));
 
 			var strSystem = GetStringValue(GetValue(arisItem,'System'));
 			var strPersona = GetStringValue(GetValue(arisItem,'Persona'));
@@ -262,19 +246,12 @@ progresstracker.SetPercentageProgress(100);
 				GetStringValue(aRequiredItems));				
 
 		}
-
-		//gs.info('Attachment Content: ' + x_snc_devtools.RenderValue(aArisData));
-
-/*
-		x_snc_devtools.Log('Personas:\n'+x_snc_devtools.RenderValue(aPersonas));
-		x_snc_devtools.Log('Level1:\n'+x_snc_devtools.RenderValue(aLevel1));
-		x_snc_devtools.Log('Level2:\n'+x_snc_devtools.RenderValue(aLevel2));
-		x_snc_devtools.Log('Level3:\n'+x_snc_devtools.RenderValue(aLevel3));
-*/
-		
 	}
 	progresstracker.SetPercentageProgress(100);
 	progresstracker.SetText('Import complete.');
+	progresstracker.SetResult(null,true,'Import complete');
+	
+	Log('ImportDataFromAttachments: Import complete');
 
 	return result;
 }]]></script>
@@ -282,13 +259,13 @@ progresstracker.SetPercentageProgress(100);
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-02-28 13:50:03</sys_created_on>
         <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>ImportDataFromAttachments</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-03-04 21:09:01</sys_updated_on>
+        <sys_updated_on>2025-03-05 13:23:52</sys_updated_on>
     </sys_script_include>
 </record_update>
