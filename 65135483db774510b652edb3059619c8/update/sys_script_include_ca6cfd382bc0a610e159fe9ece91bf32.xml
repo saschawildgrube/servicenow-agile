@@ -17,13 +17,14 @@
 	var GetArrayValue = x_snc_devtools.GetArrayValue;
 	var RecordSetValue = x_snc_devtools.RecordSetValue;
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var StringFormat = x_snc_devtools.StringFormat;
 
 
 	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
 
 	progresstracker.Start();
 	progresstracker.SetText('Importing data...');
-	progresstracker.SetPercentageProgress(1);
+	progresstracker.SetPercentageProgress(0);
 
 	var result = {};
 
@@ -31,7 +32,6 @@
 	if (IsValidRecord(grBacklogItem) == false)
 	{
 		progresstracker.SetResult(null,false,'Backlog item not found!');
-		LogError('ImportDataFromAttachments: Backlog item not found!');
 		return result;
 	}
 
@@ -39,7 +39,6 @@
 	if (IsValidRecord(grBacklog) == false)
 	{
 		progresstracker.SetResult(null,false,'Backlog not found!');
-		LogError('ImportDataFromAttachments: Backlog not found!');
 		return result;
 	}
 
@@ -53,24 +52,22 @@
 	if (nFiles == 0)
 	{
 		progresstracker.SetResult(null,true,'No files to import');
-		Log('ImportDataFromAttachments: No files to import!');
 		return result;
 	}
 
-	var fProgressPerFile = 100 / nFiles;
+	var fPercentagePerFile = 100 / nFiles;
 
 	var nFile = 0;
 	while (grAttachment.next())
 	{
-		Log('Import from '+grAttachment.file_name+'');
-
-		progresstracker.SetText('Importing from '+grAttachment.file_name);
-		progresstracker.SetPercentageProgress(fProgressPerFile * nFile);
+		var strFileName = GetStringValue(grAttachment.file_name);
+		progresstracker.SetText('Importing from '+strFileName);
+		progresstracker.SetPercentageProgress(fPercentagePerFile * nFile);
 
 		var sysAttachment = new GlideSysAttachment();
 		var strCsv = sysAttachment.getContent(grAttachment);
 
-		var aArisData = x_snc_devtools.ParseCsv(strCsv);
+		var aData = x_snc_devtools.ParseCsv(strCsv);
 
 		var aSystems = [];
 		var aPersonas = [];
@@ -79,17 +76,29 @@
 		var aLevel2 = [];
 		var aLevel3 = [];
 
-		for (var nItem = 0; nItem < aArisData.length; nItem++)
+		for (var nItem = 0; nItem < aData.length; nItem++)
 		{
-			var arisItem = aArisData[nItem];
+			var item = aData[nItem];
 
-			Log('Item '+nItem+':\n'+x_snc_devtools.RenderValue(arisItem));
+			progresstracker.SetText(
+				StringFormat(
+					'Importing row {1} of {2} from {0}.',
+					strFileName,
+					nItem,
+					aData.length));
 
-			var strSystem = GetStringValue(GetValue(arisItem,'System'));
-			var strPersona = GetStringValue(GetValue(arisItem,'Persona'));
-			var strLevel1 = GetStringValue(GetValue(arisItem,'L1'));
-			var strLevel2 = GetStringValue(GetValue(arisItem,'L2'));
-			var strLevel3 = GetStringValue(GetValue(arisItem,'L3'));
+			var fProgressInFile = nItem / aData.length;
+
+			var fPercentageTotal =
+				(fPercentagePerFile * nFile)
+				+ (fPercentagePerFile * fProgressInFile);
+			progresstracker.SetPercentageProgress(fPercentageTotal);
+
+			var strSystem = GetStringValue(GetValue(item,'System'));
+			var strPersona = GetStringValue(GetValue(item,'Persona'));
+			var strLevel1 = GetStringValue(GetValue(item,'L1'));
+			var strLevel2 = GetStringValue(GetValue(item,'L2'));
+			var strLevel3 = GetStringValue(GetValue(item,'L3'));
 
 			strSystem = strSystem.trim();
 			strPersona = strPersona.trim();
@@ -244,28 +253,26 @@
 				'x_snc_agile_backlog_item',grBacklogItem.sys_id,
 				'required_backlog_items',
 				GetStringValue(aRequiredItems));				
-
 		}
+		nFile++;
 	}
 	progresstracker.SetPercentageProgress(100);
 	progresstracker.SetText('Import complete.');
 	progresstracker.SetResult(null,true,'Import complete');
 	
-	Log('ImportDataFromAttachments: Import complete');
-
 	return result;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-02-28 13:50:03</sys_created_on>
         <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>ImportDataFromAttachments</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-03-05 13:23:52</sys_updated_on>
+        <sys_updated_on>2025-03-07 10:49:42</sys_updated_on>
     </sys_script_include>
 </record_update>
