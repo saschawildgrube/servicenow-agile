@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_agile.ImportDataFromAttachmentsCheck</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns an empty string if CSV files are attached to the given backlog item. If not, the user is informed about how the data import works.</description>
+        <name>ImportDataFromAttachmentsCheck</name>
+        <script><![CDATA[function ImportDataFromAttachmentsCheck(vBacklogItem)
+{
+	var grBacklogItem = GetBacklogItemRecord(vBacklogItem);
+	if (grBacklogItem == false)
+	{
+		return 'No backlog item was found.';
+	}
+	var grAttachment = new GlideRecord('sys_attachment');
+	grAttachment.addQuery('table_name','=','x_snc_agile_backlog_item'); 
+	grAttachment.addQuery('table_sys_id','=', grBacklogItem.sys_id);
+	grAttachment.addQuery('file_name','CONTAINS', '.csv');
+	grAttachment.query();
+
+	var nFiles = grAttachment.getRowCount();
+
+	if (nFiles > 0)
+	{
+		return '';
+	}
+
+	var strText = 'No CSV files are attached to this backlog item. Please refer to the manual on how to import backlog item and persona data from CSV files.';
+
+	return strText;
+
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-13 18:08:48</sys_created_on>
+        <sys_id>a1f37dcd33d0e610037396382e5c7b42</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>ImportDataFromAttachmentsCheck</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_a1f37dcd33d0e610037396382e5c7b42</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-13 18:23:11</sys_updated_on>
+    </sys_script_include>
+</record_update>
