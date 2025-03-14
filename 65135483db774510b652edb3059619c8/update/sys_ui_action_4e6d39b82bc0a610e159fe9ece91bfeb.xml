@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name>agile_backlogitem_lowprio</action_name>
+        <action_name>agile_import</action_name>
         <active>true</active>
-        <client>false</client>
+        <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
-        <comments>Sets the current backlog item to the end of the queue.</comments>
+        <comments>Imports backlog item data from attached CSV files.</comments>
         <condition/>
         <form_action>true</form_action>
-        <form_button>true</form_button>
+        <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
         <form_context_menu>false</form_context_menu>
-        <form_link>false</form_link>
+        <form_link>true</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
-        <form_style>destructive</form_style>
+        <form_style/>
         <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint/>
         <isolate_script>false</isolate_script>
@@ -27,39 +27,33 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Low Prio</name>
-        <onclick/>
-        <order>101</order>
-        <script><![CDATA[var nLowestPrioOrder = 0;
-
-var grLastBacklogItem = GetLowestPrioBacklogItem(); 
-if (grLastBacklogItem != false)
+        <name>Import from CSV</name>
+        <onclick>onClickAgileImport()</onclick>
+        <order>100</order>
+        <script><![CDATA[function onClickAgileImport()
 {
-	nLowestPrioOrder = grLastBacklogItem.order;
+	ImportDataFromAttachments(GetCurrentRecordSysId());
 }
-current.order = nLowestPrioOrder;
-current.update();
-x_snc_devtools.RedirectToRecord(current);
-gs.addInfoMessage(x_snc_devtools.StringFormat('Backlog item {0} is moved to the end of the backlog!',current.number));]]></script>
+]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-10-07 10:49:22</sys_created_on>
+        <sys_created_on>2025-02-28 13:54:00</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>66783ae81bbdb5106c17fdd49b4bcb42</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Low Prio</sys_name>
+        <sys_id>4e6d39b82bc0a610e159fe9ece91bfeb</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Import from CSV</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
-        <sys_update_name>sys_ui_action_66783ae81bbdb5106c17fdd49b4bcb42</sys_update_name>
+        <sys_update_name>sys_ui_action_4e6d39b82bc0a610e159fe9ece91bfeb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-05 18:32:32</sys_updated_on>
+        <sys_updated_on>2025-03-05 12:42:37</sys_updated_on>
         <table>x_snc_agile_backlog_item</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

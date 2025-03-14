@@ -9,6 +9,7 @@
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 <div style="padding-left: 20px;">
 <span style="visibility: hidden;">_CUT_HERE_</span>
+
 	<g2:no_escape>$[
 		var docapi = new x_snc_devtools.DocumentationAPI('x_snc_agile');
 		docapi.RenderHeader();
@@ -147,6 +148,65 @@
 		<li>Mark backlog items associated to the application in "Ready for PROD" as "Review in PROD".</li>
 	</ol>
 
+	<h2>Data Import</h2>
+	<p>Backlog item and persona data can be imported for CSV files attached to a backlog item.</p>
+	<p>See the following example:</p>
+
+	<style>
+		table, th, td
+		{
+			border: 1px solid;
+			padding: 2px;
+			vertical-align: top
+		}
+	</style>
+
+	<table>
+		<tbody>
+			<tr>
+				<th>Level1</th>
+				<th>Level2</th>
+				<th>short_description</th>
+				<th>Persona</th>
+			</tr>
+			<tr>
+				<td>Epic 1</td>
+				<td></td>
+				<td>Story 1</td>
+				<td>End User</td>
+			</tr>
+			<tr>
+				<td>Epic 1</td>
+				<td></td>
+				<td>Story 2</td>
+				<td>Service Desk Agent</td>
+			</tr>
+			<tr>
+				<td>Epic 1</td>
+				<td></td>
+				<td>Story 2</td>
+				<td>Service Desk Manager</td>
+			</tr>
+			<tr>
+				<td>Epic 1</td>
+				<td>Story 2</td>
+				<td>Task 2.1</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<p></p>
+	<p>Importing a CSV files with this content would result in the creation of the following records (if they do not exist already):</p>
+	<ol>
+		<li>Persona "End User"</li>
+		<li>Persona "Service Desk Agent"</li>
+		<li>Persona "Service Desk Manager"</li>
+		<li>Backlog Item "Story 1" associated to persona "End User"</li>
+		<li>Backlog Item "Task 2.1"</li>
+		<li>Backlog Item "Story 2" depending on backlog item "Task 2.1" and associated to persona "Service Desk Agent" and "Service Desk Manager"</li>
+		<li>Backlog Item "Epic 1" depending on backlog items "Story 1" and "Story 2"</li>
+	</ol> 
+	<p>The backlog item to which the data is imported will have a dependency to the backlog item "Epic 1".</p> 
 	
 	<h2>Reference</h2>
 
@@ -165,18 +225,6 @@
 <!--
 	<h3>Script Includes</h3>
 	<g2:no_escape>$[docapi.RenderScriptIncludes()]</g2:no_escape>
-	
-	<h3>UI Scripts</h3>
-	<g2:no_escape>$[docapi.RenderUIScripts()]</g2:no_escape>	
-	
-	<h3>Test step configurations</h3>
-	<g2:no_escape>$[docapi.RenderTestStepConfigurations()]</g2:no_escape>
-	
-	<h3>Extension Points</h3>
-	<g2:no_escape>$[docapi.RenderExtensionPoints()]</g2:no_escape>		
-
-	<h3>Business Rules</h3>
-	<g2:no_escape>$[docapi.RenderBusinessRules()]</g2:no_escape>	
 -->	
 
 	<h3>Dependencies</h3>
@@ -191,6 +239,20 @@
 	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
 	
 	<h2>Release Notes</h2>
+
+	<h3>1.11.0 - 2025-03-14</h3>
+	<ol>
+		<li>DevTools 1.114.0 is required because of HtmlRenderProcessMap().</li>
+		<li>The dependencies view now support the "Map" mode.</li>
+		<li>Added import from CSV capability.</li>
+		<li>Added function GetBacklogItemRecord().</li>
+		<li>Added function CreateNewRequiredBacklogItem().</li>
+		<li>Added function GetLowestPrioBacklogItem().</li>
+		<li>Added function GetBacklogRecord().</li>
+		<li>Backlog Item table is now configurable.</li>
+		<li>HtmlRenderBacklogItemDependencies() and HtmlRenderPageBacklogItemDependencies() now support the maxlevel parameter to control how deep the dependency tree should render.</li>
+	</ol>
+
 
 	<h3>1.10.0 - 2024-10-01</h3>
 	<ol>
@@ -310,13 +372,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>135</sys_mod_count>
+        <sys_mod_count>156</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 18:33:18</sys_updated_on>
+        <sys_updated_on>2025-03-14 18:23:24</sys_updated_on>
     </sys_ui_page>
 </record_update>

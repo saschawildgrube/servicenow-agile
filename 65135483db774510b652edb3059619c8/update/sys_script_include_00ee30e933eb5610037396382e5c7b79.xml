@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_agile.GetBacklogRecord</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns the backlog record based on the given parameter. If the parameter is null and there is exactly one backlog record, this record is returned.</description>
+        <name>GetBacklogRecord</name>
+        <script><![CDATA[function GetBacklogRecord(vBacklog)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+
+	if (vBacklog == null)
+	{
+		var grBacklog = new GlideRecord('x_snc_agile_backlog');
+		grBacklog.query();
+		if (grBacklog.getRowCount() == 1)
+		{
+			if (grBacklog.next() == true)
+			{
+				return grBacklog;
+			}
+		}
+		return false;
+	}
+
+	var grBacklog = GetRecord('x_snc_agile_backlog',vBacklog);
+	if (grBacklog != false)
+	{
+		return grBacklog;
+	}
+
+	var grBacklog = new GlideRecord('x_snc_agile_backlog');
+	grBacklog.addQuery('name','=',GetStringValue(vBacklog));
+	grBacklog.query();
+	if (grBacklog.getRowCount() == 1)
+	{
+		if (grBacklog.next() == true)
+		{
+			return grBacklog;
+		}
+	}
+
+	return false;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 20:53:06</sys_created_on>
+        <sys_id>00ee30e933eb5610037396382e5c7b79</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>GetBacklogRecord</sys_name>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_00ee30e933eb5610037396382e5c7b79</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-14 18:33:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

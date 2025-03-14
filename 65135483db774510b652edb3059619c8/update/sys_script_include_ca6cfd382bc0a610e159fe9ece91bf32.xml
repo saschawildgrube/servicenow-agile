@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_agile.ImportDataFromAttachments</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Imports data from an attachment to the given backlog item.</description>
+        <name>ImportDataFromAttachments</name>
+        <script><![CDATA[function ImportDataFromAttachments(vBacklogItem)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var ArrayPushUnique = x_snc_devtools.ArrayPushUnique;
+	var GetValue = x_snc_devtools.GetValue;
+	var RecordInsertOrUpdate = x_snc_devtools.RecordInsertOrUpdate;
+	var RecordGetValue = x_snc_devtools.RecordGetValue;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var RecordSetValue = x_snc_devtools.RecordSetValue;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	var StringFormat = x_snc_devtools.StringFormat;
+
+
+	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
+
+	progresstracker.Start();
+	progresstracker.SetText('Importing data...');
+	progresstracker.SetPercentageProgress(0);
+
+	var result = {};
+
+	var grBacklogItem = GetBacklogItemRecord(vBacklogItem);
+	if (IsValidRecord(grBacklogItem) == false)
+	{
+		result.message = 'Backlog item not found!';
+		progresstracker.SetResult(result,false,result.message);
+		return result;
+	}
+
+	var grBacklog = GetBacklogRecord(grBacklogItem.backlog);
+	if (IsValidRecord(grBacklog) == false)
+	{
+		result.message = 'Backlog not found!';
+		progresstracker.SetResult(result,false,strMessage);
+		return result;
+	}
+
+	var grAttachment = new GlideRecord('sys_attachment');
+	grAttachment.addQuery('table_name','=','x_snc_agile_backlog_item'); 
+	grAttachment.addQuery('table_sys_id','=', grBacklogItem.sys_id);
+	grAttachment.addQuery('file_name','CONTAINS', '.csv');
+	grAttachment.query();
+
+	var nFiles = grAttachment.getRowCount();
+	if (nFiles == 0)
+	{
+		result.message = 'No files to import';
+		progresstracker.SetResult(result,true,'No files to import');
+		return result;
+	}
+
+	var fPercentagePerFile = 100 / nFiles;
+
+	var nFile = 0;
+	var nInvalidItems = 0;
+	var nImportedItems = 0;
+	var nImportedPersonas = 0;
+	while (grAttachment.next())
+	{
+		var strFileName = GetStringValue(grAttachment.file_name);
+		progresstracker.SetText('Importing from '+strFileName);
+		progresstracker.SetPercentageProgress(fPercentagePerFile * nFile);
+
+		var sysAttachment = new GlideSysAttachment();
+		var strCsv = sysAttachment.getContent(grAttachment);
+
+		var aData = x_snc_devtools.ParseCsv(strCsv);
+
+		var aSystems = [];
+		var aPersonas = [];
+
+		for (var nItem = 0; nItem < aData.length; nItem++)
+		{
+			var item = aData[nItem];
+
+			progresstracker.SetText(
+				StringFormat(
+					'Importing row {1} of {2} from {0}.',
+					strFileName,
+					nItem,
+					aData.length));
+
+			var fProgressInFile = nItem / aData.length;
+
+			var fPercentageTotal =
+				(fPercentagePerFile * nFiles)
+				+ (fPercentagePerFile * fProgressInFile);
+			progresstracker.SetPercentageProgress(fPercentageTotal);
+
+			// Get the 'System'
+			var aSystemLabels = [
+					'System',
+					'Integration',
+					'Interface',
+					'UI'
+				];
+			var strSystem = '';	
+			for (var nSystemLabel = 0; nSystemLabel < aSystemLabels.length; nSystemLabel++)
+			{
+				var strSystemCandidate = 
+					GetStringValue(
+						GetValue(item,aSystemLabels[nSystemLabel]));
+				strSystemCandidate = strSystemCandidate.trim();
+				if (strSystemCandidate != '')
+				{
+					strSystem = strSystemCandidate;
+				}
+			}	
+
+			// Get the Persona
+			var strPersona = GetStringValue(GetValue(item,'Persona'));
+			
+			// Get the path of item names
+			var aPathLabels = [
+				'1','L1','Level1',
+				'2','L2','Level2',
+				'3','L3','Level3',
+				'4','L4','Level4',
+				'5','L5','Level5',
+				'Parent',
+				'Name',
+				'Title',
+				'Task',
+				'short_description'
+			];
+			aPath = [];
+			for (var nPathLabel = 0; nPathLabel < aPathLabels.length; nPathLabel++)
+			{
+				var strNameCandidate = 
+					GetStringValue(
+						GetValue(item,aPathLabels[nPathLabel]));
+				strNameCandidate = strNameCandidate.trim();
+				if (strNameCandidate != '')
+				{
+					aPath.push(strNameCandidate);
+				}
+			}
+			aPath.reverse();
+
+			// Add System
+			var strSystemSysId = '';
+			if (strSystem != '')
+			{
+				aSystems = ArrayPushUnique(aSystems,strSystem);
+
+				strSystemSysId = x_snc_devtools.RecordInsertOrUpdate(
+					'x_snc_agile_backlog_item',
+					{
+						short_description: strSystem,
+						backlog: grBacklog.sys_id
+					},
+					{
+						description: 'Imported'
+					},
+					{
+						
+					});		
+
+				nImportedItems++;	
+			}
+
+			// Add Persona
+			var strPersonaSysId = '';
+			if (strPersona != '')
+			{			
+				aPersonas = ArrayPushUnique(aPersonas,strPersona);
+
+				strPersonaSysId = x_snc_devtools.RecordInsertOrUpdate(
+					'x_snc_agile_persona',
+					{
+						name: strPersona
+					},
+					{
+						description: 'Imported'
+					},
+					{});
+
+				nImportedPersonas++;
+			}
+
+			// Add Items
+			if (aPath.length == 0)
+			{
+				nInvalidItems++;
+			}
+			else
+			{
+
+				
+				var strLevel1 = GetStringValue(GetValue(item,'L1'));
+				var strLevel2 = GetStringValue(GetValue(item,'L2'));
+				var strLevel3 = GetStringValue(GetValue(item,'L3'));
+
+				strLowerLevelItemSysId = '';
+
+				for (var nLevel = 0; nLevel < aPath.length; nLevel++)
+				{
+					var strName = aPath[nLevel];
+					var strItemSysId = x_snc_devtools.RecordInsertOrUpdate(
+					'x_snc_agile_backlog_item',
+					{
+						short_description: strName,
+						backlog: grBacklog.sys_id
+					},
+					{
+						description: 'Imported'
+					},
+					{
+						
+					});
+
+					if (nLevel == 0)
+					{
+						// Add personas to lowest level
+						if (strPersonaSysId != '')
+						{
+							var strPersonas = RecordGetValue(
+								'x_snc_agile_backlog_item',strItemSysId,
+								'personas');
+							var aPersonas = GetArrayValue(strPersonas);
+							aPersonas = ArrayPushUnique(aPersonas,strPersonaSysId);
+							RecordSetValue(
+								'x_snc_agile_backlog_item',strItemSysId,
+								'personas',
+								GetStringValue(aPersonas));
+
+						}
+
+						// Add system dependency to lowest level
+						if (strSystemSysId != '')
+						{
+							var strRequiredItems = RecordGetValue(
+								'x_snc_agile_backlog_item',strItemSysId,
+								'required_backlog_items');
+							var aRequiredItems = GetArrayValue(strRequiredItems);
+							aRequiredItems = ArrayPushUnique(aRequiredItems,strSystemSysId);
+							RecordSetValue(
+								'x_snc_agile_backlog_item',strItemSysId,
+								'required_backlog_items',
+								GetStringValue(aRequiredItems));				
+						}	
+					}
+					else
+					{
+						// Add dependency to lower level
+						var strRequiredItems = RecordGetValue(
+							'x_snc_agile_backlog_item',strItemSysId,
+							'required_backlog_items');
+						var aRequiredItems = GetArrayValue(strRequiredItems);
+						aRequiredItems = ArrayPushUnique(
+							aRequiredItems,strLowerLevelItemSysId);
+						RecordSetValue(
+							'x_snc_agile_backlog_item',strItemSysId,
+							'required_backlog_items',
+							GetStringValue(aRequiredItems));						
+					}
+
+
+					if (nLevel == aPath.length - 1)
+					{
+						// Add dependencies to reference backlog item
+						var aRequiredItems =
+							GetArrayValue(
+								RecordGetValue(
+									'x_snc_agile_backlog_item',grBacklogItem.sys_id,
+									'required_backlog_items'));
+						aRequiredItems = ArrayPushUnique(aRequiredItems,strItemSysId);
+						RecordSetValue(
+							'x_snc_agile_backlog_item',grBacklogItem.sys_id,
+							'required_backlog_items',
+							GetStringValue(aRequiredItems));
+
+					}
+
+					strLowerLevelItemSysId = strItemSysId;
+				}
+				nImportedItems++;
+			}				
+		}
+		nFile++;
+	}
+	progresstracker.SetPercentageProgress(100);
+
+	result.imported_files = GetIntegerValue(nFiles);
+	result.imported_items = GetIntegerValue(nImportedItems);
+	result.imported_personas = GetIntegerValue(nImportedPersonas);
+	result.invalid_items = GetIntegerValue(nInvalidItems);
+	result.message = StringFormat(
+			'Imported {0} backlog item(s) and {1} persona(s) from {2} file(s).\nSkipped {3} invalid item(s)',
+			result.imported_items,
+			result.imported_personas,
+			result.imported_files,
+			result.invalid_items
+			);
+
+	progresstracker.SetText(result.message);
+	progresstracker.SetResult(result,true,result.message);
+	
+	return result;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-28 13:50:03</sys_created_on>
+        <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
+        <sys_mod_count>41</sys_mod_count>
+        <sys_name>ImportDataFromAttachments</sys_name>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-14 18:33:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

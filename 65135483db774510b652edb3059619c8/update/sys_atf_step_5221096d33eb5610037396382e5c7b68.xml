@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 20:54:10</sys_created_on>
+        <sys_id>5221096d33eb5610037396382e5c7b68</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_atf_step_5221096d33eb5610037396382e5c7b68</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 21:00:36</sys_updated_on>
+        <table/>
+        <test display_value="Agile - GetBacklogRecord">c221c56d33eb5610037396382e5c7baf</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=5221096d33eb5610037396382e5c7b68"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>5221096d33eb5610037396382e5c7b68</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 20:54:10</sys_created_on>
+        <sys_id>d221096d33eb5610037396382e5c7b69</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 20:54:10</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>5221096d33eb5610037396382e5c7b68</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 20:54:10</sys_created_on>
+        <sys_id>da21096d33eb5610037396382e5c7b69</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 21:00:37</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+	function TestCase_GetBacklogRecord(vBacklog, vExpected)&#13;
+	{&#13;
+		function TestCase_GetBacklogRecord_CheckResult(vInput,vExpected,vResult)&#13;
+		{&#13;
+			if (vBacklog === null)&#13;
+			{&#13;
+				var grBacklog = new GlideRecord('x_snc_agile_backlog');&#13;
+				grBacklog.query();&#13;
+				if (grBacklog.getRowCount() == 1)&#13;
+				{&#13;
+					return x_snc_devtools.IsValidRecord(vResult);&#13;
+				}&#13;
+				return (vResult == false);&#13;
+			}&#13;
+			if (vExpected == true)&#13;
+			{&#13;
+				return x_snc_devtools.IsValidRecord(vResult);&#13;
+			}&#13;
+			return (vExpected == vResult);&#13;
+		}&#13;
+&#13;
+		test.TestCase(&#13;
+			'Function GetBacklogRecord()',&#13;
+			GetBacklogRecord,&#13;
+			{&#13;
+				'vBacklog': vBacklog&#13;
+			},&#13;
+			vExpected,&#13;
+			TestCase_GetBacklogRecord_CheckResult);&#13;
+	}&#13;
+&#13;
+	TestCase_GetBacklogRecord(null,null);&#13;
+	TestCase_GetBacklogRecord(false,false);&#13;
+&#13;
+	var grBacklog = new GlideRecord('x_snc_agile_backlog');&#13;
+	grBacklog.initialize();&#13;
+	grBacklog.name = '_ATF_TEST';&#13;
+	grBacklog.insert();&#13;
+&#13;
+	TestCase_GetBacklogRecord(grBacklog,true);&#13;
+	TestCase_GetBacklogRecord(grBacklog.sys_id,true);&#13;
+	TestCase_GetBacklogRecord('_ATF_TEST',true);&#13;
+	&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

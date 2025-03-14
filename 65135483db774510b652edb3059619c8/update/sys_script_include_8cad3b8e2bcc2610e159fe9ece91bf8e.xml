@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_agile.AgileClientAPI</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>The AgileClientAPI is a client callable proxy for ajax calls to some of the functions provided by Agile.
+|
+Methods:
+* ImportDataFromAttachmentsCheck()
+* start()</description>
+        <name>AgileClientAPI</name>
+        <script><![CDATA[var AgileClientAPI = Class.create();
+AgileClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
+{
+
+	ImportDataFromAttachmentsCheck: function()
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var MakeJson = x_snc_devtools.MakeJson;
+		
+		if (gs.hasRole('x_snc_agile.agilist') == false)
+		{
+			return MakeJson('The user does not have the sufficient access rights');
+		}		
+		var strBacklogItemSysId = GetStringValue(
+			this.getParameter('sysparm_backlog_item_sys_id'));
+
+		var strText = ImportDataFromAttachmentsCheck(strBacklogItemSysId);
+		return MakeJson(strText);
+	},	
+
+	start: function()
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var IsValidRecord = x_snc_devtools.IsValidRecord;
+		var StartWorker = x_snc_devtools.StartWorker;
+		var StringFormat = x_snc_devtools.StringFormat;
+
+		if (gs.hasRole('x_snc_agile.agilist') == false && gs.hasRole('admin') == false)
+		{
+			return '';
+		}
+
+		var strWorkerId = '';
+		var strTrackerSourceTable = '';
+		var strTrackerType = '';
+
+		var strCommand = GetStringValue(
+			this.getParameter("sysparm_ajax_processor_command"));
+		if (strCommand == 'agile_import')
+		{
+			Log('AgileClientAPI::start() command is agile_import');
+			var strBacklogItemSysId = GetStringValue(this.getParameter("sysparm_ajax_processor_backlog_item_sys_id"));
+			if (strBacklogItemSysId == '')
+			{
+				LogError('AgileClientAPI.start(): ImportDataFromAttachments: no backlog_item_sys_id specified.');
+				return '';
+			}
+			var grBacklogItem = GetBacklogItemRecord(strBacklogItemSysId);
+			if (IsValidRecord(grBacklogItem) == false)
+			{
+				LogError('AgileClientAPI.start(): ImportDataFromAttachments: Backlog Item not found.');
+				return '';
+			}
+
+			strTrackerSourceTable = 'x_snc_agile_backlog_item';
+			strTrackerType = 'agile_import';
+	
+			var strProgressName =
+				StringFormat(
+					"Importing data to backlog item {0} - {1}",
+					grBacklogItem.number,
+					grBacklogItem.short_description);
+
+			var params = {};
+			params['vBacklogItem'] = strBacklogItemSysId;
+
+			strWorkerId = StartWorker(
+				strProgressName,
+				'x_snc_agile.AgileWorkerAPI',
+				'ImportDataFromAttachments',
+				params);
+		}
+		else
+		{
+			LogError('AgileClientAPI.start(): Unknown command!');
+		}
+
+		
+		if (strWorkerId == '')
+		{
+			return '';
+		}
+
+		var nCountDown = 1000;
+		while (nCountDown > 0)
+		{
+			var grTracker = new GlideRecord('sys_execution_tracker');
+			grTracker.orderByDesc('sys_created_on');
+			grTracker.addQuery('source_table','=',strTrackerSourceTable);
+			grTracker.addQuery('type','=',strTrackerType);
+			grTracker.addQuery('state', 'IN', '0,1');
+			grTracker.query();
+			if (grTracker.next())
+			{
+				return GetStringValue(grTracker.sys_id);
+			}
+			nCountDown--;
+		}
+
+		return strWorkerId;
+	},
+		
+
+    type: 'AgileClientAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-04 20:26:37</sys_created_on>
+        <sys_id>8cad3b8e2bcc2610e159fe9ece91bf8e</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>AgileClientAPI</sys_name>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_8cad3b8e2bcc2610e159fe9ece91bf8e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-14 18:33:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

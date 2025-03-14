@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_agile.GetBacklogItemRecord</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns the Backlog Item record based on the given input.</description>
+        <name>GetBacklogItemRecord</name>
+        <script><![CDATA[function GetBacklogItemRecord(vBacklogItem)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	
+	var grBacklogItem = GetRecord('x_snc_agile_backlog_item',vBacklogItem);
+	if (IsValidRecord(grBacklogItem) == true)
+	{
+		return grBacklogItem;
+	}
+
+	var grBacklogItem = new GlideRecord('x_snc_agile_backlog_item');
+	grBacklogItem.addQuery('number','=',vBacklogItem);
+	grBacklogItem.query();
+	if (grBacklogItem.next() == true)
+	{
+		return grBacklogItem;
+	}
+	return false;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 17:27:25</sys_created_on>
+        <sys_id>e531506933e75610037396382e5c7b63</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GetBacklogItemRecord</sys_name>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_script_include_e531506933e75610037396382e5c7b63</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-14 18:33:33</sys_updated_on>
+    </sys_script_include>
+</record_update>
