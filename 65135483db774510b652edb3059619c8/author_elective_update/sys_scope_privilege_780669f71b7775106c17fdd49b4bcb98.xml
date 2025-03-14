@@ -21,7 +21,7 @@
     </sys_scope_privilege>
 <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="Agile">65135483db774510b652edb3059619c8</application>
+        <application display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</application>
         <file_path/>
         <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
         <instance_name>wildwashington</instance_name>
@@ -75,10 +75,10 @@
         <sys_metadata>780669f71b7775106c17fdd49b4bcb98</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>GetInstanceRecordURL</sys_name>
-        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_scope_delete display_value="">2dbab3f1846b464c8f5dbbc77c31e019</sys_scope_delete>
         <sys_update_name>sys_scope_privilege_780669f71b7775106c17fdd49b4bcb98</sys_update_name>
         <sys_update_version display_value="sys_scope_privilege_780669f71b7775106c17fdd49b4bcb98">0a2e8098c35cda505a37f9070501319d</sys_update_version>
