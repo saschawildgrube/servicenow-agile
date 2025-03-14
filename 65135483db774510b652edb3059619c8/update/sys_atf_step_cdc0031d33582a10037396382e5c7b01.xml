@@ -15,9 +15,9 @@
         <sys_id>cdc0031d33582a10037396382e5c7b01</sys_id>
         <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_atf_step_cdc0031d33582a10037396382e5c7b01</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-03-14 18:22:24</sys_updated_on>
