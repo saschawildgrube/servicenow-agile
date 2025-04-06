@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_snc_agile.GetBacklogItemState</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the numeric value of a state based on its id.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetBacklogItemState</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetBacklogItemState(strState)
 {
 	return x_snc_devtools.GetValue(GetBacklogItemStates(),strState);
@@ -15,13 +17,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 19:07:35</sys_created_on>
         <sys_id>5b7fcd47db7f4510b652edb305961982</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>GetBacklogItemState</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_5b7fcd47db7f4510b652edb305961982</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 18:58:37</sys_updated_on>
+        <sys_updated_on>2025-04-06 19:50:09</sys_updated_on>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>5b7fcd47db7f4510b652edb305961982</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-06 19:50:09</sys_created_on>
+        <sys_id>e1e1b9f093346610959b7fda2bba1088</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-06 19:50:09</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
