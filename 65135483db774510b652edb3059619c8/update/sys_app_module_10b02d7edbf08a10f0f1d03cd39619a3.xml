@@ -6,7 +6,7 @@
         <device_type/>
         <filter table="x_snc_agile_backlog_item">state=4000^ORstate=4500^ORstate=6500^EQ<item display_value="Done / Committed to repo" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="4000"/>
             <item display_value="Baselined" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="4500"/>
-            <item display_value="Baselined Showstopper" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="6500"/>
+            <item display_value="Test Failed / Show Stopper / Baselined" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="6500"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter>
         <hint/>

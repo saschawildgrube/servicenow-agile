@@ -7,7 +7,7 @@
         <filter table="x_snc_agile_backlog_item">state=5000^ORstate=6000^ORstate=7000^ORstate=6500^EQ<item display_value="In Test" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="5000"/>
             <item display_value="Test Failed / Show Stopper / Back to Development" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="6000"/>
             <item display_value="Test Passed / Ready for PROD" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="7000"/>
-            <item display_value="Baselined Showstopper" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="6500"/>
+            <item display_value="Test Failed / Show Stopper / Baselined" endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="6500"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter>
         <hint/>

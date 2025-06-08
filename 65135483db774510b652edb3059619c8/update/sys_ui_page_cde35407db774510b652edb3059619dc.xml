@@ -86,7 +86,7 @@
 		<li><b>Baselined</b>: The team has baselined all related applications that were affected by the changes made for this backlog item - which enables the backlog item to be part of a subsequent deployment to the TEST environment.</li>
 		<li><b>In Test</b>: The changes related to the backlog item has been deployed to the TEST environemnt and a tester is asked to test the result.</li>
 		<li><b>Test Failed / Showstopper / Back to development</b>: A backlog item has failed the test and must be considered as a showstopper - so the current version on the TEST environment MUST NOT be deplyoed to the PROD environment. The backlog item is sent back to a developer who is now asked to fix issues. It is important to distinguish this state from "In Development" because the current deployment on TEST should not be deployed to the PROD environment as long as there are showstoppers. If a test failed but the issues are not considered as showstoppers, the version can be deployed to PROD and the state should be set to "In Development" which indicates that they do not represent a reason to delay deployment to PROD but still need to be worked on.</li>
-		<li><b>Baselined Showstopper</b>: A fix has been provided to resolve the showstopper. All relevant application versions have been baselined and are now ready for deployment to TEST.</li> 
+		<li><b>Test Failed / Showstopper / Baselined</b>: A fix has been provided to resolve the showstopper. All relevant application versions have been baselined and are now ready for deployment to TEST.</li> 
 		<li><b>Test Passed / Ready for PROD</b>: The test has been passed and the backlog item is ready for deployment on the PROD environment.</li>
 		<li><b>Review on PROD</b>: Deployment to PROD environment has been completed. A final check should be done before the backlog item is marked as "Completed".</li>
 		<li><b>Completed</b>: The backlog item is finally completed.</li>
@@ -243,6 +243,7 @@
 	<h3>1.12.0 - TODO</h3>
 	<ol>
 		<li>DevTools 1.124.0 is required due to the fix in two ATF test step configs.</li>
+		<li>Renamed state "Baselined Showstopper" to "Test Failed / Show Stopper / Baselined" for consistency.</li>
 		<li>GetBacklogItemState() is now accessible from all scopes.</li>
 		<li>GetBacklogItemStates() is now accessible from all scopes.</li>
 	</ol>
@@ -380,14 +381,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>159</sys_mod_count>
+        <sys_mod_count>161</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-08 09:23:08</sys_updated_on>
+        <sys_updated_on>2025-06-08 18:08:34</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>cde35407db774510b652edb3059619dc</id>
