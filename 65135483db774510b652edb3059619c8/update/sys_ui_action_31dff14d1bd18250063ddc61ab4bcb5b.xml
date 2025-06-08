@@ -56,4 +56,15 @@ x_snc_devtools.RedirectToRecord(current);]]></script>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>31dff14d1bd18250063ddc61ab4bcb5b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-08 18:13:10</sys_created_on>
+        <sys_id>07d73dc193826e10ae97b4aa6aba10c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-08 18:13:10</sys_updated_on>
+        <table>sys_ui_action</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
