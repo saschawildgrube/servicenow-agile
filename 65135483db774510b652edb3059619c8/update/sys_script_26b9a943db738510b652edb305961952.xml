@@ -21,7 +21,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>Backlog Item - Assign users</name>
-        <order>21000</order>
+        <order>42520</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -40,7 +40,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>26b9a943db738510b652edb305961952</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Backlog Item - Assign users</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -48,10 +48,21 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_26b9a943db738510b652edb305961952</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-07 20:28:37</sys_updated_on>
+        <sys_updated_on>2025-06-08 11:13:42</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=26b9a943db738510b652edb305961952"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>26b9a943db738510b652edb305961952</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-08 11:13:41</sys_created_on>
+        <sys_id>aed79485930e2e10ae97b4aa6aba10ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-08 11:13:41</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

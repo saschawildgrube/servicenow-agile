@@ -19,7 +19,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>Backlog Item - Set downstream levels</name>
-        <order>23000</order>
+        <order>42595</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -50,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e74c93b4db37ca90f0f1d03cd3961996</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Backlog Item - Set downstream levels</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -58,10 +58,21 @@
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_e74c93b4db37ca90f0f1d03cd3961996</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-08-13 10:03:34</sys_updated_on>
+        <sys_updated_on>2025-06-08 11:16:29</sys_updated_on>
         <template/>
         <when>after</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=e74c93b4db37ca90f0f1d03cd3961996"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e74c93b4db37ca90f0f1d03cd3961996</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-08 11:16:28</sys_created_on>
+        <sys_id>9b7814c5930e2e10ae97b4aa6aba102b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-08 11:16:28</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
