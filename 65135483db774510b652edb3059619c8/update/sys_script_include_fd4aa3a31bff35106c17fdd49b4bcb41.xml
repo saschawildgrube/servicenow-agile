@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Renders the dependenc tree of a given backlog item</description>
+        <mobile_callable>false</mobile_callable>
         <name>HtmlRenderBacklogItemDependencies</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function HtmlRenderBacklogItemDependencies(vBacklogItem,strMode,nMaxLevel)
 {
 	var GetRecord = x_snc_devtools.GetRecord;

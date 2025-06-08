@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the backog item with the lowest priority (the highest order number). If the parameter bActive is true, only active backlog items are considered.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetLowestPrioBacklogItem</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetLowestPrioBacklogItem(bActive)
 {
 	var GetBoolValue = x_snc_devtools.GetBoolValue;

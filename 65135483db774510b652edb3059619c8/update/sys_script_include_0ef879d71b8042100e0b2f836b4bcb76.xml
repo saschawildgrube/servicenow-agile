@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Updates the order of all backlog items based on the order of the given backlog item. The function considers all required backlog items recursively.</description>
+        <mobile_callable>false</mobile_callable>
         <name>BacklogItemManageOrder</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function BacklogItemManageOrder(grBacklogItem,aPath)
 {
 	var RecordManageOrder = x_snc_devtools.RecordManageOrder;

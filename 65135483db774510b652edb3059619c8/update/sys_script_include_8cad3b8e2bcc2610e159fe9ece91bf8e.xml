@@ -10,7 +10,9 @@
 Methods:
 * ImportDataFromAttachmentsCheck()
 * start()</description>
+        <mobile_callable>false</mobile_callable>
         <name>AgileClientAPI</name>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var AgileClientAPI = Class.create();
 AgileClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 {

@@ -3,7 +3,9 @@
         <active>true</active>
         <admin_overrides>true</admin_overrides>
         <advanced>false</advanced>
+        <applies_to/>
         <condition/>
+        <decision_type>allow</decision_type>
         <description>Allow write for short_description in x_snc_agile_backlog_item, for users with role x_snc_agile.agilist.</description>
         <local_or_existing/>
         <name>x_snc_agile_backlog_item.assigned_to</name>
