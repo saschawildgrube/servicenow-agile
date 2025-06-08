@@ -2,7 +2,7 @@
     <sys_atf_step action="INSERT_OR_UPDATE">
         <active>true</active>
         <copied_from/>
-        <description>Checks if all documented dependencies of the application "Agile" are installed in a compatible version
+        <description>Checks if all documented dependencies of the application are installed in a compatible version
 </description>
         <display_name>DevTools - Check app dependencies</display_name>
         <inputs/>
@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-07 15:32:12</sys_created_on>
         <sys_id>c07869fadbfce9106a03dad1f39619f3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>DevTools - Check app dependencies</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_atf_step_c07869fadbfce9106a03dad1f39619f3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-07 15:32:12</sys_updated_on>
+        <sys_updated_on>2025-06-08 09:20:10</sys_updated_on>
         <table/>
         <test display_value="Agile - Installation">8de35407db774510b652edb3059619e5</test>
         <timeout/>
@@ -42,4 +42,19 @@
         <value>65135483db774510b652edb3059619c8</value>
         <variable display_value="">75de33561b3f5d105b76777d8b4bcbc8</variable>
     </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>c07869fadbfce9106a03dad1f39619f3</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-08 09:20:10</sys_created_on>
+        <sys_id>abdd33b0938a2e10ae97b4aa6aba10f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-08 09:20:10</sys_updated_on>
+        <value>65135483db774510b652edb3059619c8</value>
+        <variable display_value="Application">abfabdb693e1aa50959b7fda2bba10e4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_e4b8e71e1bbb5d105b76777d8b4bcb35^id=c07869fadbfce9106a03dad1f39619f3"/>
 </record_update>

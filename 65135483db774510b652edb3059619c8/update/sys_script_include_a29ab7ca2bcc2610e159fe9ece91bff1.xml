@@ -10,7 +10,9 @@
 Methods:
 * initialize()
 * ImportDataFromAttachments()</description>
+        <mobile_callable>false</mobile_callable>
         <name>AgileWorkerAPI</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var AgileWorkerAPI = Class.create();
 AgileWorkerAPI.prototype = {
     initialize: function() {

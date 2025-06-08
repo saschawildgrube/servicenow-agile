@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the Backlog Item record based on the given input.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetBacklogItemRecord</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetBacklogItemRecord(vBacklogItem)
 {
 	var GetRecord = x_snc_devtools.GetRecord;

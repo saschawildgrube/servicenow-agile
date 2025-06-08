@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Creates a new backlog item and adds it to the list of required backlog items of the given backlog item.</description>
+        <mobile_callable>false</mobile_callable>
         <name>CreateNewRequiredBacklogItem</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function CreateNewRequiredBacklogItem(vBacklogItem)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;

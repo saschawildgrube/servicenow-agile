@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the backlog record based on the given parameter. If the parameter is null and there is exactly one backlog record, this record is returned.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetBacklogRecord</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetBacklogRecord(vBacklog)
 {
 	var GetRecord = x_snc_devtools.GetRecord;

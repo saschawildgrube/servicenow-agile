@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Renders the dependenc tree of a given backlog item</description>
+        <mobile_callable>false</mobile_callable>
         <name>HtmlRenderBacklogItemDependencies</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function HtmlRenderBacklogItemDependencies(vBacklogItem,strMode,nMaxLevel)
 {
 	var GetRecord = x_snc_devtools.GetRecord;
@@ -43,7 +45,7 @@
 		var GetBoolValue = x_snc_devtools.GetBoolValue;
 		var HtmlRenderError = x_snc_devtools.HtmlRenderError;
 		var GetUserRecord = x_snc_devtools.GetUserRecord;
-		var GetInstanceListURL = x_snc_devtools.GetInstanceListURL;
+		var GetInstanceListUrl = x_snc_devtools.GetInstanceListUrl;
 				
 		if (IsObject(backlogitem) == false)
 		{
@@ -90,7 +92,7 @@
 		strContent += HtmlRenderLink(strUrl,strDisplay,true); 
 		if (bShowAssignedUser == true && IsValidSysId(backlogitem.assigned_to))
 		{
-			var strUrl = GetInstanceListURL(
+			var strUrl = GetInstanceListUrl(
 				'x_snc_agile_backlog_item',
 				'',
 				'active=true^assigned_to='+backlogitem.assigned_to,
@@ -168,13 +170,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-24 08:18:04</sys_created_on>
         <sys_id>fd4aa3a31bff35106c17fdd49b4bcb41</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>HtmlRenderBacklogItemDependencies</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_fd4aa3a31bff35106c17fdd49b4bcb41</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-03-06 10:53:16</sys_updated_on>
+        <sys_updated_on>2025-06-08 18:36:08</sys_updated_on>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>fd4aa3a31bff35106c17fdd49b4bcb41</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-08 18:36:08</sys_created_on>
+        <sys_id>eb1d318993826e10ae97b4aa6aba1074</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-08 18:36:08</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

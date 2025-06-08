@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_snc_agile.GetBacklogItemStates</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns an object that maps state ids to their numeric values.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetBacklogItemStates</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetBacklogItemStates()
 {
 	var states = {};
@@ -17,6 +19,7 @@
 	states.baselined				= 4500;
 	states.test      				= 5000;
 	states.failed    				= 6000;
+	states.done_showstopper			= 6100;
 	states.baselined_showstopper	= 6500;
 	states.passed    				= 7000;
 	states.prod     				= 8000;
@@ -28,13 +31,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 19:06:55</sys_created_on>
         <sys_id>19cec147db7f4510b652edb3059619f5</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>GetBacklogItemStates</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_19cec147db7f4510b652edb3059619f5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 18:58:37</sys_updated_on>
+        <sys_updated_on>2025-06-08 18:07:21</sys_updated_on>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>19cec147db7f4510b652edb3059619f5</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-04 15:43:25</sys_created_on>
+        <sys_id>7f36eec49338a210959b7fda2bba1029</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-04 15:43:25</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

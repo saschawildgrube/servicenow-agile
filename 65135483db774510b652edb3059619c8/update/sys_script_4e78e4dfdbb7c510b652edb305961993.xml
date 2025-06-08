@@ -19,7 +19,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>Backlog Item - Check values</name>
-        <order>20000</order>
+        <order>42550</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -33,16 +33,20 @@
 	
 	if (GetStringValue(current.short_description) == '')
 	{
-		current.state = GetBacklogItemState('draft');
 		gs.addErrorMessage('Please enter a short description!');
+		current.state = GetBacklogItemState('draft');
 	}
 	
 	if (current.state >= GetBacklogItemState('ready'))
 	{
 		if (GetStringValue(current.description) == '')
 		{
-			current.state = GetBacklogItemState('draft');
 			gs.addErrorMessage('Please enter a description!');
+			if (current.state >= GetBacklogItemState('failed'))
+			{
+				current.state = GetBacklogItemState('failed');
+			}
+
 		}
 	}
 
@@ -53,7 +57,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4e78e4dfdbb7c510b652edb305961993</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Backlog Item - Check values</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -61,10 +65,21 @@
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_4e78e4dfdbb7c510b652edb305961993</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-05 18:23:28</sys_updated_on>
+        <sys_updated_on>2025-06-08 18:54:26</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=4e78e4dfdbb7c510b652edb305961993"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>4e78e4dfdbb7c510b652edb305961993</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-08 11:12:55</sys_created_on>
+        <sys_id>c7a7d085930e2e10ae97b4aa6aba1014</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-08 11:12:55</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

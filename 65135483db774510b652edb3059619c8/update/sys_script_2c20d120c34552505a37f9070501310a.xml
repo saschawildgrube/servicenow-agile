@@ -19,7 +19,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>Backlog Item - Sort required items</name>
-        <order>24000</order>
+        <order>42590</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -38,7 +38,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2c20d120c34552505a37f9070501310a</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Backlog Item - Sort required items</sys_name>
         <sys_overrides/>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
@@ -46,10 +46,21 @@
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_2c20d120c34552505a37f9070501310a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 16:51:45</sys_updated_on>
+        <sys_updated_on>2025-06-08 11:15:00</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=2c20d120c34552505a37f9070501310a"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>2c20d120c34552505a37f9070501310a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-08 11:15:00</sys_created_on>
+        <sys_id>29281c85930e2e10ae97b4aa6aba10cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-08 11:15:00</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
