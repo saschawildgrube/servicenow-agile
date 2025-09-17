@@ -40,7 +40,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Xanadu,Yokohama',
+				'Yokohama,Zurich',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -244,6 +244,8 @@
 	<h3>1.13.0 - TODO</h3>
 	<ol>
 		<li>DevTools 1.132.0 is now required.</li>
+		<li>Xanadu is no longer actively supported.</li>
+		<li>Agile has been fully tested with Zurich.</li>
 		<li>Added ACL to protect the AgileClientAPI Script Include.</li>
 	</ol>
 
@@ -393,14 +395,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>174</sys_mod_count>
+        <sys_mod_count>176</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-17 15:34:00</sys_updated_on>
+        <sys_updated_on>2025-09-17 15:47:14</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>cde35407db774510b652edb3059619dc</id>
