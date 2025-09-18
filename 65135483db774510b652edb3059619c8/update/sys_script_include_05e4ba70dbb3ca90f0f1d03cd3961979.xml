@@ -43,5 +43,6 @@ If no other item depends on the given item, the dependency level is 0.</descript
         <sys_update_name>sys_script_include_05e4ba70dbb3ca90f0f1d03cd3961979</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-10-01 18:58:37</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

@@ -87,7 +87,7 @@
 
 			progresstracker.SetText(
 				StringFormat(
-					'Importing row {1} of {2} from {0}.',
+					'Importing row {1} of {2} from file "{0}".',
 					strFileName,
 					nItem,
 					aData.length));
@@ -95,7 +95,7 @@
 			var fProgressInFile = nItem / aData.length;
 
 			var fPercentageTotal =
-				(fPercentagePerFile * nFiles)
+				(fPercentagePerFile * nFile)
 				+ (fPercentagePerFile * fProgressInFile);
 			progresstracker.SetPercentageProgress(fPercentageTotal);
 
@@ -209,17 +209,17 @@
 				{
 					var strName = aPath[nLevel];
 					var strItemSysId = x_snc_devtools.RecordInsertOrUpdate(
-					'x_snc_agile_backlog_item',
-					{
-						short_description: strName,
-						backlog: grBacklog.sys_id
-					},
-					{
-						description: 'Imported'
-					},
-					{
-						
-					});
+						'x_snc_agile_backlog_item',
+						{
+							short_description: strName,
+							backlog: grBacklog.sys_id
+						},
+						{
+							description: 'Imported'
+						},
+						{
+							
+						});
 
 					if (nLevel == 0)
 					{
@@ -314,13 +314,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-02-28 13:50:03</sys_created_on>
         <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>ImportDataFromAttachments</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-03-14 18:33:33</sys_updated_on>
+        <sys_updated_on>2025-09-17 19:32:24</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
