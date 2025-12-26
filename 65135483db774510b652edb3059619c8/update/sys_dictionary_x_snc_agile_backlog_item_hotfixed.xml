@@ -53,9 +53,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-08-06 18:44:20</sys_created_on>
         <sys_name>Hotfixed in PROD</sys_name>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_agile_backlog_item_hotfixed</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2023-08-06 18:44:20</sys_updated_on>
