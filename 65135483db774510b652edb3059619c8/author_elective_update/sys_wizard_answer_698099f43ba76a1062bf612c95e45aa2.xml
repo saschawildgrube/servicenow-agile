@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="DELETE">
+        <active>true</active>
+        <answer>Backlog Item</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>Backlog Item</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Task" name="Task">b0a4b778e11312105590bd68cbbecb8f</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2025-08-21 10:17:00</sys_created_on>
+        <sys_id>698099f43ba76a1062bf612c95e45aa2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Backlog Item</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_update_name>sys_wizard_answer_698099f43ba76a1062bf612c95e45aa2</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-08-21 10:17:00</sys_updated_on>
+        <table/>
+        <target_url>x_snc_agile_backlog_item.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</application>
+        <file_path/>
+        <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
+        <instance_name>wildyokohama</instance_name>
+        <name>sys_wizard_answer_698099f43ba76a1062bf612c95e45aa2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer"><sys_wizard_answer action="INSERT_OR_UPDATE"><active>true</active><answer>Backlog Item</answer><button_label/><dependent_value/><element/><name>Backlog Item</name><next_question/><order>100</order><payload_name/><question display_value="Task" name="Task">b0a4b778e11312105590bd68cbbecb8f</question><roles/><script/><sys_class_name>sys_wizard_answer</sys_class_name><sys_created_by>system</sys_created_by><sys_created_on>2025-08-21 10:17:00</sys_created_on><sys_id>698099f43ba76a1062bf612c95e45aa2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Backlog Item</sys_name><sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package><sys_policy/><sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope><sys_update_name>sys_wizard_answer_698099f43ba76a1062bf612c95e45aa2</sys_update_name><sys_updated_by>system</sys_updated_by><sys_updated_on>2025-08-21 10:17:00</sys_updated_on><table/><target_url>x_snc_agile_backlog_item.do</target_url><type>1</type></sys_wizard_answer></record_update>]]></payload>
+        <payload_hash>-634579757</payload_hash>
+        <record_name>Backlog Item</record_name>
+        <reverted_from/>
+        <source>44b6a5202b3132109083fe395e91bf84</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2025-12-10 13:36:38</sys_created_on>
+        <sys_id>577b49783bc23e5062bf612c95e45a29</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>19b087a66700000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Answer</type>
+        <update_guid>177b4978e3c23e50a0980adb4d64b729</update_guid>
+        <update_guid_history>177b4978e3c23e50a0980adb4d64b729:-634579757</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2025-12-23 16:31:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_wizard_answer">sys_wizard_answer</sys_db_object>
+        <sys_id>26aec59c544548f886fa58393f17da90</sys_id>
+        <sys_metadata>698099f43ba76a1062bf612c95e45aa2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Backlog Item</sys_name>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_parent display_value="Task">b0a4b778e11312105590bd68cbbecb8f</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope_delete display_value="">2dbab3f1846b464c8f5dbbc77c31e019</sys_scope_delete>
+        <sys_update_name>sys_wizard_answer_698099f43ba76a1062bf612c95e45aa2</sys_update_name>
+        <sys_update_version display_value="sys_wizard_answer_698099f43ba76a1062bf612c95e45aa2">577b49783bc23e5062bf612c95e45a29</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-12-23 16:31:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

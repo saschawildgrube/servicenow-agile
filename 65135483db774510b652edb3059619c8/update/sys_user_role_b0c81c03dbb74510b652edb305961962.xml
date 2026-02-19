@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>The user is a team member of an agile software project team.</description>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id>lrhphhQC1/z82PnHUaZfiy/GImfjKV9aYaGAa0iRfgs=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_agile.agilist</name>

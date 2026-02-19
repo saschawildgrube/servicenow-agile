@@ -4,13 +4,13 @@
             <element>backlog</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>54ae8a4ac3a496105a37f9070501312d</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>417d66932b0fb6109083fe395e91bf4c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>order</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>10ae8a4ac3a496105a37f9070501312e</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>457d66932b0fb6109083fe395e91bf4d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>number</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>94ae8a4ac3a496105a37f9070501312e</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>017d66932b0fb6109083fe395e91bf4e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>state</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>1cae8a4ac3a496105a37f9070501312e</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>c97d66932b0fb6109083fe395e91bf4e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>hotfixed</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>90ae8a4ac3a496105a37f9070501312f</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>857d66932b0fb6109083fe395e91bf4f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -74,13 +74,13 @@
             <element>.split</element>
             <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>18ae8a4ac3a496105a37f9070501312f</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>417d66932b0fb6109083fe395e91bf50</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -88,13 +88,13 @@
             <element>assigned_to</element>
             <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>9cae8a4ac3a496105a37f9070501312f</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>0d7d66932b0fb6109083fe395e91bf50</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -102,13 +102,13 @@
             <element>owner</element>
             <position>7</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>14ae8a4ac3a496105a37f90705013130</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>c57d66932b0fb6109083fe395e91bf51</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -116,13 +116,13 @@
             <element>developer</element>
             <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>98ae8a4ac3a496105a37f90705013130</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>817d66932b0fb6109083fe395e91bf52</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -130,13 +130,13 @@
             <element>tester</element>
             <position>9</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>10ae8a4ac3a496105a37f90705013131</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>4d7d66932b0fb6109083fe395e91bf52</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -144,13 +144,13 @@
             <element>tags</element>
             <position>10</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>94ae8a4ac3a496105a37f90705013131</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>097d66932b0fb6109083fe395e91bf53</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -158,13 +158,13 @@
             <element>.end_split</element>
             <position>11</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>1cae8a4ac3a496105a37f90705013131</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>c17d66932b0fb6109083fe395e91bf54</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
@@ -172,13 +172,13 @@
             <element>short_description</element>
             <position>12</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>90ae8a4ac3a496105a37f90705013132</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>8d7d66932b0fb6109083fe395e91bf54</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -186,13 +186,13 @@
             <element>.begin_split</element>
             <position>13</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>18ae8a4ac3a496105a37f90705013132</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>497d66932b0fb6109083fe395e91bf55</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
@@ -200,13 +200,13 @@
             <element>components</element>
             <position>14</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>9cae8a4ac3a496105a37f90705013132</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>057d66932b0fb6109083fe395e91bf56</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -214,13 +214,13 @@
             <element>.split</element>
             <position>15</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>14ae8a4ac3a496105a37f90705013133</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>cd7d66932b0fb6109083fe395e91bf56</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -228,13 +228,13 @@
             <element>personas</element>
             <position>16</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>98ae8a4ac3a496105a37f90705013133</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>417d66932b0fb6109083fe395e91bf64</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -242,13 +242,13 @@
             <element>.end_split</element>
             <position>17</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>10ae8a4ac3a496105a37f90705013134</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>0d7d66932b0fb6109083fe395e91bf64</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
@@ -256,55 +256,69 @@
             <element>required_backlog_items</element>
             <position>18</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>94ae8a4ac3a496105a37f90705013134</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>c57d66932b0fb6109083fe395e91bf65</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>external_reference_url</element>
+            <position>19</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>817d66932b0fb6109083fe395e91bf66</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>description</element>
-            <position>19</position>
+            <position>20</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>1cae8a4ac3a496105a37f90705013134</sys_id>
+            <sys_created_on>2026-02-19 11:07:35</sys_created_on>
+            <sys_id>4d7d66932b0fb6109083fe395e91bf66</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>comments</element>
-            <position>20</position>
+            <position>21</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>90ae8a4ac3a496105a37f90705013135</sys_id>
+            <sys_created_on>2026-02-19 11:07:36</sys_created_on>
+            <sys_id>097d66932b0fb6109083fe395e91bf67</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>activity.xml</element>
-            <position>21</position>
+            <position>22</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2024-09-11 12:41:14</sys_created_on>
-            <sys_id>18ae8a4ac3a496105a37f90705013135</sys_id>
+            <sys_created_on>2026-02-19 11:07:36</sys_created_on>
+            <sys_id>c17d66932b0fb6109083fe395e91bf68</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Activities (filtered)">444ea5c6bf310100e628555b3f0739d6</sys_ui_formatter>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_agile_backlog_item" sys_domain="global" view="Default view">dc2e1c8fdbb74510b652edb30596196c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2024-09-11 12:41:14</sys_updated_on>
+            <sys_updated_on>2026-02-19 11:07:36</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>

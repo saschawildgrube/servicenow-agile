@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>The user can access the admin areas of the Agile application.</description>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id>NXR40/S9vhHYbgsI56Epxan5ttZs05gYgvXEqjSCwnk=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_agile.admin</name>
