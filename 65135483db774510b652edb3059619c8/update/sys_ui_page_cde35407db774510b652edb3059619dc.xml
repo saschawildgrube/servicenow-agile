@@ -15,7 +15,7 @@
 		docapi.RenderHeader();
 	]</g2:no_escape>
 	
-	<p>Welcome to the Agile app - created and maintained by&#160;<a href="mailto:sascha.wildgrube@servicenow.com">Sascha Wildgrube</a>.</p>
+	<p>Welcome to the Agile app - created and maintained by&#160;<a href="mailto:sascha@wildgrube.com">Sascha Wildgrube</a>.</p>
 
 	<h2>Overview</h2> 
 	<g2:no_escape>$[
@@ -412,14 +412,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>191</sys_mod_count>
+        <sys_mod_count>192</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-19 20:43:04</sys_updated_on>
+        <sys_updated_on>2026-02-20 12:20:02</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>cde35407db774510b652edb3059619dc</id>
