@@ -6,9 +6,9 @@
         <sys_id>ea7c4acd1b158250063ddc61ab4bcbdc</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Continue Development.x_snc_agile.agilist</sys_name>
-        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_ui_action display_value="Continue Development">c4c0068d1bd18250063ddc61ab4bcb0a</sys_ui_action>
         <sys_update_name>sys_ui_action_role_ea7c4acd1b158250063ddc61ab4bcbdc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>

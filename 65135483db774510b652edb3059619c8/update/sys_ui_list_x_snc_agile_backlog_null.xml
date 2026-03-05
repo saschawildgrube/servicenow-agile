@@ -63,9 +63,9 @@
             <sys_id>934e1043978e6910a6a07767f053afbb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_snc_agile_backlog</sys_name>
-            <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+            <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
             <sys_policy/>
-            <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
+            <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
             <sys_update_name>sys_ui_list_x_snc_agile_backlog_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2023-04-11 08:05:07</sys_updated_on>
