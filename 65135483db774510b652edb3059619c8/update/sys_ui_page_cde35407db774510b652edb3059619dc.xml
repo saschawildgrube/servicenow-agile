@@ -34,6 +34,7 @@
 		<li>Manage the development and deployment process as described in the whitepaper&#160;<a href="https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf" target="_blank">A mature Development and Deployment Process - How to sleep well when your 200 developers deploy apps every day</a>.</li>
 		<li>Keep track on relevant components and personas for each backlog item.</li> 
 		<li>List all "Top Level" backlog items - these are backlog items which are not required by any other backlog item. This list view is helpful to make real prioritization decisions.</li>
+		<li>Keep track on external tickets by linking tickets maintained in other systems.</li>
 	</ul>
 
 	<h2>Disclaimer</h2>
@@ -412,14 +413,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>192</sys_mod_count>
+        <sys_mod_count>193</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-20 12:20:02</sys_updated_on>
+        <sys_updated_on>2026-03-05 11:45:23</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>cde35407db774510b652edb3059619dc</id>
