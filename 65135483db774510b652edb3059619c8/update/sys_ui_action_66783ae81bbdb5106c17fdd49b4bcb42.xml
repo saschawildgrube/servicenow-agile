@@ -54,9 +54,9 @@ gs.addInfoMessage(x_snc_devtools.StringFormat('Backlog item {0} is moved to the 
         <sys_mod_count>5</sys_mod_count>
         <sys_name>Low Prio</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_action_66783ae81bbdb5106c17fdd49b4bcb42</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-02-05 18:32:32</sys_updated_on>

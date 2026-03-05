@@ -124,9 +124,9 @@ AgileClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_id>8cad3b8e2bcc2610e159fe9ece91bf8e</sys_id>
         <sys_mod_count>15</sys_mod_count>
         <sys_name>AgileClientAPI</sys_name>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_8cad3b8e2bcc2610e159fe9ece91bf8e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-03-14 18:33:33</sys_updated_on>

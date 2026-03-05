@@ -6,9 +6,9 @@
         <sys_id>166ffd7c2bc0a610e159fe9ece91bf55</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Import from CSV.x_snc_agile.agilist</sys_name>
-        <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
+        <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
+        <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_ui_action display_value="Import from CSV">4e6d39b82bc0a610e159fe9ece91bfeb</sys_ui_action>
         <sys_update_name>sys_ui_action_role_166ffd7c2bc0a610e159fe9ece91bf55</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
