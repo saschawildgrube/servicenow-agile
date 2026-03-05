@@ -15,7 +15,7 @@
 		docapi.RenderHeader();
 	]</g2:no_escape>
 	
-	<p>Welcome to the Agile app - created and maintained by&#160;<a href="mailto:sascha.wildgrube@servicenow.com">Sascha Wildgrube</a>.</p>
+	<p>Welcome to the Agile app - created and maintained by&#160;<a href="mailto:sascha@wildgrube.com">Sascha Wildgrube</a>.</p>
 
 	<h2>Overview</h2> 
 	<g2:no_escape>$[
@@ -34,6 +34,7 @@
 		<li>Manage the development and deployment process as described in the whitepaper&#160;<a href="https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf" target="_blank">A mature Development and Deployment Process - How to sleep well when your 200 developers deploy apps every day</a>.</li>
 		<li>Keep track on relevant components and personas for each backlog item.</li> 
 		<li>List all "Top Level" backlog items - these are backlog items which are not required by any other backlog item. This list view is helpful to make real prioritization decisions.</li>
+		<li>Keep track on external tickets by linking tickets maintained in other systems.</li>
 	</ul>
 
 	<h2>Disclaimer</h2>
@@ -239,6 +240,15 @@
 	
 	<h2 toc-ignore-children="true">Release Notes</h2>
 
+	<h3>1.15.0 - 2026-03-05</h3>  
+	<ol>
+		<li>DevTools 1.137.0 is now required.</li>
+		<li>Added field "External Reference" to store urls to external tickets or other references in a backlog item.</li>
+		<li>HtmlRenderBacklogItemDependencies() now renders the link to external reference if it is set.</li>
+		<li>CSV import now also responds to column header "Short description" (with lower-case 'd').</li>
+	</ol>
+
+
 	<h3>1.14.0 - 2025-12-26</h3>
 	<ol>
 		<li>DevTools 1.135.0 is now required.</li>
@@ -403,14 +413,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-04 14:47:11</sys_created_on>
         <sys_id>cde35407db774510b652edb3059619dc</sys_id>
-        <sys_mod_count>186</sys_mod_count>
+        <sys_mod_count>194</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Agile" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_ui_page_cde35407db774510b652edb3059619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-26 18:51:49</sys_updated_on>
+        <sys_updated_on>2026-03-05 12:23:18</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>cde35407db774510b652edb3059619dc</id>
