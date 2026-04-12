@@ -137,7 +137,8 @@
 				'Task',
 				'task',
 				'short_description',
-				'Short description'
+				'Short description',
+				'Short Description'
 			];
 			aPath = [];
 			for (var nPathLabel = 0; nPathLabel < aPathLabels.length; nPathLabel++)
@@ -211,6 +212,20 @@
 
 				for (var nLevel = 0; nLevel < aPath.length; nLevel++)
 				{
+					var strDescription = '';
+					if (nLevel == 0)
+					{
+						strDescription = GetStringValue(GetValue(item,'Description'));
+						if (strDescription == '')
+						{
+							strDescription = GetStringValue(GetValue(item,'description'));
+						}
+					}
+					if (strDescription == '')
+					{
+						strDescription = 'Imported';
+					}
+
 					var strName = aPath[nLevel];
 					var strItemSysId = x_snc_devtools.RecordInsertOrUpdate(
 						'x_snc_agile_backlog_item',
@@ -219,7 +234,7 @@
 							backlog: grBacklog.sys_id
 						},
 						{
-							description: 'Imported'
+							description: strDescription
 						},
 						{
 							
@@ -318,14 +333,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-02-28 13:50:03</sys_created_on>
         <sys_id>ca6cfd382bc0a610e159fe9ece91bf32</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>55</sys_mod_count>
         <sys_name>ImportDataFromAttachments</sys_name>
         <sys_package display_value="Agile WORK IN PROGRESS" source="x_snc_agile">65135483db774510b652edb3059619c8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Agile WORK IN PROGRESS">65135483db774510b652edb3059619c8</sys_scope>
         <sys_update_name>sys_script_include_ca6cfd382bc0a610e159fe9ece91bf32</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-04 11:33:26</sys_updated_on>
+        <sys_updated_on>2026-04-12 09:00:46</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
